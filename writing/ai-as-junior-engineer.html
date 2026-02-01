@@ -39,10 +39,47 @@
     </ul>
 
     <p>
-      The teams that actually keep the productivity gains do one thing
-      differently: they treat AI output like junior engineer output — small
-      diffs, explicit intent, and automated checks.
+      The initial burst feels like a win. More PRs, faster feature delivery,
+      less time staring at boilerplate. But then the reviews start piling up.
+      Diffs are bigger than they used to be. The code is syntactically correct
+      but the reviewer can't tell if the submitter actually thought through
+      the edge cases or just accepted what the model suggested. Trust erodes.
+      The senior engineers, who are responsible for production stability,
+      start reviewing more carefully — which means more slowly — which means
+      the team is back where it started, except now with more code to maintain.
     </p>
+
+    <p>
+      The teams that actually keep the productivity gains do one thing
+      differently: they treat AI output like junior engineer output.
+    </p>
+
+    <h2>What that means</h2>
+
+    <p>
+      A good junior engineer produces work that needs review. Nobody is
+      surprised by this. You expect small, focused PRs. You expect the PR
+      description to explain the intent. You expect tests. You expect the
+      person to be able to explain their reasoning when asked. The review
+      process is calibrated for this level of trust.
+    </p>
+
+    <p>
+      AI-generated code has the same trust profile. It's often correct. It's
+      sometimes subtly wrong. It lacks broader context about the system it's
+      being inserted into. It doesn't know about the production incident last
+      month that made everyone wary of touching the caching layer. It doesn't
+      understand that the reason the code looks the way it does is because of
+      a regulatory requirement nobody documented.
+    </p>
+
+    <p>
+      Treating it as junior output isn't dismissive. It's a recognition that
+      the code needs the same scaffolding any new-to-the-codebase contributor
+      would need: small scope, clear intent, automated guardrails.
+    </p>
+
+    <h2>A concrete example</h2>
 
     <p>
       I've been mentoring an early-career engineer with strong Claude Code
@@ -57,13 +94,53 @@
     </ul>
 
     <p>
-      The result wasn't flashy — but it meant the output could be trusted,
+      The incremental refactor point is worth expanding on. AI tools are
+      perfectly happy to rewrite an entire module if you ask them to. The
+      output might even be better than the original. But a 500-line diff
+      that changes the structure of a module is almost impossible to review
+      with confidence. A 30-line diff that extracts one function is easy to
+      review. It's easy to test. It's easy to revert if something goes wrong.
+    </p>
+
+    <p>
+      The PR description matters because it shifts the conversation from
+      "is this code correct?" to "is this change safe?" Correct and safe
+      are different things. Code can be correct and still be unsafe — because
+      it touches something fragile, because it changes behaviour in a way
+      that isn't covered by existing tests, because the deployment pipeline
+      can't roll it back cleanly. A good PR description makes the safety
+      argument explicit.
+    </p>
+
+    <p>
+      The result wasn't flashy. But it meant the output could be trusted,
       which is what actually matters.
     </p>
+
+    <h2>The discipline multiplier</h2>
 
     <p>
       It's a useful reminder that AI doesn't replace engineering discipline —
       it amplifies whatever discipline is already there.
+    </p>
+
+    <p>
+      A team with good review processes, solid test coverage, and clear
+      coding standards will get faster with AI tools. The AI handles the
+      boilerplate. The humans handle the judgment. The system catches mistakes
+      from both.
+    </p>
+
+    <p>
+      A team without those things will generate more code, faster, with less
+      understanding. The backlog of technical debt will grow. Incidents will
+      get harder to diagnose because nobody fully understands the code that's
+      running.
+    </p>
+
+    <p>
+      Same tool. Different outcomes. The variable isn't the AI. It's the
+      engineering culture it's dropped into.
     </p>
 
   </article>

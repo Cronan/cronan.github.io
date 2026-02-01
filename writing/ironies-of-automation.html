@@ -31,10 +31,40 @@
     </p>
 
     <p>
-      Her core insight wasn't "humans make mistakes" — it was that automation
+      Bainbridge was writing about industrial process control — chemical
+      plants, power stations, manufacturing lines. The paper was published
+      in <em>Automatica</em>, an engineering journal. It's six pages long.
+      It has accumulated over 2,000 citations. If you work in any field
+      where humans interact with automated systems, you should read it.
+    </p>
+
+    <h2>The core insight</h2>
+
+    <p>
+      Her core insight wasn't "humans make mistakes." It was that automation
       tends to remove the very work that keeps humans competent, then hands
       responsibility back to them at the worst possible moment.
     </p>
+
+    <p>
+      She identified several ironies. The first is that designers automate
+      tasks because they consider humans unreliable — but the designers
+      themselves are human, and their errors get baked into the system as
+      latent faults that may lie dormant for years. The second is that
+      operators who no longer perform a task manually lose the skill to
+      perform it, so when the automation fails and they're asked to take
+      over, they're less competent than they were before the automation
+      existed. The third is that the most automated systems, covering the
+      most edge cases, are precisely the ones that demand the most operator
+      training — not less.
+    </p>
+
+    <p>
+      Read that again if you work with AI coding tools. It's 1983 and she's
+      describing 2025.
+    </p>
+
+    <h2>The human-in-the-loop problem</h2>
 
     <p>
       That's starting to show up clearly with AI.
@@ -49,15 +79,73 @@
     </p>
 
     <p>
-      What's interesting is that tools like Claude Code can go either way here.
+      This is Bainbridge's monitoring paradox, restated for software
+      engineering. The operator is asked to supervise a process they didn't
+      perform, catch errors in reasoning they didn't follow, and intervene
+      at precisely the moment when the system has already exhausted the
+      easy cases and is failing on the hard ones.
+    </p>
+
+    <p>
+      Think about code review for AI-generated PRs. A developer asks Claude
+      to refactor a module. The model produces 200 lines of clean,
+      well-structured code. A reviewer looks at the diff. They didn't write
+      it. They didn't follow the chain of reasoning. They can see what the
+      code does, but they can't easily see what the code <em>should</em>
+      have done and didn't. They approve it because it looks right. That's
+      not review. That's rubber-stamping with extra steps.
+    </p>
+
+    <h2>The deskilling problem</h2>
+
+    <p>
+      Bainbridge's skill-degradation argument is the one that should worry
+      engineering leaders the most. Physical skills deteriorate when they're
+      not used, she wrote. Cognitive skills do too.
+    </p>
+
+    <p>
+      If a junior engineer spends their first two years generating code with
+      AI and having it reviewed by seniors, what do they actually learn?
+      They learn to prompt well. They learn to read diffs. They may learn
+      to write good tests. But do they build the deep mental model of a
+      system that comes from writing it line by line, debugging it at 2am,
+      and gradually understanding why the abstractions are shaped the way
+      they are?
+    </p>
+
+    <p>
+      I'm not sure. It's too early to know. But the question matters,
+      because those deep mental models are exactly what we rely on when
+      things go wrong — when the system is in a state nobody anticipated
+      and someone needs to reason from first principles about what's
+      happening. If we've automated away the work that builds those models,
+      we've created Bainbridge's irony: we need the skill most precisely
+      when we've done the least to maintain it.
+    </p>
+
+    <h2>Two directions for the same tool</h2>
+
+    <p>
+      What's interesting is that tools like Claude Code can go either way
+      here.
     </p>
 
     <p>
       Used naively, they accelerate deskilling: fewer reps, less context,
-      more opaque decisions. Used deliberately — with reusable skills,
-      explicit structure, tests, constraints, and review loops — they can
-      do the opposite: preserve the human mental model while stripping
-      away boilerplate.
+      more opaque decisions. The engineer becomes a prompt-writer who
+      approves outputs. The gap between what the system does and what the
+      human understands grows wider. When something breaks, nobody has the
+      mental model to diagnose it.
+    </p>
+
+    <p>
+      Used deliberately — with reusable skills, explicit structure, tests,
+      constraints, and review loops — they can do the opposite: preserve
+      the human mental model while stripping away boilerplate. The engineer
+      still makes the architectural decisions. The AI handles the repetitive
+      implementation. The tests verify the intent. The human stays engaged
+      with the hard parts — the parts that build real understanding.
     </p>
 
     <p>
@@ -66,19 +154,47 @@
 
     <ul>
       <li>Not how much we automate</li>
-      <li>But which cognitive work we remove, and which we deliberately keep humans engaged in</li>
+      <li>But which cognitive work we remove, and which we deliberately
+          keep humans engaged in</li>
     </ul>
 
+    <h2>Designing for epistemic engagement</h2>
+
     <p>
-      If an AI system is too complex for a human to understand during normal
-      operation, it's unrealistic — and unsafe — to expect understanding to
-      suddenly appear during failure.
+      Bainbridge wrote that if a monitoring task is too complex for the
+      operator to follow during normal operation, it's unrealistic to expect
+      them to understand it during failure. The same applies to AI in
+      software.
+    </p>
+
+    <p>
+      If an AI system generates code that the team can't understand during
+      normal development, it's unrealistic — and unsafe — to expect
+      understanding to suddenly appear during a production incident. The
+      system won't explain itself. The logs won't map to the mental model.
+      The person on call will be staring at code they've never engaged with,
+      trying to reason about behaviour they've never thought through.
+    </p>
+
+    <p>
+      The fix isn't to avoid AI tools. It's to design workflows where
+      humans remain engaged with the decisions that matter. That means
+      smaller AI-generated changes that a human actually reviews. It means
+      tests that encode intent, so when something breaks you know what
+      was supposed to happen. It means documentation that explains why,
+      not just what. It means keeping humans in the reasoning loop, not
+      just the approval loop.
     </p>
 
     <p>
       The future isn't "humans vs AI" or even "humans supervising AI."
-      It's systems that are designed so humans stay epistemically in the loop,
-      not just formally on the hook.
+      It's systems that are designed so humans stay epistemically in the
+      loop, not just formally on the hook.
+    </p>
+
+    <p>
+      Bainbridge saw this coming forty years ago. We should probably
+      listen.
     </p>
 
   </article>

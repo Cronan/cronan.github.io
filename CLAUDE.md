@@ -19,14 +19,13 @@ cronan.github.io/
 │   └── ironies-of-automation.html
 ├── about/
 │   └── index.html          # Full bio
-├── CNAME                   # Custom domain: cronyn.co.uk
 └── CLAUDE.md               # This file
 ```
 
 ## Tech Stack
 
 - **Hosting**: GitHub Pages (automatic deployment from default branch)
-- **Domain**: `cronyn.co.uk` (via CNAME)
+- **Domain**: `cronyn.co.uk` (CNAME removed temporarily — re-add `CNAME` file containing `cronyn.co.uk` once DNS A records are pointed at GitHub Pages IPs)
 - **Content**: Plain HTML + CSS — no templating engine, framework, or JavaScript
 - **Build**: None — files are served as-is
 

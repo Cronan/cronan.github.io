@@ -1,0 +1,235 @@
+/* cronyn.co.uk — minimal, typographic, fast */
+
+:root {
+  --bg: #fafaf8;
+  --text: #1a1a1a;
+  --text-secondary: #555;
+  --accent: #8b0000;
+  --border: #ddd;
+  --code-bg: #f0f0ec;
+  --link: #1a1a1a;
+  --link-hover: #8b0000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --text: #e0e0e0;
+    --text-secondary: #999;
+    --accent: #c44;
+    --border: #333;
+    --code-bg: #1a1a1a;
+    --link: #e0e0e0;
+    --link-hover: #c44;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Charter', 'Bitstream Charter', 'Georgia', serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* Headings — monospaced for engineering feel */
+h1, h2, h3 {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Subtitle / role line */
+.role {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* Horizontal rules as section dividers */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+/* Blockquote — for pull quotes or key ideas */
+blockquote {
+  border-left: 2px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: 0 0 0 1.2rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Code */
+code {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+/* Navigation links */
+nav {
+  margin-bottom: 2rem;
+}
+
+nav a {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+nav a:hover {
+  color: var(--link-hover);
+}
+
+nav a.active {
+  color: var(--text);
+}
+
+/* Elsewhere / links sections */
+.links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.links li {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.links .label {
+  display: inline-block;
+  width: 7rem;
+  color: var(--text-secondary);
+}
+
+/* Essay list */
+.essay-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.essay-list li {
+  margin-bottom: 1.2rem;
+}
+
+.essay-list a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.essay-list a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--link-hover);
+}
+
+.essay-list .date {
+  display: block;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+/* Article / essay pages */
+article header {
+  margin-bottom: 2rem;
+}
+
+article header h1 {
+  margin-bottom: 0.5rem;
+}
+
+article header .date {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Motto */
+.motto {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

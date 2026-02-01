@@ -217,6 +217,24 @@ article header .date {
   color: var(--text-secondary);
 }
 
+/* Headshot */
+.headshot {
+  display: block;
+  max-width: 200px;
+  border-radius: 4px;
+  margin: 0 0 2rem 0;
+}
+
+.headshot-home {
+  max-width: 180px;
+  margin-top: 0.5rem;
+}
+
+.headshot-about {
+  max-width: 220px;
+  margin-top: 0.5rem;
+}
+
 /* Footer */
 footer {
   margin-top: 3rem;

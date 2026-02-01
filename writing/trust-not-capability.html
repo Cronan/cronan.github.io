@@ -28,9 +28,20 @@
     </p>
 
     <p>
-      The models are already good enough to write useful code. The bottleneck
-      isn't accuracy — it's confidence. If senior engineers don't trust the
-      changes, velocity collapses back to baseline.
+      The models are already good enough to write useful code. GPT-4, Claude,
+      Gemini — they can all produce working functions, reasonable tests, decent
+      refactors. The bottleneck isn't accuracy. It's confidence. If senior
+      engineers don't trust the changes, velocity collapses back to baseline.
+    </p>
+
+    <p>
+      I've watched this play out across multiple teams now. The pattern is
+      almost predictable. Someone introduces an AI coding tool. Output goes up.
+      Then code review starts taking longer, because reviewers can't tell
+      whether the person submitting the PR actually understands the code they're
+      submitting. PRs get bigger. Context gets thinner. Senior engineers start
+      pushing back — not because they're resistant to change, but because
+      they've been burned before by code nobody fully understood.
     </p>
 
     <p>
@@ -45,13 +56,76 @@
     </ul>
 
     <p>
-      That's not "AI safety" as a moral stance — it's basic software
+      That's not "AI safety" as a moral stance. It's basic software
       engineering applied to new tooling.
     </p>
+
+    <h2>What observable means in practice</h2>
+
+    <p>
+      When I say observable, I mean the reviewer can see what changed, why it
+      changed, and what the expected behaviour is — without having to reverse-engineer
+      intent from a diff. That means small PRs with clear descriptions.
+      It means tests that document intent, not just coverage. It means commit
+      messages that explain the reasoning, not just the action.
+    </p>
+
+    <p>
+      None of this is new. Good teams have done this for years. But AI-assisted
+      coding makes it more important, because the person submitting the code may
+      not have written every line themselves. The reviewer needs to trust the
+      process, not just the author.
+    </p>
+
+    <h2>What reversible means in practice</h2>
+
+    <p>
+      If a bad change gets through, how expensive is it? If the answer is
+      "we roll back the deploy and lose ten minutes," that's cheap. If the
+      answer is "we corrupt production data and spend a week recovering,"
+      that's not.
+    </p>
+
+    <p>
+      Feature flags, canary deployments, database migrations that can be
+      undone — these are the infrastructure that lets you absorb mistakes.
+      AI makes more mistakes than a careful senior engineer. But it also
+      moves faster. Whether that's a net win depends entirely on how cheaply
+      you can recover from the mistakes.
+    </p>
+
+    <h2>What enforcement means in practice</h2>
+
+    <p>
+      Humans forget things. They forget to run the linter. They forget to
+      update the changelog. They forget that module X has an implicit
+      dependency on module Y. CI pipelines don't forget. Static analysis
+      doesn't forget.
+    </p>
+
+    <p>
+      The more you can encode your team's standards into automated checks,
+      the less you need to rely on reviewers catching problems by eye. This
+      matters especially with AI-generated code, because the failure modes
+      are different. AI won't misspell a variable name, but it will happily
+      introduce a subtle race condition and wrap it in perfectly formatted
+      code.
+    </p>
+
+    <h2>The real question</h2>
 
     <p>
       AI is only a force multiplier if the underlying system is designed to
       absorb mistakes cheaply. Everything else is a demo.
+    </p>
+
+    <p>
+      The question isn't "how good is the model?" It's "how good is
+      your engineering system at catching and recovering from errors,
+      regardless of their source?" If you have a robust CI pipeline,
+      good test coverage, fast rollbacks, and clear review processes, AI
+      tools will accelerate your team. If you don't, they'll accelerate
+      your problems.
     </p>
 
     <p>

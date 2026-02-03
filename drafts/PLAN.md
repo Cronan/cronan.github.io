@@ -58,44 +58,31 @@ Position Ivan Cronyn as Man Group's most senior and visible technologist. CTO-tr
 | Platform | Status | Priority |
 |----------|--------|----------|
 | cronyn.co.uk | ✅ Live, essays updated | - |
-| GitHub profile | ❌ Bio too casual, no README | HIGH |
-| GitHub repos | ❌ No thought-leadership repos | MEDIUM |
+| GitHub profile | ✅ Bio updated, README live, thesis in bio | - |
+| GitHub repos | ✅ ai-engineering-reading-list created | - |
 | Substack | ❌ Not created | MEDIUM |
 | LinkedIn | ✅ Active, has posts | LOW (already working) |
+| cronyn.co.uk domain | ❌ DNS not configured | LOW |
 
 ## Next Actions
 
-### Immediate (this session or today)
+### Completed
 
-1. **Update GitHub bio** (5 min)
-   - Current: "Principal Engineer at Man Group... enthusiastic guitarist and skilled sourdough baker"
-   - New: "Principal Engineer & Head of Solutions Technology at Man Group. Writing about AI in production engineering. cronyn.co.uk"
+1. ~~**Update GitHub bio**~~ ✅ Done
+2. ~~**Create Cronan/Cronan profile README repo**~~ ✅ Done
+3. ~~**Update pinned repos**~~ ✅ Done (NArctic, cronan.github.io)
+4. ~~**Create ai-engineering-reading-list repo**~~ ✅ Done
 
-2. **Create Cronan/Cronan profile README repo** (15 min)
-   - Create new repo named `Cronan` (matches username)
-   - Add README.md with content from `drafts/github-profile-readme.md`
-   - This displays on your profile page
+### Optional
 
-3. **Update pinned repos** (5 min)
-   - Keep: NArctic (shows Man Group contribution)
-   - Add: cronan.github.io (shows you write)
-   - Consider removing: pythonnet, IntelliSense (useful but don't tell your story)
-
-### This week
-
-4. **Create ai-engineering-reading-list repo** (30 min)
-   - New repo with content from `drafts/ai-engineering-reading-list.md`
-   - Pin it to profile
-   - Shows intellectual engagement beyond own writing
-
-5. **Star relevant AI repos** (5 min)
+5. **Star relevant AI repos**
    - anthropics/anthropic-cookbook
    - simonw/llm
    - langchain-ai/langchain
 
 ### When ready to start distributing
 
-6. **Set up Substack** (20 min)
+6. **Set up Substack**
    - Username: `cronyn`
    - Publication name: Ivan Cronyn
    - Bio from `drafts/substack-profile.md`

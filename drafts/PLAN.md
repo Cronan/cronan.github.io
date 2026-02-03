@@ -62,7 +62,7 @@ Position Ivan Cronyn as Man Group's most senior and visible technologist. CTO-tr
 | GitHub repos | ✅ ai-engineering-reading-list created | - |
 | Substack | ❌ Not created | MEDIUM |
 | LinkedIn | ✅ Active, has posts | LOW (already working) |
-| cronyn.co.uk domain | ❌ DNS not configured | LOW |
+| cronyn.co.uk domain | ✅ DNS configured, CNAME live | - |
 
 ## Next Actions
 

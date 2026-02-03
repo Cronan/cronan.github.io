@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Treating AI output like junior engineer output — Ivan Cronyn</title>
-  <meta name="description" content="AI productivity gains are real — but only if the output can be trusted. The teams that keep the gains treat AI output like junior engineer output.">
+  <title>Building engineers in the age of AI — Ivan Cronyn</title>
+  <meta name="description" content="AI changes what junior work looks like. If we're not careful, we'll optimise for today's velocity and break tomorrow's capability.">
   <link rel="stylesheet" href="/styles.css?v=3">
 </head>
 <body>
@@ -17,130 +17,175 @@
 
   <article>
     <header>
-      <h1>Treating AI output like junior engineer output</h1>
+      <h1>Building engineers in the age of AI</h1>
       <p class="date">2025</p>
     </header>
 
     <hr>
 
     <p>
-      AI productivity gains are real — but only if the output can be trusted.
+      Here's a question I keep coming back to: how do we build the next
+      generation of senior engineers when AI does the work that used to
+      train them?
     </p>
 
     <p>
-      I've seen a lot of teams adopt AI-assisted coding over the last few
-      months, and the pattern is fairly consistent:
+      Junior engineers used to spend their first years writing boilerplate,
+      fixing small bugs, and slowly building mental models of how systems
+      fit together. That work wasn't exciting, but it was formative. You
+      learned the codebase by touching it. You developed intuition by
+      making mistakes and cleaning them up. The reps mattered.
+    </p>
+
+    <p>
+      AI changes this. A junior engineer with Claude can produce working
+      code faster than they can understand it. The output looks fine. The
+      tests pass. But the understanding that used to come from writing
+      that code — the hard-won intuition about why things are shaped the
+      way they are — where does that come from now?
+    </p>
+
+    <h2>The productivity trap</h2>
+
+    <p>
+      I've watched this play out across multiple teams. The pattern is
+      predictable:
     </p>
 
     <ul>
       <li>Everyone moves faster at first</li>
       <li>Code review friction spikes</li>
-      <li>Senior engineers quietly try to slow things down again</li>
+      <li>Senior engineers start slowing things down</li>
     </ul>
 
     <p>
-      The initial burst feels like a win. More PRs, faster feature delivery,
-      less time staring at boilerplate. But then the reviews start piling up.
-      Diffs are bigger than they used to be. The code is syntactically correct
-      but the reviewer can't tell if the submitter actually thought through
-      the edge cases or just accepted what the model suggested. Trust erodes.
-      The senior engineers, who are responsible for production stability,
-      start reviewing more carefully — which means more slowly — which means
-      the team is back where it started, except now with more code to maintain.
+      The seniors aren't being obstructionist. They're the ones who'll be
+      on call when the system breaks at 2am. They need to trust that the
+      code can be understood, debugged, and fixed under pressure. When PRs
+      get bigger and context gets thinner, that trust erodes.
     </p>
 
     <p>
-      The teams that actually keep the productivity gains do one thing
-      differently: they treat AI output like junior engineer output.
+      But here's the deeper problem: if we optimise purely for velocity,
+      we stop investing in the skills that create good senior engineers.
+      We trade tomorrow's capability for today's throughput.
     </p>
 
-    <h2>What that means</h2>
+    <h2>What we still need engineers to learn</h2>
 
     <p>
-      A good junior engineer produces work that needs review. Nobody is
-      surprised by this. You expect small, focused PRs. You expect the PR
-      description to explain the intent. You expect tests. You expect the
-      person to be able to explain their reasoning when asked. The review
-      process is calibrated for this level of trust.
+      Some skills matter more than ever:
     </p>
 
     <p>
-      AI-generated code has the same trust profile. It's often correct. It's
-      sometimes subtly wrong. It lacks broader context about the system it's
-      being inserted into. It doesn't know about the production incident last
-      month that made everyone wary of touching the caching layer. It doesn't
-      understand that the reason the code looks the way it does is because of
-      a regulatory requirement nobody documented.
+      <strong>System reasoning.</strong> Understanding how components
+      interact, where the failure modes are, what happens when assumptions
+      break. This doesn't come from reading code — it comes from building
+      and debugging systems over time.
     </p>
 
     <p>
-      Treating it as junior output isn't dismissive. It's a recognition that
-      the code needs the same scaffolding any new-to-the-codebase contributor
-      would need: small scope, clear intent, automated guardrails.
+      <strong>Judgment under uncertainty.</strong> Knowing when to be
+      cautious and when to move fast. Recognising when a change is safe
+      and when it's risky. This is pattern recognition built from
+      experience, not something you can prompt for.
     </p>
 
-    <h2>A concrete example</h2>
+    <p>
+      <strong>Explaining the "why".</strong> Being able to articulate
+      why the system works this way, not just what it does. This matters
+      for code review, for onboarding new people, and for debugging
+      production incidents when nobody has time to figure out the
+      original intent.
+    </p>
 
     <p>
-      I've been mentoring an early-career engineer with strong Claude Code
-      experience but no deep infrastructure background. Instead of chasing
-      agentic abstractions, we focused on three "boring" skills:
+      None of these come from generating code faster. They come from
+      engagement with hard problems over time.
+    </p>
+
+    <h2>A different approach to AI-assisted development</h2>
+
+    <p>
+      I've been mentoring an early-career engineer who's strong with
+      Claude Code but has no deep infrastructure background. Instead of
+      chasing agentic abstractions, we focused on three things:
     </p>
 
     <ul>
-      <li>Using Claude to produce incremental refactors, not wholesale rewrites</li>
-      <li>Writing PR descriptions that explain <em>why</em> a change is safe</li>
-      <li>Letting CI enforce the boundaries — tests, coverage, file-scope rules</li>
+      <li>Incremental refactors, not wholesale rewrites</li>
+      <li>PR descriptions that explain why a change is safe</li>
+      <li>Letting CI enforce the boundaries</li>
     </ul>
 
     <p>
-      The incremental refactor point is worth expanding on. AI tools are
-      perfectly happy to rewrite an entire module if you ask them to. The
-      output might even be better than the original. But a 500-line diff
-      that changes the structure of a module is almost impossible to review
-      with confidence. A 30-line diff that extracts one function is easy to
-      review. It's easy to test. It's easy to revert if something goes wrong.
+      The incremental refactor point matters most. AI is happy to rewrite
+      an entire module if you ask. The output might even be better. But a
+      500-line diff that changes the structure of a module is impossible
+      to review with confidence. A 30-line diff that extracts one function
+      is easy to review, easy to test, easy to revert.
     </p>
 
     <p>
-      The PR description matters because it shifts the conversation from
-      "is this code correct?" to "is this change safe?" Correct and safe
-      are different things. Code can be correct and still be unsafe — because
-      it touches something fragile, because it changes behaviour in a way
-      that isn't covered by existing tests, because the deployment pipeline
-      can't roll it back cleanly. A good PR description makes the safety
-      argument explicit.
+      More importantly, breaking work into small pieces forces the engineer
+      to understand each piece. The AI handles the typing. The human makes
+      the decisions about what to change and why. The skill-building happens
+      in the decision-making, not the implementation.
+    </p>
+
+    <h2>The organisational question</h2>
+
+    <p>
+      This matters beyond individual mentoring. Technology organisations
+      need to think about where their future senior engineers will come
+      from.
     </p>
 
     <p>
-      The result wasn't flashy. But it meant the output could be trusted,
-      which is what actually matters.
+      If AI handles all the work that used to build foundational skills,
+      we need to be deliberate about creating other paths to expertise.
+      That might mean:
     </p>
 
-    <h2>The discipline multiplier</h2>
+    <ul>
+      <li>Pairing junior engineers with seniors on debugging and incident
+          response, not just feature work</li>
+      <li>Requiring engineers to explain their AI-generated code in
+          reviews, not just submit it</li>
+      <li>Rotating people through on-call and support roles where they
+          have to understand systems they didn't build</li>
+      <li>Investing in architecture discussions and design reviews, even
+          when "just ship it" feels faster</li>
+    </ul>
 
     <p>
-      It's a useful reminder that AI doesn't replace engineering discipline —
-      it amplifies whatever discipline is already there.
+      This isn't nostalgia for the old ways. It's recognition that
+      expertise doesn't appear by magic. It's built through specific
+      kinds of work. If AI changes what junior work looks like, we need
+      to consciously create the conditions for expertise to develop.
+    </p>
+
+    <h2>Five years from now</h2>
+
+    <p>
+      The question I ask myself: in five years, who will diagnose the
+      production incident at 3am? Who will understand why the system
+      is designed the way it is? Who will make the judgment call about
+      whether a risky migration is safe to proceed?
     </p>
 
     <p>
-      A team with good review processes, solid test coverage, and clear
-      coding standards will get faster with AI tools. The AI handles the
-      boilerplate. The humans handle the judgment. The system catches mistakes
-      from both.
+      If we spend those five years maximising AI-assisted throughput
+      without investing in skill development, we'll have a team that
+      can generate code but can't reason about systems. That's a bad
+      trade.
     </p>
 
     <p>
-      A team without those things will generate more code, faster, with less
-      understanding. The backlog of technical debt will grow. Incidents will
-      get harder to diagnose because nobody fully understands the code that's
-      running.
-    </p>
-
-    <p>
-      Same tool. Different outcomes. The variable isn't the AI. It's the
-      engineering culture it's dropped into.
+      AI doesn't replace engineering judgment. It just changes how we
+      build it. The organisations that figure this out will have a
+      meaningful advantage. The ones that don't will discover, too late,
+      that they've optimised themselves into a corner.
     </p>
 
   </article>

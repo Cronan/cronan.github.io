@@ -72,7 +72,7 @@
 
     <p>
       Most "human-in-the-loop" designs I see today are structurally flawed.
-      We let models do the reasoning, the exploration, the pattern-finding —
+      We let models do the reasoning, the exploration, the pattern-finding,
       and then ask a human to approve or override the output without having
       participated in the process that produced it. At that point, the human
       isn't providing judgment; they're absorbing liability.
@@ -100,8 +100,8 @@
 
     <p>
       Bainbridge's skill-degradation argument is the one that should worry
-      engineering leaders the most. Physical skills deteriorate when they're
-      not used, she wrote. Cognitive skills do too.
+      engineering leaders most. Physical skills deteriorate when they're
+      not used. Cognitive skills do too.
     </p>
 
     <p>
@@ -122,6 +122,41 @@
       happening. If we've automated away the work that builds those models,
       we've created Bainbridge's irony: we need the skill most precisely
       when we've done the least to maintain it.
+    </p>
+
+    <h2>When the code handles money</h2>
+
+    <p>
+      In financial services, deskilling isn't an abstract concern about
+      engineering craft. It's an operational risk problem.
+    </p>
+
+    <p>
+      The systems I work on manage client mandates, execute portfolio
+      rebalancing, and produce regulatory reporting. When something breaks
+      at 2am (and things always break at 2am), someone needs to diagnose
+      the problem quickly and accurately. If the team doesn't have the mental
+      model to reason about the system under pressure, the consequences aren't
+      engineering embarrassment. They're real money, real clients, and real
+      regulatory exposure.
+    </p>
+
+    <p>
+      Regulators increasingly expect firms to demonstrate that they understand
+      their own systems. "The AI generated it" isn't an acceptable answer when
+      a compliance officer asks why a calculation produced the wrong result.
+      The SM&CR regime in the UK assigns personal accountability to senior
+      managers for failures in their areas. You can't delegate understanding
+      to a model.
+    </p>
+
+    <p>
+      This is where Bainbridge's ironies bite hardest. The more we automate
+      the routine work of building and maintaining these systems, the fewer
+      people develop the intuition to diagnose them when they fail. And in
+      financial services, the cost of slow diagnosis isn't just technical
+      debt — it's client losses, regulatory sanctions, and reputational damage
+      that takes years to repair.
     </p>
 
     <h2>Two directions for the same tool</h2>
@@ -169,7 +204,7 @@
 
     <p>
       If an AI system generates code that the team can't understand during
-      normal development, it's unrealistic — and unsafe — to expect
+      normal development, it's unrealistic (and unsafe) to expect
       understanding to suddenly appear during a production incident. The
       system won't explain itself. The logs won't map to the mental model.
       The person on call will be staring at code they've never engaged with,

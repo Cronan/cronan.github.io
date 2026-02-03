@@ -12,7 +12,7 @@ Use the clean headshot (ivan-headshot.jpg), not the glitched one. The glitch wor
 
 ## Bio (short version for profile)
 
-> Principal Engineer & Head of Solutions Technology at Man Group. Writing about AI in production engineering — the gap between capability and trust.
+> Principal Engineer & Head of Solutions Technology at Man Group. Writing about AI in production engineering: the gap between capability and trust.
 
 ## Bio (longer version for About page)
 
@@ -20,7 +20,7 @@ Use the clean headshot (ivan-headshot.jpg), not the glitched one. The glitch wor
 >
 > I've been writing code since 1981, on a Sinclair ZX81 in Durban, South Africa.
 >
-> This newsletter is about AI in production engineering. Not the hype, not the doom — the practical question of how we integrate AI into systems that handle real money and real consequences. The capability is impressive. The bottleneck is trust.
+> This newsletter is about AI in production engineering. Not the hype, not the doom, but the practical question of how we integrate AI into systems that handle real money and real consequences. The capability is impressive. The bottleneck is trust.
 >
 > I also write at [cronyn.co.uk](https://cronyn.co.uk).
 
@@ -52,7 +52,7 @@ Or simply:
 
 ## First Post
 
-Don't start with a "welcome to my newsletter" post. Start with your strongest essay. I'd suggest the Trust essay — it's the clearest statement of your thesis.
+Don't start with a "welcome to my newsletter" post. Start with your strongest essay. I'd suggest the Trust essay: it's the clearest statement of your thesis.
 
 Title it the same as on your site. Add a short intro paragraph for Substack readers who don't know you:
 

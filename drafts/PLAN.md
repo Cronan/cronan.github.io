@@ -8,7 +8,7 @@ Position Ivan Cronyn as Man Group's most senior and visible technologist. CTO-tr
 
 ## The Thesis
 
-**"Trust, not capability"** — AI is a force multiplier only if the underlying system is designed to absorb mistakes cheaply. Observable, reversible, enforceable.
+**"Trust, not capability"**: AI is a force multiplier only if the underlying system is designed to absorb mistakes cheaply. Observable, reversible, enforceable.
 
 ## The Voice
 
@@ -24,15 +24,15 @@ Position Ivan Cronyn as Man Group's most senior and visible technologist. CTO-tr
 - Landing page with glitch headshot, career summary, essay links
 - About page with clean headshot, full bio
 - Three essays (strategic/CTO level):
-  1. **Bainbridge's Ironies of Automation** — diagnosis, financial services risk
-  2. **Trust, not capability** — strategy for technology organizations
-  3. **Building engineers in the age of AI** — talent development
+  1. **Bainbridge's Ironies of Automation**: diagnosis, financial services risk
+  2. **Trust, not capability**: strategy for technology organizations
+  3. **Building engineers in the age of AI**: talent development
 - Responsive design, dark mode, cache-busting
 
 ### Drafts ready (in /drafts/)
-- `github-profile-readme.md` — content for Cronan/Cronan repo
-- `ai-engineering-reading-list.md` — curated reading list structure
-- `substack-profile.md` — Substack setup guide
+- `github-profile-readme.md`: content for Cronan/Cronan repo
+- `ai-engineering-reading-list.md`: curated reading list structure
+- `substack-profile.md`: Substack setup guide
 
 ## Lessons from Tech Leader Research
 
@@ -50,14 +50,14 @@ Position Ivan Cronyn as Man Group's most senior and visible technologist. CTO-tr
 - Volume of writing matters
 - Voice over design
 - Show curiosity, not just expertise
-- Lean into the geek — it IS the credibility
+- Lean into the geek (it IS the credibility)
 - Have a referenceable point of view
 
 ## Current State
 
 | Platform | Status | Priority |
 |----------|--------|----------|
-| cronyn.co.uk | ✅ Live, essays updated | — |
+| cronyn.co.uk | ✅ Live, essays updated | - |
 | GitHub profile | ❌ Bio too casual, no README | HIGH |
 | GitHub repos | ❌ No thought-leadership repos | MEDIUM |
 | Substack | ❌ Not created | MEDIUM |
@@ -155,4 +155,4 @@ cronyn.co.uk/
 
 ## Claude Profile (for user settings)
 
-See suggested text in conversation — covers identity, writing preferences (humaniser patterns), and goals (career, wealth, life).
+See suggested text in conversation. Covers identity, writing preferences (humaniser patterns), and goals (career, wealth, life).

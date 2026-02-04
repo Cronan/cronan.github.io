@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observable, Reversible, Enforceable - Ivan Cronyn</title>
+  <meta name="description" content="Three requirements for AI in production. Before asking whether AI can do something, ask whether your system can absorb the mistakes.">
+  <link rel="stylesheet" href="/styles.css?v=3">
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/writing/" class="active">Writing</a>
+    <a href="/reading/">Reading</a>
+    <a href="/about/">About</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>Observable, Reversible, Enforceable: Three Requirements for AI in Production</h1>
+      <p class="date">2025</p>
+    </header>
+
+    <hr>
+
+    <p>
+      Most AI deployment discussions start in the wrong place. They start with
+      capability. Can the model write code? Can it generate reports? Can it
+      answer customer queries?
+    </p>
+
+    <p>
+      Those are the easy questions. The model can probably do all of those
+      things, at least some of the time. The harder question is: when it gets
+      something wrong, what happens next?
+    </p>
+
+    <p>
+      Over twenty-seven years in financial systems, I've learned that production
+      readiness isn't about whether something works. It's about whether you can
+      detect, recover from, and prevent failures at a cost the business can
+      absorb. This applies to human work. It applies to automated systems. And
+      it applies, with some specific twists, to AI.
+    </p>
+
+    <p>
+      Three properties tell you whether an AI-assisted process belongs in
+      production: observable, reversible, enforceable. Miss any one and you're
+      running a demo that happens to touch real data.
+    </p>
+
+    <h2>Observable</h2>
+
+    <p>
+      Observable means you can see what happened, why it happened, and whether
+      it matched your expectations - without reconstructing the reasoning after
+      the fact.
+    </p>
+
+    <p>
+      This sounds obvious. It isn't. AI systems fail observability in ways that
+      traditional automation doesn't.
+    </p>
+
+    <p>
+      A portfolio rebalancing script either executes trades or throws an error.
+      The logs show you which. An AI agent that decides whether to rebalance,
+      chooses which assets to adjust, and generates the trade instructions can
+      fail in ways the logs don't capture. The reasoning that led to "sell 200
+      shares of X" might be sound or might be hallucinated from training data.
+      The output looks identical.
+    </p>
+
+    <p>
+      Observable AI processes need several things traditional processes don't:
+    </p>
+
+    <ul>
+      <li>Input capture - not just "user asked a question" but the full context
+          the model received, including any retrieved documents or system state</li>
+      <li>Reasoning traces - where available, the chain of thought that led to
+          the output, in a form humans can audit</li>
+      <li>Output logging - the full response, not just the action taken</li>
+      <li>Confidence signals - where the model hedged, where it expressed
+          certainty, where it declined to answer</li>
+    </ul>
+
+    <p>
+      In financial services, observability isn't optional. The FCA wants to know
+      why a suitability decision was made. The auditors want to reconstruct the
+      inputs to a valuation. If "the AI said so" is your only answer, you don't
+      have observability. You have liability you can't explain.
+    </p>
+
+    <p>
+      The practical test: if something goes wrong at 2am, can the on-call
+      engineer reconstruct what happened from the logs alone? If they need to
+      re-run the AI with the same inputs and hope for the same output, you're
+      not observable. You're hoping.
+    </p>
+
+    <h2>Reversible</h2>
+
+    <p>
+      Reversible means you can undo a bad decision at a cost proportional to
+      catching it quickly.
+    </p>
+
+    <p>
+      The ideal is immediate, complete reversal: roll back the deployment,
+      restore the database, cancel the trade. Reality is messier. Some actions
+      create external state changes you can't unwind. A client email, once sent,
+      is sent. A regulatory filing, once submitted, is on record. A trade, once
+      executed, is in the market.
+    </p>
+
+    <p>
+      This is where AI deployment differs from traditional automation. Most
+      automation operates on well-defined inputs and produces predictable
+      outputs. You can test it exhaustively. AI systems are stochastic. The
+      same input can produce different outputs. The model that worked fine
+      yesterday might hallucinate today. Your test suite covers the cases you
+      anticipated, not the ones you didn't.
+    </p>
+
+    <p>
+      Reversibility requires asking: when (not if) this produces an unexpected
+      output, what breaks?
+    </p>
+
+    <p>
+      Some patterns make reversal cheap:
+    </p>
+
+    <ul>
+      <li>Stage-then-commit workflows, where AI output goes to a review queue
+          before affecting production state</li>
+      <li>Feature flags that let you instantly disable AI paths and fall back
+          to manual or traditional automated processes</li>
+      <li>Canary deployments that expose AI decisions to a small population
+          before rolling out broadly</li>
+      <li>Soft deletes and audit trails that preserve the ability to reconstruct
+          prior state</li>
+    </ul>
+
+    <p>
+      In the systems I work on - bespoke investment mandates, client reporting,
+      regulatory submissions - we treat irreversibility as a risk multiplier.
+      If an AI-assisted process feeds directly into something that can't be
+      undone, the quality bar is higher. The review is more thorough. The
+      monitoring is tighter. The acceptable error rate is lower.
+    </p>
+
+    <p>
+      Sometimes the answer is: this process isn't ready for AI, because the cost
+      of a mistake we can't reverse exceeds the benefit of automation. That's a
+      legitimate answer.
+    </p>
+
+    <h2>Enforceable</h2>
+
+    <p>
+      Enforceable means the rules that govern correct behaviour are checked by
+      machines, not remembered by humans.
+    </p>
+
+    <p>
+      AI outputs look plausible. That's the problem. A human reviewer scanning
+      AI-generated code or a model-written report will catch obvious errors. They
+      won't reliably catch subtle constraint violations, edge cases the model
+      didn't consider, or policy breaches wrapped in confident language.
+    </p>
+
+    <p>
+      Humans forget things. They forget that client A has a restriction on
+      emerging market exposure. They forget that the timestamp format changed
+      last quarter. They forget that this particular report goes to a regulator
+      who interprets column headers literally. The cognitive load of remembering
+      every constraint while also evaluating AI output for correctness is too high.
+    </p>
+
+    <p>
+      Enforcement moves these checks out of human memory and into automated
+      validation:
+    </p>
+
+    <ul>
+      <li>Schema validation on AI outputs - does the structure match what
+          downstream systems expect?</li>
+      <li>Business rule checks - does this trade comply with the investment
+          mandate? Does this report contain required disclosures?</li>
+      <li>Consistency verification - does the AI output contradict data it
+          should have referenced?</li>
+      <li>Boundary conditions - are numerical outputs within plausible ranges?
+          Are dates in valid formats?</li>
+    </ul>
+
+    <p>
+      This isn't AI-specific. Good engineering teams have always encoded their
+      constraints in CI pipelines, database constraints, and runtime validation.
+      But AI makes enforcement more important because the failure modes are
+      different. Traditional code fails predictably - the same bug produces the
+      same wrong output. AI fails stochastically - the same prompt might work
+      99 times and fail the 100th.
+    </p>
+
+    <p>
+      When I evaluate an AI-assisted workflow, I ask: what percentage of the
+      constraints that define "correct" are enforced by code versus remembered
+      by reviewers? The higher the former, the safer the process.
+    </p>
+
+    <h2>The framework in practice</h2>
+
+    <p>
+      These three properties interact. Strong observability makes reversal
+      cheaper - you know what to undo. Strong enforcement catches errors before
+      they need reversal. Weak observability means enforcement is your last
+      line of defence.
+    </p>
+
+    <p>
+      When teams ask me whether they're ready to deploy AI in some process, I
+      ask them to score each property:
+    </p>
+
+    <ul>
+      <li>Observable: Can you reconstruct what happened and why from logs alone?</li>
+      <li>Reversible: If the AI output is wrong, what's the cost to fix it?
+          Minutes? Hours? Days? Unrecoverable?</li>
+      <li>Enforceable: What percentage of correctness constraints are checked
+          automatically versus manually?</li>
+    </ul>
+
+    <p>
+      A process that scores well on all three is ready for AI to increase
+      velocity. A process that scores poorly on any one is a candidate for
+      infrastructure investment before AI deployment.
+    </p>
+
+    <p>
+      This framing has a useful side effect: it depoliticises the AI adoption
+      conversation. The question isn't "are you for or against AI?" It's "is
+      this specific process ready for AI, given its observability, reversibility,
+      and enforcement properties?" That's an engineering question with an
+      engineering answer.
+    </p>
+
+    <h2>What this means for AI strategy</h2>
+
+    <p>
+      Most AI strategies I see focus on model selection and use case
+      identification. Which model? Which tasks? How do we train people to
+      prompt effectively?
+    </p>
+
+    <p>
+      Those aren't wrong questions, but they're secondary. The primary question
+      is: which processes have the infrastructure to absorb AI mistakes cheaply?
+      Those are your starting points. The processes where mistakes are expensive
+      and irreversible - those are where you invest in observability,
+      reversibility, and enforcement before you invest in AI.
+    </p>
+
+    <p>
+      The firms that will get most value from AI aren't the ones that adopt it
+      fastest. They're the ones that have already built - or are building - the
+      trust infrastructure that makes AI safe to deploy. For them, AI becomes
+      a genuine force multiplier. For everyone else, it's a faster way to create
+      problems that take longer to diagnose.
+    </p>
+
+    <p>
+      Observable, reversible, enforceable. If you can't say yes to all three,
+      you're not ready.
+    </p>
+
+  </article>
+
+  <footer>
+    <a href="/writing/">← All writing</a> · <a href="/">Ivan Cronyn</a>
+  </footer>
+
+</body>
+</html>

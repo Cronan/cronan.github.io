@@ -234,13 +234,13 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 13. Em dash overuse
 
-**Problem:** LLMs use em dashes more than humans, mimicking "punchy" sales writing.
+**Problem:** LLMs use em dashes more than humans, mimicking "punchy" sales writing. Replace em dashes (—) with regular hyphens (-) or commas.
 
 **Before:**
 > The term is primarily promoted by Dutch institutions—not by the people themselves. You don't say "Netherlands, Europe" as an address—yet this mislabeling continues—even in official documents.
 
 **After:**
-> The term is primarily promoted by Dutch institutions, not by the people themselves. You don't say "Netherlands, Europe" as an address, yet this mislabelling continues in official documents.
+> The term is primarily promoted by Dutch institutions - not by the people themselves. You don't say "Netherlands, Europe" as an address, yet this mislabelling continues in official documents.
 
 ---
 

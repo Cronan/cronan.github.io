@@ -1,6 +1,6 @@
 # cronyn.co.uk
 
-Personal website for Ivan Cronyn — Principal Engineer & Head of Solutions Technology at Man Group.
+Personal website for Ivan Cronyn - Principal Engineer & Head of Solutions Technology at Man Group.
 
 **Live at** [cronyn.co.uk](https://cronyn.co.uk)
 

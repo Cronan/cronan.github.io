@@ -1,4 +1,4 @@
-/* cronyn.co.uk — minimal, typographic, fast */
+/* cronyn.co.uk - minimal, typographic, fast */
 
 :root {
   --bg: #fafaf8;
@@ -55,7 +55,7 @@ body {
   color: #fff;
 }
 
-/* Headings — monospaced for engineering feel */
+/* Headings - monospaced for engineering feel */
 h1, h2, h3 {
   font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
   font-weight: 600;
@@ -125,7 +125,7 @@ li {
   margin-bottom: 0.35rem;
 }
 
-/* Blockquote — for pull quotes or key ideas */
+/* Blockquote - for pull quotes or key ideas */
 blockquote {
   border-left: 2px solid var(--accent);
   margin: 1.5rem 0;

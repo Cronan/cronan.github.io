@@ -123,7 +123,7 @@ The essays are a collection, not isolated pieces. Readers who find one will read
 
 Use British English (optimisation, colour, behaviour). Mid-Atlantic acceptable for international audiences.
 
-For comprehensive AI pattern detection (39 patterns with examples), see `.claude/skills/humaniser/SKILL.md`. That skill is portable across repos. What follows here is site-specific.
+For comprehensive AI pattern detection (37 patterns organised by detection severity), see `.claude/skills/humaniser/SKILL.md`. That skill is portable across repos. What follows here is site-specific.
 
 ### House Style
 

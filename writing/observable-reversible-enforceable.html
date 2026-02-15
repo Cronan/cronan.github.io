@@ -25,29 +25,23 @@
     <hr>
 
     <p>
-      Most AI deployment discussions start in the wrong place. They start with
-      capability. Can the model write code? Can it generate reports? Can it
-      answer customer queries?
+      After twenty-seven years of building financial systems, I've noticed
+      that production readiness always comes down to the same three things,
+      whether the work is done by humans, traditional automation, or AI.
     </p>
 
     <p>
-      Those are the easy questions. The model can probably do all of those
-      things, at least some of the time. The harder question is: when it gets
-      something wrong, what happens next?
+      Can you see what happened and why? Can you undo a bad outcome cheaply?
+      Are the constraints checked by machines rather than remembered by
+      people?
     </p>
 
     <p>
-      Over twenty-seven years in financial systems, I've learned that production
-      readiness isn't about whether something works. It's about whether you can
-      detect, recover from, and prevent failures at a cost the business can
-      absorb. This applies to human work. It applies to automated systems. And
-      it applies, with some specific twists, to AI.
-    </p>
-
-    <p>
-      Three properties tell you whether an AI-assisted process belongs in
-      production: observable, reversible, enforceable. Miss any one and you're
-      running a demo that happens to touch real data.
+      Observable, reversible, enforceable. Miss any one and you're running a
+      demo that happens to touch real data. The models can already write code,
+      generate reports, handle queries. That part resolved itself faster than
+      most people expected. What hasn't been resolved is whether the systems
+      around them can handle the failures.
     </p>
 
     <h2>Observable</h2>
@@ -211,7 +205,7 @@
       by reviewers? The higher the former, the safer the process.
     </p>
 
-    <h2>The framework in practice</h2>
+    <h2>How the three interact</h2>
 
     <p>
       These three properties interact. Strong observability makes reversal
@@ -241,34 +235,35 @@
 
     <p>
       This framing has a useful side effect: it depoliticises the AI adoption
-      conversation. The question isn't "are you for or against AI?" It's "is
-      this specific process ready for AI, given its observability, reversibility,
-      and enforcement properties?" That's an engineering question with an
-      engineering answer.
+      conversation. Instead of arguing about whether AI is good or dangerous,
+      you're asking whether a specific process has the infrastructure to handle
+      the errors AI will inevitably produce. That's an engineering question
+      with an engineering answer.
     </p>
 
-    <h2>What this means for AI strategy</h2>
+    <h2>Start where the infrastructure is strong</h2>
 
     <p>
-      Most AI strategies I see focus on model selection and use case
-      identification. Which model? Which tasks? How do we train people to
-      prompt effectively?
-    </p>
-
-    <p>
-      Those aren't wrong questions, but they're secondary. The primary question
-      is: which processes have the infrastructure to absorb AI mistakes cheaply?
-      Those are your starting points. The processes where mistakes are expensive
-      and irreversible - those are where you invest in observability,
-      reversibility, and enforcement before you invest in AI.
+      Model selection matters. Use case identification matters. Training
+      people to prompt effectively matters. But these are second-order
+      decisions. The first-order decision is: which processes already have
+      the engineering infrastructure to handle mistakes cheaply? Those are
+      where AI belongs first.
     </p>
 
     <p>
-      The firms that will get most value from AI aren't the ones that adopt it
-      fastest. They're the ones that have already built - or are building - the
-      trust infrastructure that makes AI safe to deploy. For them, AI becomes
-      a genuine force multiplier. For everyone else, it's a faster way to create
-      problems that take longer to diagnose.
+      The processes where mistakes are expensive and hard to reverse -
+      regulatory submissions, client-facing calculations, anything with
+      external state changes - need investment in observability,
+      reversibility, and enforcement before they need investment in AI.
+    </p>
+
+    <p>
+      The advantage won't go to whoever adopts fastest. It will go to the
+      teams whose systems were already built to absorb errors from any
+      source - human or machine - without drama. For them, AI is a genuine
+      force multiplier. For everyone else, it's a faster way to generate
+      problems that take longer to find.
     </p>
 
     <p>

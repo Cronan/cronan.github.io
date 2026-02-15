@@ -10,22 +10,35 @@ This is **cronyn.co.uk** - Ivan Cronyn's personal website, hosted as a static Gi
 
 ```
 cronan.github.io/
-├── index.html              # Landing page - career front and centre
-├── styles.css              # Single stylesheet (dark mode, responsive)
+├── index.html                  # Landing page
+├── styles.css                  # Single stylesheet (dark mode, responsive)
+├── CNAME                       # cronyn.co.uk
 ├── writing/
-│   ├── index.html          # Essay listing
+│   ├── index.html              # Essay listing
+│   ├── observable-reversible-enforceable.html
+│   ├── the-suspicion-tax.html
+│   ├── ironies-of-automation.html
 │   ├── trust-not-capability.html
-│   ├── ai-as-junior-engineer.html
-│   └── ironies-of-automation.html
+│   └── ai-as-junior-engineer.html
+├── reading/
+│   └── index.html              # Reading list
 ├── about/
-│   └── index.html          # Full bio
-└── CLAUDE.md               # This file
+│   └── index.html              # Full bio
+├── images/
+│   ├── ivan-glitch.jpg         # Home page headshot
+│   └── ivan-headshot.jpg       # About page headshot
+├── drafts/                     # Unpublished working files
+├── .claude/
+│   └── skills/
+│       └── humaniser/
+│           └── SKILL.md        # AI pattern detection (portable)
+└── CLAUDE.md                   # This file
 ```
 
 ## Tech Stack
 
 - **Hosting**: GitHub Pages (automatic deployment from default branch)
-- **Domain**: `cronyn.co.uk` (CNAME removed temporarily - re-add `CNAME` file containing `cronyn.co.uk` once DNS A records are pointed at GitHub Pages IPs)
+- **Domain**: `cronyn.co.uk` (via CNAME file; DNS A records point at GitHub Pages IPs)
 - **Content**: Plain HTML + CSS - no templating engine, framework, or JavaScript
 - **Build**: None - files are served as-is
 
@@ -65,7 +78,7 @@ To preview locally, open `index.html` in a browser.
 - No JavaScript unless strictly necessary
 - Keep changes minimal and avoid adding unnecessary tooling
 - British English spelling throughout (optimisation, colour, behaviour)
-- All pages share the same `nav` structure: Home, Writing, About
+- All pages share the same `nav` structure: Home, Writing, Reading, About
 - Essay pages link back to `/writing/` and `/`
 
 ## Author
@@ -97,86 +110,71 @@ Influences to channel: Howard Marks (patient argument, intellectual honesty), Cl
 
 Do not channel: Generic tech leadership content. LinkedIn optimisation. Consultantese. Conference-circuit platitudes.
 
+### Across essays
+
+The essays are a collection, not isolated pieces. Readers who find one will read others. Watch for:
+
+- Vary the shape. Not every essay should follow the same arc (observation, framework, application, restatement). Open some with stories, others with questions, others with data or a direct claim.
+- Don't reuse concrete images across essays. "2am production incident" is vivid once; after that, find different details.
+- If two essays reach the same conclusion, write the conclusion differently. Same thesis, different words and angle.
+- Watch for convergent framing. "The question isn't X, it's Y" is a powerful device once. By the third essay it's a formula.
+
 ## Writing Preferences
 
 Use British English (optimisation, colour, behaviour). Mid-Atlantic acceptable for international audiences.
 
-### Patterns to Avoid
+For comprehensive AI pattern detection (39 patterns with examples), see `.claude/skills/humaniser/SKILL.md`. That skill is portable across repos. What follows here is site-specific.
 
-**Significance inflation:** crucial, pivotal, critical, vital, essential, paramount, fundamental, testament, cornerstone, bedrock, incredible, remarkable
+### House Style
 
-**Promotional language:** vibrant, showcasing, groundbreaking, renowned, cutting-edge, game-changing, best-in-class, world-class, leading, premier, innovative, transformative
+- Em-dashes: never. Use hyphens, commas, or separate sentences.
+- Sentence case for headings, not title case.
+- No exclamation marks (almost never). No emojis in professional writing.
+- "is" over "serves as", "stands as", "acts as" - just use the copula.
+- Prefer verbs to nominalisations. "Decide" not "make a decision."
+- Active voice. Subject-verb-object.
+- Concrete detail over vague claims. "84% exposure" not "significant exposure."
 
-**AI vocabulary:** Additionally, delve, interplay, underscore, foster, garner, leverage (as verb), navigate, landscape, tapestry, ecosystem, space (meaning industry), journey (meaning process), unlock, empower, unpack, align, synergy
+### Banned Words (quick reference)
 
-**Intensifiers (almost always delete):** very, really, extremely, incredibly, deeply, highly, particularly, especially, certainly, absolutely, definitely, truly, literally
+These words should never appear in content for this site. The humaniser skill has the full list with examples; this is the generation-time checklist.
 
-**Adverb frontloading:** Interestingly, Importantly, Notably, Significantly, Crucially, Frankly, Honestly, Ultimately, Essentially, Basically
+**Kill on sight:** delve, robust, seamless, nuanced, holistic, comprehensive, pivotal, crucial, testament, vibrant, showcasing, groundbreaking, renowned, leverage (as verb), navigate, landscape (abstract), ecosystem, tapestry, journey (meaning process), framework, paradigm, synergy, unlock, empower, foster, garner, interplay
 
-**Vague quantifiers (use specific numbers):** a number of, various, significant, substantial, considerable, numerous, countless, myriad
+**Almost always delete:** very, really, extremely, incredibly, deeply, highly, truly, literally, certainly, absolutely, definitely
 
-**Hedging and filler:** It's worth noting, It's important to consider, It bears mentioning, That said, With that in mind, At the end of the day, When all is said and done, Moving forward, Going forward, It could be argued that, One might say that
-
-**Bureaucratic bloat:** in order to (use "to"), due to the fact that (use "because"), in the event that (use "if"), prior to (use "before"), subsequent to (use "after"), at this point in time (use "now"), has the potential to (use "could"), is able to (use "can"), make use of (use "use"), with respect to, in terms of, when it comes to, in the context of
-
-**Copula avoidance:** "serves as", "stands as", "acts as", "functions as" - just use "is"
-
-**Parallelism cliches:** "not only... but also", "it's not just... it's", "both X and Y", forced rule of three
-
-**Weak transitions:** Furthermore, Moreover, In addition, Consequently, Thus, Hence, Therefore (at sentence start), However (at sentence start, overused), Indeed, As such
-
-**Redundant signposting:** As mentioned, As noted, As stated, It should be noted that, This is because, The reason is that, In other words, To put it simply, Let me explain
-
-**Presumptuous phrases:** As we all know, Needless to say, It goes without saying, Obviously, Clearly, Of course
-
-**Meta-commentary:** This is a great question, Let me explain, I'd be happy to, Great point, That's an interesting question
-
-**Performative enthusiasm:** Excited to, Thrilled to, Passionate about, Love to see, Can't wait to
-
-**Sycophantic affirmations:** Absolutely, Certainly, Definitely, Of course, Great question, Excellent point
-
-**Generic conclusions:** Exciting times ahead, The future is bright, Only time will tell, Watch this space, Food for thought, Time will tell
-
-**Overused "smart" words:** robust, seamless, nuanced, holistic, comprehensive, strategic, key (as adjective), actionable, impactful, framework, paradigm
-
-**Vague endings:** etc., and so on, among others, to name a few, and the like
+**Replace with nothing:** Additionally, Furthermore, Moreover, In addition, Consequently, Indeed, As such, Interestingly, Importantly, Notably, Significantly, Crucially, Essentially, Basically
 
 ### Structural Patterns to Avoid
 
-- Em-dashes. Use hyphens, commas, or separate sentences. Never use the em-dash character.
 - Starting with "So," or "Now," or "Well,"
 - Starting with "I" too frequently
 - Starting too many sentences with "The" or "This"
-- "Here's the thing" or "The thing is"
+- "Here's the thing", "Here's a question", "Here's what" - cut the preamble, start with the substance
 - "What's interesting is" or "What's notable is"
+- "deep dive" (corporate jargon)
 - Rhetorical questions as transitions
 - Summarising what was just said
 - Bullet points in conversational writing (save for genuinely list-like content)
 - Headers in short pieces
+- Formulaic section headers: "The broader point", "What this means for X", "The real question", "What X means in practice" - these describe structural roles, not arguments
 - Excessive colon usage to introduce explanations
-- Exclamation marks (almost never)
-- Emojis (never in professional writing)
 - "Let's" when there's no actual collaboration
 - Sentence fragments for false drama. Like this. Every time.
 - Parenthetical asides that should be their own sentences
 - Numbered lists when prose would work better
 - "First,", "Second,", "Third," as mechanical paragraph starters
+- Bold-colon inline lists (`**Term:** description`) - convert to flowing prose
 
 ### What Good Writing Does
 
 - Varies sentence length dramatically. Short sentences punch. Longer ones can unspool an idea, but sparingly.
-- Uses concrete detail and specific numbers. "84% exposure" not "significant exposure."
+- Uses concrete detail and specific numbers.
 - Lets silence and implication do work. Trust the reader.
 - Has opinions and states them plainly.
 - Acknowledges uncertainty where it exists. "I don't know" is a complete sentence.
 - Uses first person when personal experience is the evidence.
-- Prefers active voice. Subject-verb-object.
-- Prefers verbs to nominalisations. "Decide" not "make a decision."
 - Ends on substance, not sentiment.
-
-### Humaniser Skill
-
-For comprehensive AI pattern detection and removal, see `.claude/skills/humaniser/SKILL.md`. Use this skill when editing or reviewing text to catch patterns that might have slipped through.
 
 ## Git
 

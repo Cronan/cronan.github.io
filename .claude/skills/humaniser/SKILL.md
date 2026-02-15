@@ -1,13 +1,14 @@
 ---
 name: humaniser
-version: 2.1.1
+version: 3.0.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
-  text to make it sound more natural and human-written. Based on Wikipedia's
-  comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
-  inflated symbolism, promotional language, superficial -ing analyses, vague
-  attributions, em dash overuse, rule of three, AI vocabulary words, negative
-  parallelisms, and excessive conjunctive phrases.
+  text to make it sound more natural and human-written. Covers single-text
+  patterns (Wikipedia's "Signs of AI writing"), corpus-level patterns (cross-text
+  repetition, motif overuse, structural homogeneity), vocabulary/transition tells
+  (intensifiers, bureaucratic bloat, weak transitions, formulaic headers), and
+  statistical signals from 2025-2026 detection research (lexical diversity,
+  sentence-length uniformity, punctuation poverty).
 allowed-tools:
   - Read
   - Write
@@ -388,29 +389,253 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
+## CORPUS-LEVEL PATTERNS
+
+These patterns only appear when you read multiple texts by the same author together. They are among the strongest AI tells because LLMs generate each text independently, while a human writer's voice develops across a body of work.
+
+When reviewing a collection, use Grep to search across files before editing any single piece.
+
+### 25. Cross-text verbatim repetition
+
+**Problem:** LLMs converge on the same conclusion for similar prompts. If two essays share a near-identical paragraph or sentence, one was almost certainly generated from a similar prompt rather than written independently.
+
+**Before (essay A):**
+> The firms that will benefit most from AI tooling aren't the ones that adopt it fastest. They're the ones that have already built the infrastructure to absorb mistakes safely.
+
+**Before (essay B):**
+> The firms that will get most value from AI aren't the ones that adopt it fastest. They're the ones that have already built the trust infrastructure that makes AI safe to deploy.
+
+**Fix:** Keep the version that fits its essay better. Rewrite the other to reach the same conclusion through different words and a different angle.
+
+---
+
+### 26. Motif overuse across works
+
+**Problem:** A concrete image or detail used once is an anecdote. Used twice is a callback. Used four or five times across a collection is a verbal tic that betrays generation-per-prompt rather than writing-across-a-lifetime.
+
+**Example:** "2am production incident" appearing in four of five essays. "The question isn't X, it's Y" appearing in every essay's conclusion.
+
+**Fix:** Grep for recurring phrases and images across all files. Keep the instance where the detail is most thematically loaded. Replace the others with different concrete details. A human writer has a lifetime of specific memories to draw from; a model has one bag of vivid-sounding phrases.
+
+---
+
+### 27. Structural homogeneity
+
+**Problem:** All pieces follow the same rhetorical arc. A human writing on related topics over months would naturally vary the shape. One essay opens with a story, another with data, another with a direct claim. If every essay opens with an observation, builds a framework, applies it to an industry, and closes with a restatement, the sameness itself is a tell.
+
+**Diagnostic questions:**
+- Do all pieces open the same way? (observation? question? anecdote?)
+- Do all pieces have the same number and rhythm of sections?
+- Do all pieces end with the same move? (restatement? implication? question?)
+- Could you swap the section headers between essays and they'd still fit?
+
+**Fix:** Vary deliberately. If the last three essays opened with observation, open the next one with a story or a piece of data. If they all end with implications, try ending one on a question or an admission of uncertainty.
+
+---
+
+### 28. Convergent framing devices
+
+**Problem:** A specific rhetorical device appearing at the same structural position across multiple pieces. Reasoning models favour certain framings - "The question isn't X, it's Y", "This isn't about X, it's about Y", "The real constraint is..." - and will reach for them in every essay conclusion.
+
+**Before (across three essays):**
+> The question isn't which model. It's whether your system can absorb mistakes.
+
+> The question isn't whether to use AI. It's whether you're ready to trust it.
+
+> The question isn't how much we automate. It's which cognitive work we remove.
+
+**Fix:** Keep the strongest instance. Rewrite the others. A framing device that's powerful once becomes a formula by the third use. Consider: direct statement, a question left open, a concrete scenario, a callback to the opening.
+
+---
+
+## VOCABULARY AND TRANSITION PATTERNS
+
+These patterns are harder to detect than the content patterns above because the individual words are legitimate. The problem is density and co-occurrence.
+
+### 29. Intensifiers
+
+**Words to watch:** very, really, extremely, incredibly, deeply, highly, particularly, especially, certainly, absolutely, definitely, truly, literally
+
+**Problem:** Almost always filler. Delete and see if the sentence loses anything. It usually doesn't.
+
+**Before:**
+> This is a really important and truly significant finding that is extremely relevant.
+
+**After:**
+> This finding is relevant.
+
+---
+
+### 30. Adverb frontloading
+
+**Words to watch:** Interestingly, Importantly, Notably, Significantly, Crucially, Frankly, Honestly, Ultimately, Essentially, Basically
+
+**Problem:** LLMs open sentences with these to signal "this matters" without earning it. The adverb tells the reader what to think before the evidence arrives.
+
+**Before:**
+> Interestingly, the team found that caching reduced latency by 40%.
+
+**After:**
+> Caching reduced latency by 40%.
+
+---
+
+### 31. Bureaucratic bloat
+
+**Replacements:**
+- "in order to" → "to"
+- "due to the fact that" → "because"
+- "in the event that" → "if"
+- "prior to" → "before"
+- "subsequent to" → "after"
+- "at this point in time" → "now"
+- "has the potential to" → "could"
+- "is able to" → "can"
+- "make use of" → "use"
+- "with respect to" / "in terms of" / "when it comes to" → cut or rephrase
+
+**Problem:** These phrases double the word count without adding meaning.
+
+---
+
+### 32. Weak transitions
+
+**Words to watch (at sentence start):** Furthermore, Moreover, In addition, Consequently, Thus, Hence, Therefore, However (overused), Indeed, As such
+
+**Problem:** LLMs use these as paragraph glue. They signal "I'm connecting two ideas" without actually doing the connecting. In well-structured writing, the connection is implicit.
+
+**Before:**
+> The team shipped the feature on time. Furthermore, they reduced the bug count by 30%.
+
+**After:**
+> The team shipped the feature on time and reduced the bug count by 30%.
+
+---
+
+### 33. Redundant signposting
+
+**Phrases to watch:** As mentioned, As noted, As stated, It should be noted that, This is because, The reason is that, In other words, To put it simply, Let me explain
+
+**Problem:** Signposts that point to things the reader already knows. Trust the reader to follow the argument.
+
+---
+
+### 34. Overused "smart" words
+
+**Words to watch:** robust, seamless, nuanced, holistic, comprehensive, strategic, key (as adjective), actionable, impactful, framework, paradigm, leverage (as verb), navigate, ecosystem, landscape (abstract), space (meaning industry)
+
+**Problem:** These words feel precise but aren't. "Robust" means nothing specific. "Seamless" is almost always wrong. Replace with what you actually mean.
+
+**Before:**
+> We built a robust framework for navigating the AI landscape.
+
+**After:**
+> We built a test harness that catches model regressions before deployment.
+
+---
+
+### 35. "Here's" constructions
+
+**Phrases to watch:** Here's the thing, Here's what, Here's a question, Here's how I think about it, Here's what gets me
+
+**Problem:** Reasoning models use these as transition devices to simulate a human "leaning in." One per essay is fine. Multiple per collection is a fingerprint.
+
+**Fix:** Cut the preamble and start with the substance. "Here's a question that keeps nagging at me: how do we train juniors?" becomes "How do we train juniors?"
+
+---
+
+### 36. Formulaic section headers
+
+**Headers to watch:** "The broader point", "What this means for X", "Looking ahead", "The real question", "Why this matters", "The bottom line", "Implications for X", "What X means in practice"
+
+**Problem:** These are outline headers - they describe what a section does rather than what it says. They signal a model organising output into a predictable template.
+
+**Fix:** Use headers that preview the argument, not the structural role. "What this means for technology leaders" → "The investment goes to infrastructure, not models." Or drop the header entirely if the section flows naturally from the previous one.
+
+---
+
+## STATISTICAL PATTERNS
+
+From 2025-2026 detection research. These are harder to spot by reading but useful as diagnostic checks when something feels off.
+
+### 37. Low lexical diversity
+
+**Problem:** AI text uses fewer unique words than human text of equivalent length. The vocabulary feels syntactically varied but draws from a narrower pool. Look for this when a passage reads smoothly but feels somehow thin.
+
+**Diagnostic:** If you notice the same adjectives, verbs, or connecting phrases recurring across paragraphs, the lexical diversity may be low. Humans naturally reach for different words, even awkward ones.
+
+---
+
+### 38. Uniform sentence length
+
+**Problem:** Human writing has high variance in sentence length. Short sentences punch. Longer ones unspool. AI text clusters around a mean, typically 15-25 words per sentence. Every sentence feels the same weight.
+
+**Diagnostic:** Read a paragraph aloud. If every sentence takes the same number of breaths, investigate. Good prose has rhythm - a mix of five-word sentences and forty-word sentences.
+
+**Before:**
+> The team evaluated the new deployment process. They found several areas for improvement. The rollback mechanism needed additional testing. The monitoring dashboard required configuration updates.
+
+**After:**
+> The team evaluated the new deployment process. Rollbacks didn't work. The monitoring dashboard was half-configured, and nobody had tested what happens when a deploy fails at 4pm on a Friday.
+
+---
+
+### 39. Punctuation poverty
+
+**Problem:** AI text over-relies on commas and periods. Human text uses more semicolons, colons, parentheses, question marks, and dashes. If a long passage contains only commas and periods, that's a soft signal of generation.
+
+**Note:** This interacts with house style. Some style guides (including this repo's) ban em dashes. But the absence of *all* varied punctuation - no colons, no semicolons, no parentheses, no questions - is still a tell.
+
+---
+
 ## Process
 
+### For a single text:
+
 1. Read the input text carefully
-2. Identify all instances of the patterns above
-3. Rewrite each problematic section
+2. Scan for patterns 1-24 and 29-39 above
+3. Rewrite problematic sections
 4. Ensure the revised text:
    - Sounds natural when read aloud
-   - Varies sentence structure naturally
+   - Varies sentence structure and length naturally
    - Uses specific details over vague claims
    - Maintains appropriate tone for context
    - Uses simple constructions (is/are/has) where appropriate
+   - Has actual voice - opinions, uncertainty, personality
 5. Present the humanised version
+
+### For a collection of texts:
+
+Run these checks *before* editing individual pieces:
+
+1. **Grep for repeated phrases across files.** Any sentence or clause that appears in more than one file is a red flag. Fix: keep the stronger instance, rewrite the other.
+
+2. **Grep for recurring concrete details.** Specific images, times, numbers, or scenarios that appear across multiple pieces ("2am", "at scale", a particular anecdote). Fix: keep the instance where the detail is most earned, vary the others.
+
+3. **Compare structural arcs.** Read the first and last paragraph of each piece. Do they all open the same way? Close the same way? Use the same rhetorical move? Fix: vary deliberately.
+
+4. **Check for convergent framing.** Does the same construction ("The question isn't X, it's Y") appear across pieces? Fix: keep one, rewrite the rest.
+
+5. **Then proceed with single-text review** on each piece individually.
 
 ## Output format
 
 Provide:
 1. The rewritten text
 2. A brief summary of changes made (optional, if helpful)
+3. For collections: a list of cross-text issues found
 
 ---
 
 ## Reference
 
-This skill is based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. The patterns documented there come from observations of thousands of instances of AI-generated text on Wikipedia.
+This skill is based on:
+
+- [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup
+- [Linguistic Characteristics of AI-Generated Text: A Survey (arXiv, 2025)](https://arxiv.org/pdf/2510.05136)
+- [The Disappearing Author: Linguistic and Cognitive Markers (2025)](https://researchleap.com/the-disappearing-author-linguistic-and-cognitive-markers-of-ai-generated-communication/)
+- [Comparative linguistic analysis of human vs. machine-generated text (2025)](https://www.tandfonline.com/doi/full/10.1080/09540091.2025.2507183)
 
 Key insight from Wikipedia: "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
+
+Key insight from 2025-2026 research: As reasoning models improve, surface-level vocabulary tells fade, but structural patterns (uniform sentence length, low lexical diversity, convergent framing) persist. The strongest tells are now corpus-level: cross-text repetition and structural homogeneity across a body of work.

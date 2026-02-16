@@ -131,6 +131,7 @@ The essays are a body of work. Readers who find one will read others. The collec
 1. **Bainbridge's Ironies of Automation, forty years on** (November 2025) - historical grounding
 1. **The Suspicion Tax** (January 2026) - the cost of not trusting AI output
 1. **Observable, Reversible, Enforceable** (February 2026) - practical framework
+1. **Compromised Witnesses** (March 2026) - cognitive bias in AI productivity claims
 
 ### Cross-essay discipline
 

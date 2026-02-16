@@ -15,6 +15,7 @@ cronan.github.io/
 ├── CNAME                       # cronyn.co.uk
 ├── writing/
 │   ├── index.html              # Essay listing
+│   ├── compromised-witnesses.html
 │   ├── observable-reversible-enforceable.html
 │   ├── the-suspicion-tax.html
 │   ├── ironies-of-automation.html
@@ -126,11 +127,12 @@ The essays are a body of work. Readers who find one will read others. The collec
 
 ### Published essays (chronological)
 
-1. **Building engineers in the age of AI** (August 2025) - junior engineer development
-1. **Trust, not capability** (September 2025) - the foundational thesis
-1. **Bainbridge's Ironies of Automation, forty years on** (November 2025) - historical grounding
-1. **The Suspicion Tax** (January 2026) - the cost of not trusting AI output
-1. **Observable, Reversible, Enforceable** (February 2026) - practical framework
+1. **Building engineers in the age of AI** (May 2025) - junior engineer development
+1. **Trust, not capability** (July 2025) - the foundational thesis
+1. **Bainbridge's Ironies of Automation, forty years on** (August 2025) - historical grounding
+1. **The Suspicion Tax** (November 2025) - the cost of not trusting AI output
+1. **Observable, Reversible, Enforceable** (December 2025) - practical framework
+1. **Compromised Witnesses** (February 2026) - cognitive bias in AI productivity claims
 
 ### Cross-essay discipline
 

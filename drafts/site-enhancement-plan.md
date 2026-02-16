@@ -1,0 +1,316 @@
+# Site enhancement plan: positioning for speaking, advisory, and board roles
+
+February 2026. This plan covers what to change on cronyn.co.uk and why, informed by research into Ivan's unique positioning, target conferences, advisory pathways, and comparable career trajectories.
+
+---
+
+## Part 1: What makes you distinctive (and what the site doesn't yet say)
+
+### The three-domain rarity
+
+The research turned up no publicly visible individual who has worked across all three of risk technology, quantitative investment technology, and solutions/bespoke mandate technology within top-tier hedge funds. These domains are deeply siloed. Risk tech people build VaR engines and stress tests. Quant tech people build signal pipelines and backtesting frameworks. Solutions tech people build mandate orchestration and client delivery systems. Most careers stay in one lane.
+
+Your career path - quant team at GLG (under Dr Nicholas Clarke, PhD Computational Mathematics, now MD/Head of Portfolio Management Tech at Man AHL), then risk technology (reporting to Dr Darrel Yawitch, PhD Theoretical Physics, CRO across Man Solutions/AHL/GLG), then Head of Solutions Technology - covers the full value chain from alpha generation through risk management to client delivery. That is CTO-scope thinking demonstrated through doing, not just claimed on a CV.
+
+The site currently says none of this. The About page lists career history as a flat timeline. The risk technology stint and the quant team experience are invisible.
+
+### The practitioner-writer gap
+
+Almost all public writing about AI in financial services comes from vendors, consultancies, regulators, or think tanks. Practitioners inside regulated firms almost never write publicly. The research found only three comparable figures (Danilo McGarry ex-Citi, Dr Paul Dongha, Clara Durodie) - and all three have left their firms for advisory/consulting. You are writing from inside the building. That is your structural advantage, and the site should make it explicit.
+
+### The 45-year programming arc
+
+ZX81 BASIC in Durban (1981) to AI agents in London (2026). Ten major paradigm shifts, experienced as a practitioner. Many people started early. Very few are still hands-on, still leading engineering teams, AND writing substantively about technology deployment. The site mentions the ZX81 in passing on the About page. It does not draw the line from there to here. That line is a keynote talk waiting to happen.
+
+### The South African thread
+
+Both you and Darrel Yawitch are South African. You grew up in Durban; he studied at Wits in Johannesburg. The SA diaspora in London finance is significant and well-networked (SAFFA Breakfast Indaba at Vivat Bacchus near London Bridge, South African Business Club with 450+ members). The site currently mentions Durban once. This is not about making it a brand - it is about recognising a community and network that already exists.
+
+### The contrarian thesis at the right moment
+
+"Trust, not capability" is contrarian in a market obsessed with model benchmarks, but the evidence is catching up. MIT Sloan research confirms people prefer human decisions even when AI performs better. The WEF found 91% of organisations unprepared to scale AI responsibly. Your six essays over nine months are the beginning of a Howard Marks-style body of work. The site presents the essays as a list. It does not yet position the thesis as a coherent intellectual project.
+
+---
+
+## Part 2: Site changes - what to build
+
+### Change 1: Add Open Graph and Twitter Card meta tags to all pages
+
+**Why:** When someone shares an essay on LinkedIn - your primary distribution channel for all three target audiences - it currently renders as a bare URL. No title card, no description, no image. Board recruiters, conference organisers, and senior hiring managers are on LinkedIn. This is the highest-ROI change for zero visual impact.
+
+**What:**
+- Add `og:title`, `og:description`, `og:image`, `og:url`, `og:type` to every page
+- Add `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`
+- Use the headshot as the default `og:image`; for essays, use the headshot or a site-level card image
+- Add `og:site_name` = "Ivan Cronyn"
+- Add canonical URL tags (`<link rel="canonical">`) to every page
+
+**Scope:** ~12 lines of HTML per page, 9 pages total.
+
+### Change 2: Create a Speaking page (`/speaking/index.html`)
+
+**Why:** This is the single biggest gap for conference programme committees. They need to decide in minutes whether to invite you. Right now they would have to piece together your positioning from the About page and hope they find the essays. A speaking page is a ready-made speaker kit.
+
+**What the page should contain:**
+
+**Short bio (50 words, copy-pasteable):**
+> Ivan Cronyn is a Principal Engineer and Head of Solutions Technology at a major London hedge fund, where he leads engineering for bespoke investment mandates. He has spent 27 years building financial systems across risk, quant, and client technology, and writes about AI deployment in regulated environments.
+
+**Long bio (150 words, for programme booklets):**
+> Ivan Cronyn leads engineering for bespoke investment mandates at one of the world's largest alternative investment managers in London. Over 27 years in financial technology - at Barclays Capital, Merrill Lynch, GLG Partners, Brevan Howard, and his current firm - he has built systems across risk technology, quantitative research, and solutions engineering: the full lifecycle from signal generation through risk management to client delivery.
+>
+> He has programmed since 1981, starting on a Sinclair ZX81 in Durban, South Africa, and has built production systems through every major paradigm shift from structured programming to AI agents. His writing argues that trust, not capability, is the real bottleneck in AI-assisted engineering - that the models are good enough, but systems must be designed to absorb their mistakes cheaply. His essays have been read by [X] (add metric when available).
+
+**Topics I speak on:**
+1. **Trust, not capability: what production AI actually needs** - Why the bottleneck in AI adoption is not model quality but the ability to observe, reverse, and enforce AI output. Drawn from building AI-integrated systems inside a regulated financial firm.
+2. **Ten paradigm shifts: what 45 years of programming teaches you about AI** - From ZX81 BASIC to AI agents. Pattern recognition across every major technology transition since 1981. What the previous nine shifts tell us about this one.
+3. **Bainbridge's ironies, forty years on** - A 1983 paper about factory automation predicted the exact problems we now face with AI coding assistants. What it means for how we build teams.
+4. **The suspicion tax: when AI erodes trust faster than it creates value** - Why self-reported AI productivity gains are structurally unreliable, and what to measure instead.
+5. **Building engineers when AI writes the code** - Junior developer training in the age of AI. What skills still matter, what formative work looks like now, and why optimising for today's velocity breaks tomorrow's capability.
+
+**Formats:** Keynote, panel, fireside chat. (Note: debating background makes panel/fireside particularly strong - flag this.)
+
+**Downloadable headshot:** Link to a high-resolution version of the existing headshot.
+
+**Contact:** A line with preferred contact method (email or LinkedIn).
+
+**Design:** Same nav, same CSS, same minimal aesthetic as the rest of the site. Add "Speaking" to the nav across all pages.
+
+### Change 3: Strengthen the About page
+
+**Why:** The About page currently reads as a career timeline with a "beyond work" section. It undersells governance-relevant experience. Board recruiters scan for words like "risk", "regulatory", "governance", "accountability". The essays have all of this; the About page has none.
+
+**What to add (not rewrite - add):**
+
+**a) A "What I focus on" section** after the current role description:
+- AI deployment in regulated environments - designing systems where AI output can be trusted
+- Engineering leadership - building teams that compound capability over years
+- Risk and governance in technology - how to absorb errors cheaply, from any source
+- Portfolio construction and optimisation technology - the intersection of quant research and engineering
+
+**b) Surface the three-domain experience.** The career timeline currently lists firms. It does not say what you did at each in terms that resonate with boards. Add a line or two per role that surfaces the risk/quant/solutions thread. For example:
+- Current role: reference the mandate engineering, multi-engine orchestration, and the breadth across risk, quant, and client technology
+- Brevan Howard: front-office development, software architecture, team leadership
+- GLG Partners: senior member of the quant team, quantitative analysis and development
+- The risk technology stint at Man Group (currently invisible): add it to the timeline
+
+**c) Remove nothing.** The guitar, baking, chess, genealogy details humanise the profile. Keep them.
+
+### Change 4: Add an RSS feed (`/feed.xml`)
+
+**Why:** People who read one essay and want to follow your writing have no mechanism to do so other than checking back manually. An RSS feed is a single static XML file - no JavaScript, no build step, fits the site's constraints perfectly.
+
+**What:** A hand-written XML file with one `<item>` per essay. Update manually when adding new essays. Link to it from every page via `<link rel="alternate" type="application/rss+xml">` in the `<head>`.
+
+### Change 5: Add JSON-LD structured data
+
+**Why:** Search engines cannot currently present you as a Person, your essays as Articles, or your site as a professional profile. When someone searches "AI trust engineering finance speaker", structured data helps you surface.
+
+**What:**
+- `Person` schema on the homepage and About page (name, jobTitle, worksFor, url, sameAs for LinkedIn/GitHub)
+- `Article` schema on each essay page (headline, datePublished, author, description)
+- `WebSite` schema on the homepage
+
+**Scope:** ~20 lines of JSON-LD per page type. No visual change.
+
+### Change 6: Strengthen the Reading page
+
+**Why:** The reading page currently links to an external GitHub repo. Visitors who might invite you to speak or sit on a board will not click through to a GitHub repo. The annotated reading list, brought onto the site, demonstrates intellectual breadth and curatorial judgment - both signals that boards and conference committees value.
+
+**What:** Pull the curated list from the GitHub repo into the page itself. Keep the three trails structure. Add brief annotations for each source. This makes the page a standalone resource rather than a pointer.
+
+### Change 7: Add a contact line
+
+**Why:** Conference organisers and board recruiters may not want to use LinkedIn. A simple `mailto:` link lowers the barrier.
+
+**What:** Add a contact email to the Speaking page and the About page footer. Can be an alias that forwards.
+
+---
+
+## Part 3: Positioning strategy beyond the site
+
+### Conferences to target
+
+#### Immediate actions (CFPs open now, February 2026)
+
+| Conference | Date | Location | CFP status | Best talk | Contact |
+|---|---|---|---|---|---|
+| **CogX London** | 4-5 Mar 2026 | London | Open speaker applications | "Trust, not capability" | cogxfestival.com/speaker-applications |
+| **FTT AI Transformation (summer)** | 25 Jun 2026 | etc.venues County Hall, London | Open call for speakers | "The suspicion tax" | fintechtalents.com/call-for-speakers/ |
+| **The AI Summit London** | 10-11 Jun 2026 | Tobacco Dock, London (4,500 attendees) | Rolling submissions | "Trust, not capability" | london.theaisummit.com/conference-speakers/submit-speaker/ |
+| **FTT AI Transformation (autumn)** | 9-10 Nov 2026 | The Brewery, London (2,000+ attendees) | Open call for speakers | "The suspicion tax" | fintechtalents.com/call-for-speakers/ |
+| **FCA Mills Review** | Ongoing to Sep 2026 | Written submission | Call for Input open | "Trust, not capability" (as written response) | fca.org.uk |
+
+#### High-value targets (contact organisers directly)
+
+| Conference | Date | Location | How to get in | Best talk |
+|---|---|---|---|---|
+| **QCon London** | 16-18 Mar 2026 | QEII Centre, London | Invite-based; submit via website form, email info@qconlondon.com. "AI Engineering" and "Tech of Finance" tracks are ideal. Having published essays is strong supporting material. | "Trust, not capability" or "Bainbridge's ironies" |
+| **FStech Future of AI in Financial Services** | 6 Oct 2026 | London Hilton Tower Bridge | Contact FStech. Covers "speed versus safety, autonomy versus control, innovation versus regulatory compliance" - your exact territory. | "Trust, not capability" (keynote potential) |
+| **RiskMinds International** | 16-19 Nov 2026 | InterContinental London - The O2 (1,200+ attendees, 330+ speakers) | Invite/sponsorship. Email james.roberts@informa.com. The "Cyber Risk, AI & Technology Resilience Summit" is the best entry point. Buy-side practitioners are valued. | "The suspicion tax" |
+| **LeadDev London (LDX3)** | 2-3 Jun 2026 | InterContinental London - The O2 (2,000+ attendees) | Main CFP closed (deadline was 4 Jan). Workshop proposals accepted rolling. Email hello@leaddev.com. | "Building engineers when AI writes the code" |
+
+#### Policy and governance venues (invitation-based, build relationships)
+
+| Venue | How to engage | Best talk |
+|---|---|---|
+| **Chatham House** | Build relationship with their Digital Society Programme team. The essays on AI governance in financial services are the kind of work that gets noticed. No public CFP. | "Trust, not capability" (governance frame) |
+| **RSA (Royal Society of Arts)** | Become an RSA Fellow. Fellows can propose events at RSA House. The RSA also commissions external speakers for its main programme. Salon-style discussions are their signature format. | "The suspicion tax" (societal implications) |
+| **Policy Exchange** | Contact technology/economic competitiveness team. Propose a policy-focused framing: "What government should understand about AI deployment in critical infrastructure." | "Trust, not capability" (policy frame) |
+| **BoE/FCA AI Consortium** | Email AIConsortium@bankofengland.co.uk. (Also listed under advisory pathways below - this is the highest-leverage single action.) | All topics |
+
+#### 2027 pipeline (CFPs will open late 2026)
+
+| Conference | Typical dates | Notes |
+|---|---|---|
+| **LeadDev London** | June | CFP typically opens October, closes January. "Building engineers" is the natural submission. |
+| **Devoxx UK** | May (6-7 May 2026 at Business Design Centre, 1,200+ attendees) | CFP opens December, closes January. "Ten paradigm shifts" or "Building engineers" for the AI-augmented development track. |
+| **QCon London** | March | Write for InfoQ (QCon's parent publication) to build visibility with track hosts. |
+| **ELC Conference Prague** | April | Central Europe's leading event for engineering leaders. CTOs, VPs, directors. CFP-based. |
+
+#### Speaking formats: what your debating background gives you
+
+Research into speaking formats confirms your debating skills are a strategic asset:
+
+1. **Fireside chats** (your strongest format) - Rewards quick thinking, authenticity, the ability to go deeper on follow-up questions. A debater's ability to construct arguments in real time is the core skill. The informal feel lets personality and conviction come through more than a scripted talk.
+
+2. **Panels with opposing viewpoints** (your second strongest) - Small panels (3-4 people) with deliberately opposing viewpoints are where debating experience shines most visibly. Most panellists default to agreeable platitudes. A trained debater who commits to a position stands out. The ability to disagree precisely and respectfully, acknowledging the other side's strongest point before dismantling it, is rare on stage.
+
+3. **25-minute keynotes** (builds reputation fastest) - Debating experience translates to strong argument construction, pacing, and holding a room. The standard conference format (LeadDev, QCon). This is the format that builds a speaker's reputation most efficiently.
+
+4. **Audience Q&A** (natural advantage) - The ability to handle hostile or poorly framed questions, reframe them, and answer with precision. Volunteering for formats with substantial Q&A differentiates you from speakers who avoid unscripted interaction.
+
+**Avoid:** Large panels (5+ speakers, air time diluted), pre-recorded talks (removes your spontaneity advantage), lightning talks (too short to build an argument).
+
+**The ideal progression:** Panel participant (low risk, shows you can hold your own) then fireside chat (shows depth and personality) then solo keynote (establishes you as a standalone voice). The essays provide the intellectual foundation for all three.
+
+### The speaking ladder
+
+1. **Start with your network.** The SAFFA Breakfast Indaba at Vivat Bacchus (bimonthly, London Bridge) features guest speakers. Low stakes, trust-based audience, SA diaspora network. A talk on AI in London finance, framed through the Durban-to-London arc.
+2. **Internal events at your firm.** If you present internally on AI deployment, that is speaking experience you can reference.
+3. **Meetups and user groups.** London has active Python, C#, and fintech meetup scenes. A 20-minute talk on Bainbridge's ironies would work at any of them.
+4. **Submit to open CFPs now.** CogX (applications open), FTT AI Transformation (call for speakers open), The AI Summit London (rolling submissions). These are the three you can apply to today.
+5. **Respond to the FCA Mills Review.** A written submission on "trust, not capability" as it applies to retail financial services AI is the most direct route to FCA engagement. The Mills Review is actively seeking input through September 2026.
+6. **Contact organisers directly.** QCon London (info@qconlondon.com), RiskMinds (james.roberts@informa.com), FStech, LeadDev (hello@leaddev.com for workshop proposals).
+7. **Accept panel invitations.** Panels are lower-preparation than keynotes and let your debating skills shine. Say yes to every relevant one.
+
+### Advisory and board pathways
+
+#### The closest precedent: Sandy Rattray
+
+Rattray is the most instructive example from your own firm's orbit. His trajectory:
+- Joined Man Group via GLG Partners (2007). CIO of Man Systematic Strategies, CEO of Man AHL, then CIO of Man Group plc (2017-2021).
+- Appointed NED on the MSCI Inc. board in **February 2020 - while still serving as Man Group CIO**. He did not wait until retirement.
+- Post-retirement: Senior Advisor at Capula Investment Management, Governor of the Southbank Centre, Governor of the King's Maths School, completed an MA in Architectural History at the Bartlett.
+- His board appointment was built on: intellectual contribution (co-inventor of the VIX, published research, Bernstein Fabozzi/Jacobs Levy awards), investment seniority (CIO of a public company), and governance experience (FTSE/Russell index committees).
+
+The structural pattern is transferable: build visible intellectual contribution (the writing portfolio), accumulate governance experience (advisory panels, charity boards), and let the NED appointment arrive as a natural consequence rather than a cold application.
+
+#### The market is moving your way
+
+EY's Global Financial Services Boardroom Monitor found that the number of NEDs appointed with technology expertise in UK financial services increased by **66% between 2020 and 2024**. Demand is real. Recent named appointments:
+- Stephane Malrait - appointed to the FCA Board (October 2025). Former MD and Global Head of Market Structure & Innovation at ING Bank.
+- James Bilefield - NED at FCDO (April 2024) with digital expertise.
+- Richard Harvey - FSCS Board (March 2025). Led analytics and digital transformation at HSBC.
+
+#### Highest-leverage actions (do first)
+
+**1. BoE/FCA AI Consortium** - email AIConsortium@bankofengland.co.uk
+This is the single most relevant body. Launched May 2025, co-chaired by BoE Deputy Governor Sarah Breeden and FCA's David Geale. 26 members from financial services, tech companies, fintechs, and universities. They meet quarterly. Workshop groups cover new risk categories from AI, responsible adoption, explainability, and systemic risk from AI-driven automation. Your combination of hands-on AI implementation + governance thinking + writing portfolio is exactly what they need. Members can invite subject-matter experts from their organisations to workshops.
+
+**2. Nurole registration** - free, immediate
+The leading online platform for board-level recruitment in the UK. 60,000 board-ready members, 800+ roles per year. Financial services board recruitment is a dedicated practice. Sign up, receive matched NED opportunities by email, apply against specific competency requirements. Nurole Plus (paid) adds CV review, elevator pitch sessions, and 1:1 guidance from headhunters.
+
+**3. BCS Fellowship (FBCS)** - £210-560, ~16-20 weeks
+Straightforward application. Requires 5+ years in IT (you have 27), evidence of professional achievements, impact, and recognition. Written review route: £210, 16+ weeks. Interview route: £560, 2-4 weeks for result. Annual subscription: £240. The post-nominals signal professional standing to nominating committees who may not have technology backgrounds themselves.
+
+#### High value, moderate effort
+
+**4. IoD Certificate in Company Direction** - the recognised NED qualification
+The benchmark for director competence in the UK. Four modules covering governance, finance, strategy, and leadership. Three routes:
+- **Accelerated residential** (5.5 days): £10,695 (IoD member) / £13,895 (non-member). Locations include 116 Pall Mall.
+- **Modular** (10 days over months): ~£13,600 total.
+- **Global** (University of St Andrews residential): premium pricing.
+Exams: four 45-minute papers, £600 for all four. Leads to Cert IoD post-nominals. Further study leads to Chartered Director status. For someone with 27 years of experience, this is less about learning new things and more about demonstrating due diligence and signalling board-readiness.
+
+**5. Alan Turing Institute - Finance & Economics Programme**
+Their ML in Finance sub-programme brings together researchers, practitioners, and regulators. They run workshops (Explainability in Finance, AIML in Finance) open to industry practitioners, and collaborate with the FCA Emerging Technology Research Hub. The Practitioners Hub has an advisory network accepting applications. The natural entry point: attend workshops, contribute to discussions, become known to the programme team.
+
+**6. IET Fellowship (FIET)** - £188, ~20 weeks
+Evidence against 2-3 of nine criteria (Creativity, Insight & Experience, Leadership, Enterprise, Innovation, etc.). Maximum 500 words per criterion. Two supporters needed (one must be a Fellow). Combined with FBCS, creates a strong credential set for technology governance positioning.
+
+#### Worth doing, lower urgency
+
+**7. FCA Practitioner Panel** - watch for vacancies at fca.org.uk/about/how-we-operate/who-work-with/statutory-panels. Appointed by the FCA Board. Recruited through open competition. Members serve in individual capacity, not representing their firms.
+
+**8. FT Non-Executive Director Diploma** - ~£7,000, 6 months
+Level 7 postgraduate qualification (Pearson-accredited). Includes workshops, networking, premium FT.com access, a "How to Get Your First NED Role" workshop, and specialist CV consultancy. Alumni network at ftnedalumni.com. Alternative to IoD if the practical NED-landing focus is more appealing.
+
+**9. NEDonBoard membership** - for the daily NED job board and networking events. Not-for-profit, approved professional organisation (membership fees are tax-deductible). NED Accelerator Programme available at £750-£1,650.
+
+**10. Henley Board Directors' Programme** - £2,195-2,805
+Shorter, cheaper than IoD. Taught by Professor Andrew Kakabadse (world's largest database of board research, 37 countries). Live-online (6 weeks of 90-minute workshops) or 2-day residential at Henley's Greenlands campus. Good governance knowledge, less formal credential weight than IoD.
+
+#### Recruitment firms for NED roles
+
+- **Odgers Berndtson** - global Board Group. Financial Services and Board Advisory practices. Technology and AI is a stated focus area.
+- **Spencer Stuart** - publishes the annual UK Board Index. Dedicated Board and CEO practice plus Technology, Media & Telecommunications practice.
+- **NED Capital** - London boutique specialising exclusively in NED placements for financial services.
+
+#### Fund directorships as a stepping stone
+
+The Hedge Fund Journal's "A Seat on the Board" covers independent directorships of offshore hedge funds (Cayman, etc.). Fund boards specifically need people who understand investment strategies, risk parameters, and fund governance. This is a different pathway from corporate NED roles but more accessible for hedge fund professionals. Fund directorships build governance experience and a track record before pursuing corporate boards.
+
+---
+
+## Part 4: The model to follow
+
+Three thinkers the site already names as influences map to a strategy:
+
+**Howard Marks** - Build authority through consistent, thesis-driven writing over years. Six essays in nine months is strong momentum. At twelve, the collection becomes referenceable. At twenty, it supports a book proposal. Never chase trends. Let the memos compound.
+
+**Cliff Asness** - Hold a contrarian position publicly, defend it with data, write with personality. "Trust, not capability" is your equivalent of Asness defending value investing through years of underperformance. The position gains authority precisely because you held it while the market was distracted by capability benchmarks.
+
+**Andrew Haldane** - Bridge academic research and institutional practice using plain language and historical depth. Haldane's "The Dog and the Frisbee" speech - arguing that complex systems need simple rules - is structurally identical to your "trust, not capability" argument. The Bainbridge essay already does this.
+
+**What you add that none of them have:** You are still building the systems you write about. Marks runs a fund, not a codebase. Asness has a research team. Haldane was a regulator. You are the engineer AND the writer. That combination is the hardest to replicate and the most credible with technical audiences.
+
+---
+
+## Part 5: Implementation priority
+
+| # | Change | Impact | Effort | Do when |
+|---|--------|--------|--------|---------|
+| 1 | Open Graph + Twitter Card meta tags | High | Low | Now |
+| 2 | Speaking page | High | Medium | Now |
+| 3 | Strengthen About page (add risk/quant/solutions, focus areas) | High | Low | Now |
+| 4 | Add Speaking to nav across all pages | Medium | Low | Now (with #2) |
+| 5 | RSS feed | Medium | Low | Now |
+| 6 | JSON-LD structured data | Medium | Low | Now |
+| 7 | Canonical URL tags | Low | Low | Now |
+| 8 | Strengthen Reading page | Medium | Medium | Next |
+| 9 | Contact line on Speaking/About | Medium | Low | Now |
+
+"Now" means: these can be implemented in the current session.
+"Next" means: requires content work beyond HTML scaffolding.
+
+---
+
+## Part 6: What the one-line positioning becomes
+
+**Current (implicit from the site):**
+"Principal Engineer who writes about AI."
+
+**Proposed (explicit, backed by the site):**
+"The practitioner who has built financial systems across risk, quant, and client technology for 27 years - programming since 1981 - now writing from inside a regulated firm about what actually happens when you deploy AI in production."
+
+That is the line that makes conference organisers pause, board recruiters take a second look, and senior hiring managers think "this person has seen things most candidates haven't."
+
+---
+
+## Appendix: Key people referenced
+
+- **Dr Darrel Yawitch** - CRO of Man Solutions, Man AHL, Man GLG. PhD Theoretical Physics (King's College London). BSc Hons (Wits, Johannesburg). Fellow of the Faculty of Actuaries. Previously 10+ years at Investec Bank. Co-authored "Drawdowns" in the Journal of Portfolio Management. South African.
+- **Dr Nicholas Clarke** - Managing Director, Head of Portfolio Management Tech at Man AHL. PhD Computational and Applied Mathematics (Southampton). Previously GLG Partners.
+- **Gary Collier** - CTO of Man Group since 2001. Member of Executive Committee. Oversees ~230 engineers and data scientists across Alpha Technology and Platform Engineering.
+- **Sandy Rattray** - Former CIO of Man Group (retired 2021). NED on MSCI board since February 2020 (appointed while still CIO). Senior Advisor at Capula Investment Management. Governor of the Southbank Centre and King's Maths School. Co-inventor of the VIX index. Co-authored *Strategic Risk Management* (Wiley). Two-time Bernstein Fabozzi/Jacobs Levy Award winner. Previously Goldman Sachs (15 years), then headed systematic strategies at GLG.

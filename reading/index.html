@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reading - Ivan Cronyn</title>
   <meta name="description" content="A curated reading list on AI in production engineering. Papers, posts, and books that have shaped how I think about the problem.">
+  <link rel="canonical" href="https://cronyn.co.uk/reading/">
+  <link rel="alternate" type="application/rss+xml" title="Ivan Cronyn" href="https://cronyn.co.uk/feed.xml">
+  <meta property="og:title" content="Reading - Ivan Cronyn">
+  <meta property="og:description" content="A curated reading list on AI in production engineering. Papers, posts, and books that have shaped how I think about the problem.">
+  <meta property="og:url" content="https://cronyn.co.uk/reading/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <meta property="og:site_name" content="Ivan Cronyn">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Reading - Ivan Cronyn">
+  <meta name="twitter:description" content="A curated reading list on AI in production engineering. Papers, posts, and books that have shaped how I think about the problem.">
+  <meta name="twitter:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
   <link rel="stylesheet" href="/styles.css?v=3">
 </head>
 <body>
@@ -18,33 +30,141 @@
     <a href="/">Home</a>
     <a href="/writing/">Writing</a>
     <a href="/reading/" class="active">Reading</a>
+    <a href="/speaking/">Speaking</a>
     <a href="/about/">About</a>
   </nav>
 
   <hr>
 
   <p>
-    A curated reading list on AI in production engineering. The bottleneck
-    isn't capability - it's trust. We can build AI systems that perform; we
-    struggle to build systems we can verify, understand, and safely operate.
+    Papers, posts, and books that have shaped how I think about AI in
+    production engineering. The bottleneck isn't capability - it's trust.
+    We can build AI systems that perform; we struggle to build systems we
+    can verify, understand, and safely operate.
   </p>
 
-  <p>
-    Three paths through the material:
-  </p>
+  <h2>Reading trails</h2>
+
+  <p>Three paths through the material, each ending at one of my essays:</p>
 
   <ul>
-    <li><strong>The Bainbridge trail</strong> - Why automation creates the problems it was meant to solve. The foundation for everything else.</li>
-    <li><strong>The trust trail</strong> - Building systems you can verify. The framework for operational trust.</li>
-    <li><strong>The people trail</strong> - How AI changes the way engineers develop expertise.</li>
+    <li><strong>The Bainbridge trail:</strong> Bainbridge &rarr; Cook &rarr; Klein &rarr; <a href="/writing/ironies-of-automation.html">Ironies of Automation</a>. Why automation creates the problems it was meant to solve.</li>
+    <li><strong>The trust trail:</strong> Lamport &rarr; Charity Majors &rarr; Rudin &rarr; Huyen &rarr; <a href="/writing/observable-reversible-enforceable.html">Observable, Reversible, Enforceable</a>. Building verifiable systems and operational trust.</li>
+    <li><strong>The people trail:</strong> Klein (both) &rarr; Allspaw &rarr; Larson &rarr; <a href="/writing/ai-as-junior-engineer.html">Building Engineers in the Age of AI</a>. How AI reshapes expertise development.</li>
   </ul>
 
-  <p>
-    The full list with annotations:
-  </p>
+  <h2>The foundational problem</h2>
 
-  <ul class="links">
-    <li><a href="https://github.com/Cronan/ai-engineering-reading-list">github.com/Cronan/ai-engineering-reading-list</a></li>
+  <ul>
+    <li>
+      <strong>Lisanne Bainbridge</strong> - <a href="https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf">Ironies of Automation</a> (1983)<br>
+      <small>Advanced automation increases human criticality while reducing their capability to provide it.</small>
+    </li>
+    <li>
+      <strong>Gary Klein</strong> - <a href="https://mitpress.mit.edu/9780262534291/sources-of-power/">Sources of Power: How People Make Decisions</a> (1998)<br>
+      <small>Experts decide via pattern recognition from experience, not analysis.</small>
+    </li>
+    <li>
+      <strong>Gary Klein</strong> - <a href="https://www.hachettebookgroup.com/titles/gary-klein/seeing-what-others-dont/9781610392754/">Seeing What Others Don't</a> (2013)<br>
+      <small>How expert insight and pattern recognition function.</small>
+    </li>
+    <li>
+      <strong>Erik Hollnagel &amp; David Woods</strong> - <a href="https://www.taylorfrancis.com/books/mono/10.1201/9781420038194/joint-cognitive-systems-erik-hollnagel-david-woods">Joint Cognitive Systems</a> (2005)<br>
+      <small>Human-machine combinations form integrated cognitive systems.</small>
+    </li>
+  </ul>
+
+  <h2>Safety and resilience</h2>
+
+  <ul>
+    <li>
+      <strong>Richard Cook</strong> - <a href="https://how.complexsystems.fail/">How Complex Systems Fail</a> (1998)<br>
+      <small>Failure is normal, and safety comes from how systems handle it.</small>
+    </li>
+    <li>
+      <strong>Sidney Dekker</strong> - <a href="https://www.routledge.com/The-Field-Guide-to-Understanding-Human-Error/Dekker/p/book/9781472439055">The Field Guide to Understanding Human Error</a> (2014)<br>
+      <small>Reframes errors as symptoms reflecting why actions seemed reasonable at the time.</small>
+    </li>
+    <li>
+      <strong>Nancy Leveson</strong> - <a href="https://mitpress.mit.edu/9780262533690/engineering-a-safer-world/">Engineering a Safer World</a> (2011)<br>
+      <small>Accidents stem from control failures, not component failures.</small>
+    </li>
+    <li>
+      <strong>David Woods</strong> - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0951832015000848">Four Concepts for Resilience</a> (2015)<br>
+      <small>Distinguishes rebound, robustness, graceful extensibility, and sustained adaptability.</small>
+    </li>
+  </ul>
+
+  <h2>Trust and verification</h2>
+
+  <ul>
+    <li>
+      <strong>Leslie Lamport</strong> - <a href="https://amturing.acm.org/p558-lamport.pdf">Time, Clocks, and the Ordering of Events in a Distributed System</a> (1978)<br>
+      <small>Foundational work on understanding and auditing automated behaviour sequences.</small>
+    </li>
+    <li>
+      <strong>Charity Majors</strong> - <a href="https://www.oreilly.com/library/view/observability-engineering/9781492076438/">Observability Engineering</a> (2022)<br>
+      <small>Practical guidance for understanding production systems.</small>
+    </li>
+    <li>
+      <strong>Cynthia Rudin</strong> - <a href="https://arxiv.org/abs/1811.10154">Stop Explaining Black Box Machine Learning Models</a> (2019)<br>
+      <small>Post-hoc explanations prove unreliable; build interpretable models for high-stakes decisions.</small>
+    </li>
+    <li>
+      <strong>Chip Huyen</strong> - <a href="https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/">Designing Machine Learning Systems</a> (2022)<br>
+      <small>Data quality, monitoring, drift detection, and ML lifecycle management.</small>
+    </li>
+  </ul>
+
+  <h2>AI in practice</h2>
+
+  <ul>
+    <li>
+      <strong>Simon Willison</strong> - <a href="https://simonwillison.net/">simonwillison.net</a><br>
+      <small>Thorough documentation of practical AI usage through TILs and link blogging.</small>
+    </li>
+    <li>
+      <strong>Andrej Karpathy</strong> - <a href="https://karpathy.medium.com/software-2-0-a64152b37c35">Software 2.0</a> (2017)<br>
+      <small>Code replaced by data, and what that means for programmer roles.</small>
+    </li>
+    <li>
+      <strong>Dan McKinley</strong> - <a href="https://mcfunley.com/choose-boring-technology">Choose Boring Technology</a> (2015)<br>
+      <small>Weighing novelty costs against stability benefits.</small>
+    </li>
+  </ul>
+
+  <h2>Building engineers</h2>
+
+  <ul>
+    <li>
+      <strong>John Allspaw</strong> - <a href="https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/">The Infinite Hows</a> (2014)<br>
+      <small>How engineers develop judgment through incident learning.</small>
+    </li>
+    <li>
+      <strong>Will Larson</strong> - <a href="https://staffeng.com/book">Staff Engineer</a> (2021)<br>
+      <small>Senior engineers create impact beyond individual coding contributions.</small>
+    </li>
+  </ul>
+
+  <h2>Financial services context</h2>
+
+  <ul>
+    <li>
+      <strong>Andrew Haldane</strong> - <a href="https://www.bankofengland.co.uk/paper/2012/the-dog-and-the-frisbee">The Dog and the Frisbee</a> (2012)<br>
+      <small>Simple rules often outperform complex models in regulation.</small>
+    </li>
+    <li>
+      <strong>Man Group Research</strong> - <a href="https://www.man.com/maninstitute/">Machine Learning Papers</a><br>
+      <small>Oxford-Man Institute publications on finance ML.</small>
+    </li>
+    <li>
+      <strong>Marcos Lopez de Prado</strong> - <a href="https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086">Advances in Financial Machine Learning</a> (2018)<br>
+      <small>Rigorous ML treatment emphasising backtesting pitfalls.</small>
+    </li>
+    <li>
+      <strong>Emanuel Derman</strong> - <a href="https://www.simonandschuster.com/books/Models-Behaving-Badly/Emanuel-Derman/9781439164990">Models.Behaving.Badly</a> (2011)<br>
+      <small>Theories describe what something is. Models describe what something is like.</small>
+    </li>
   </ul>
 
   <footer>

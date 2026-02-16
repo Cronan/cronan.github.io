@@ -19,24 +19,24 @@
   <article>
     <header>
       <h1>Bainbridge's Ironies of Automation, forty years on</h1>
-      <p class="date">November 2025</p>
+      <p class="date">August 2025</p>
     </header>
 
     <hr>
 
     <p>
-      A Hacker News thread led me to Lisanne Bainbridge's
-      <em>Ironies of Automation</em>, written in 1983. It maps onto the way
-      we're integrating AI into software systems with a precision that
-      made me uncomfortable.
+      A Hacker News thread sent me to Lisanne Bainbridge's
+      <em>Ironies of Automation</em>, written in 1983. I was expecting
+      historical interest - she was writing about chemical plants and
+      power stations. What I got was an uncomfortably precise description
+      of the AI integration problems I'd been thinking about that same
+      week.
     </p>
 
     <p>
-      Bainbridge was writing about industrial process control - chemical
-      plants, power stations, manufacturing lines. The paper was published
-      in <em>Automatica</em>, an engineering journal. It's six pages long.
-      It has accumulated over 2,000 citations. If you work in any field
-      where humans interact with automated systems, you should read it.
+      The paper was published in <em>Automatica</em>, an engineering
+      journal. Six pages. Over 2,000 citations. If you work in any field
+      where humans interact with automated systems, read it.
     </p>
 
     <h2>The core insight</h2>
@@ -109,9 +109,9 @@
       AI and having it reviewed by seniors, what do they actually learn?
       They learn to prompt well. They learn to read diffs. They may learn
       to write good tests. But do they build the deep mental model of a
-      system that comes from writing it line by line, debugging it at 2am,
-      and gradually understanding why the abstractions are shaped the way
-      they are?
+      system that comes from writing it yourself, debugging it alone when
+      nobody was around to ask, and gradually understanding why the
+      abstractions are shaped the way they are?
     </p>
 
     <p>
@@ -128,35 +128,47 @@
 
     <p>
       In financial services, deskilling isn't an abstract concern about
-      engineering craft. It's an operational risk problem.
+      engineering craft. It's operational risk with a specific cost.
     </p>
 
     <p>
-      The systems I work on manage client mandates, execute portfolio
-      rebalancing, and produce regulatory reporting. When something breaks
-      at 2am (and things always break at 2am), someone needs to diagnose
-      the problem quickly and accurately. If the team doesn't have the mental
-      model to reason about the system under pressure, the consequences aren't
-      engineering embarrassment. They're real money, real clients, and real
-      regulatory exposure.
+      I run technology for bespoke investment mandates - the kind where
+      each client portfolio has its own constraints, its own reporting
+      requirements, its own regulatory obligations. The systems that manage
+      this are intricate and layered, full of business logic that was never
+      documented well enough because the people who built it understood it
+      and the people who came after learned it by maintaining it. That
+      chain of transmitted understanding is what Bainbridge would call
+      operator competence. It's also the first thing at risk when AI takes
+      over the routine work.
     </p>
 
     <p>
-      Regulators increasingly expect firms to demonstrate that they understand
-      their own systems. "The AI generated it" isn't an acceptable answer when
-      a compliance officer asks why a calculation produced the wrong result.
+      When something breaks during overnight batch processing - a NAV
+      calculation that doesn't reconcile, a regulatory feed that throws an
+      exception nobody's seen before - someone needs to diagnose it quickly.
+      Not just read the stack trace. Understand the data flow, the business
+      rules, the reason this particular client's portfolio is handled
+      differently from every other. If the person on call hasn't built that
+      understanding through years of working inside the system, they're
+      reading logs and guessing.
+    </p>
+
+    <p>
       The SM&CR regime in the UK assigns personal accountability to senior
-      managers for failures in their areas. You can't delegate understanding
-      to a model.
+      managers for failures in their areas. "The AI generated it" isn't an
+      acceptable answer when a compliance officer asks why a calculation
+      produced the wrong result. You can't delegate understanding to a
+      model.
     </p>
 
     <p>
-      This is where Bainbridge's ironies bite hardest. The more we automate
-      the routine work of building and maintaining these systems, the fewer
-      people develop the intuition to diagnose them when they fail. And in
-      financial services, the cost of slow diagnosis isn't just technical
-      debt - it's client losses, regulatory sanctions, and reputational damage
-      that takes years to repair.
+      This is where Bainbridge's ironies bite hardest. The routine work -
+      the bug fixes, the small enhancements, the migration of a calculation
+      from one framework to another - is exactly what builds the mental
+      models people need when things go wrong. Automate that work away and
+      you remove the training ground. The system keeps running. The
+      understanding doesn't compound.
     </p>
 
     <h2>Two directions for the same tool</h2>
@@ -183,47 +195,34 @@
     </p>
 
     <p>
-      That distinction feels like the real leadership challenge with AI:
+      The leadership challenge isn't how much to automate. It's knowing
+      which cognitive work to protect.
     </p>
 
-    <ul>
-      <li>Not how much we automate</li>
-      <li>But which cognitive work we remove, and which we deliberately
-          keep humans engaged in</li>
-    </ul>
-
-    <h2>Designing for epistemic engagement</h2>
+    <h2>If you can't follow it now, you won't debug it later</h2>
 
     <p>
       Bainbridge wrote that if a monitoring task is too complex for the
       operator to follow during normal operation, it's unrealistic to expect
-      them to understand it during failure. The same applies to AI in
-      software.
+      them to understand it during failure. This translates directly.
     </p>
 
     <p>
-      If an AI system generates code that the team can't understand during
-      normal development, it's unrealistic (and unsafe) to expect
-      understanding to suddenly appear during a production incident. The
-      system won't explain itself. The logs won't map to the mental model.
-      The person on call will be staring at code they've never engaged with,
-      trying to reason about behaviour they've never thought through.
+      If an AI system generates code that the team can't follow during
+      normal development, understanding won't suddenly appear during a
+      production incident. The system won't explain itself. The logs won't
+      map to anyone's mental model. The person on call will be staring at
+      code they've never engaged with, trying to reason about behaviour
+      they've never thought through.
     </p>
 
     <p>
       The fix isn't to avoid AI tools. It's to design workflows where
-      humans remain engaged with the decisions that matter. That means
-      smaller AI-generated changes that a human actually reviews. It means
-      tests that encode intent, so when something breaks you know what
-      was supposed to happen. It means documentation that explains why,
-      not just what. It means keeping humans in the reasoning loop, not
-      just the approval loop.
-    </p>
-
-    <p>
-      The future isn't "humans vs AI" or even "humans supervising AI."
-      It's systems that are designed so humans stay epistemically in the
-      loop, not just formally on the hook.
+      humans remain engaged with the decisions that matter. Smaller
+      AI-generated changes that a human can actually review. Tests that
+      encode intent, so when something breaks you know what was supposed
+      to happen. Keeping humans in the reasoning loop, not just the
+      approval loop.
     </p>
 
     <p>

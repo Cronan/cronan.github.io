@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compromised Witnesses - Ivan Cronyn</title>
+  <meta name="description" content="Self-reported developer productivity with AI tools is structurally unreliable. The witnesses are compromised by the same cognitive biases Cialdini mapped decades ago.">
+  <link rel="stylesheet" href="/styles.css?v=3">
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/writing/" class="active">Writing</a>
+    <a href="/reading/">Reading</a>
+    <a href="/about/">About</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>Compromised Witnesses</h1>
+      <p class="date">February 2026</p>
+    </header>
+
+    <hr>
+
+    <p>
+      A developer tells a standup she's 40% more productive with Copilot.
+      She's been saying this for three months. Her tech lead quotes the number
+      in a capacity planning document. The document reaches a steering
+      committee. The steering committee approves a six-figure enterprise
+      licence. At no point does anyone measure whether the 40% shows up in
+      the team's cycle time, defect rate, or cost per feature.
+    </p>
+
+    <p>
+      This is not a story about AI. It is a story about how organisations
+      build conviction from compromised testimony.
+    </p>
+
+    <hr>
+
+    <p>
+      Robert Cialdini identified commitment and consistency as one of the
+      primary mechanisms of human persuasion. The principle is simple: once a
+      person makes a public statement, they will work to remain consistent
+      with it, even when the evidence shifts. The commitment doesn't have to
+      be dramatic. It just has to be visible. Cialdini's research showed that
+      written, public, freely chosen commitments are the most binding. A
+      standup is all three.
+    </p>
+
+    <p>
+      Charlie Munger, who spent six decades thinking about cognitive error in
+      the context of capital allocation, called this "commitment and
+      consistency tendency" and placed it among the most dangerous biases in
+      institutional decision-making. In <em>Poor Charlie's Almanack</em>, he
+      observed that the brain conserves programming space by being reluctant
+      to change. What begins as an offhand remark hardens into identity. The
+      developer who said she's more productive <em>becomes</em> the developer
+      who is more productive with AI. Reversing that position means reversing
+      something about herself.
+    </p>
+
+    <p>
+      This isn't a character flaw. It's the normal operation of a
+      well-documented cognitive mechanism. But it has specific consequences
+      for how organisations evaluate AI tools, and those consequences are not
+      widely understood.
+    </p>
+
+    <hr>
+
+    <p>
+      The problem compounds in three ways.
+    </p>
+
+    <p>
+      The first is selection bias in reporting. Developers who find AI tools
+      useful talk about it. Developers who tried them and stopped tend to say
+      nothing, because publicly abandoning a tool the organisation is
+      investing in carries social cost. The visible evidence skews positive.
+      Not conspiracy. Just the predictable result of asymmetric incentives
+      around disclosure.
+    </p>
+
+    <p>
+      The second is the absence of baseline measurement. Most engineering
+      organisations cannot tell you their current cycle time per feature,
+      their defect injection rate by author, or their total cost of rework.
+      Without these numbers, the claim "AI makes us more productive" is
+      unfalsifiable. It's not that the claim is false. There is simply no
+      apparatus to test it. And unfalsifiable claims, as Karl Popper spent a
+      career explaining, are not claims at all. They are articles of faith.
+    </p>
+
+    <p>
+      The third is what Cialdini would recognise as a cascade of social
+      proof. Once enough people in an organisation have publicly committed to
+      AI productivity, the uncommitted face pressure not from management but
+      from the apparent consensus of their peers. Cialdini's research on
+      social proof shows that people look to others' behaviour for guidance
+      on what is correct, particularly under uncertainty. AI adoption in most
+      engineering teams is nothing if not uncertain. The conditions for a
+      social proof cascade are close to ideal.
+    </p>
+
+    <hr>
+
+    <p>
+      Baldur Bjarnason, a software researcher whose <em>The Intelligence
+      Illusion</em> deserves wider reading in engineering leadership, recently
+      observed that LLM advocates are caught in Cialdini-style cognitive
+      traps and have lost sight of the distinction between personal
+      usefulness and organisational value. He identifies a taxonomy that most
+      engineering leaders have not thought about carefully: personal
+      usefulness, perceived productivity, project productivity, project ROI,
+      and overall business value.
+    </p>
+
+    <p>
+      An AI tool can score well on the first two and be a disaster on the
+      rest. A developer who generates code twice as fast but produces output
+      that takes three times as long to review has improved her own
+      experience at the expense of the team's throughput. She will not notice
+      this. She will report herself as more productive, because from where
+      she sits, she is. Her testimony is compromised not by dishonesty but by
+      the limits of her vantage point, reinforced by the commitment she has
+      already made.
+    </p>
+
+    <p>
+      Any quantitative researcher would recognise the problem. Subjective
+      experience is a poor proxy for system-level effects. We know this. We
+      have known it for decades. We simply keep forgetting it when the
+      technology is new and exciting enough.
+    </p>
+
+    <hr>
+
+    <p>
+      Lisanne Bainbridge's 1983 paper "Ironies of Automation" described a
+      version of this problem in a different context. As automated systems
+      handle more routine work, the human operators who remain become less
+      practiced at the skills they need when the automation fails. The system
+      degrades the competence of its own safety net.
+    </p>
+
+    <p>
+      The parallel to AI-assisted development is uncomfortable. If a
+      developer delegates the generative work and retains the review work,
+      she needs to be a better reviewer than before, not a worse one. But
+      review is cognitively expensive and, as anyone who has sat through a
+      code review will confirm, substantially less enjoyable than writing.
+      The commitment bias compounds: having publicly said the tool makes her
+      productive, she is now psychologically invested in approving its output
+      efficiently. Slowing down to scrutinise contradicts the narrative she
+      has committed to.
+    </p>
+
+    <p>
+      Daniel Kahneman's distinction between System 1 and System 2 thinking
+      is relevant here. AI-generated code that looks plausible activates
+      System 1: fast, pattern-matching, energy-conserving. Catching the
+      subtle errors that distinguish working code from almost-working code
+      requires System 2: slow, effortful, and exactly the kind of thinking
+      that commitment bias discourages. The reviewer who has told herself she
+      is more productive has a psychological incentive to stay in System 1.
+    </p>
+
+    <hr>
+
+    <p>
+      None of this means AI tools are useless. It means that self-reported
+      developer experience is a structurally unreliable input to an
+      engineering leader's decision. The witnesses are compromised, not by
+      malice but by the predictable operation of cognitive biases that
+      Cialdini, Munger, and Kahneman mapped out long before anyone had heard
+      of a large language model.
+    </p>
+
+    <p>
+      The engineering leader's job is to build measurement systems that do
+      not depend on testimony. Cycle time. Defect density. Time to review.
+      Rework rate. Cost per feature delivered. These are observable, and they
+      do not have opinions about whether the tools are working. If the
+      numbers improve after AI adoption, you have evidence. If they don't,
+      you have an expensive subscription and a team that believes it is more
+      productive than it is.
+    </p>
+
+    <p>
+      I have written before that trust, not capability, is the bottleneck
+      in AI-assisted engineering. The Cialdini problem is the human half of
+      that argument. You cannot trust the system if the only evidence you
+      have is the system's users telling you it works, because the act of
+      using it and publicly endorsing it compromises their ability to
+      evaluate it. None of this is new in engineering or in science. It's
+      the reason we have double-blind trials, independent audits, and
+      separation of duties. We did not invent these disciplines because
+      people are dishonest. We invented them because people are human.
+    </p>
+
+    <p>
+      The question for engineering leaders is straightforward: do you have
+      measurement systems that would tell you if AI adoption were making your
+      teams slower? If the answer is no, your current confidence is built on
+      Cialdini, not data.
+    </p>
+
+    <hr>
+
+    <h2>Sources and further reading</h2>
+
+    <p>
+      <strong>Robert Cialdini</strong>, <em>Influence: The Psychology of
+      Persuasion</em> (1984, revised 2021). The commitment and consistency
+      principle is Chapter 3. The social proof chapter is equally relevant to
+      understanding how AI adoption spreads through organisations.
+    </p>
+
+    <p>
+      <strong>Charlie Munger</strong>, "The Psychology of Human Misjudgment"
+      in <em>Poor Charlie's Almanack</em> (2005). Munger's treatment of
+      commitment and consistency tendency in institutional settings is the
+      best bridge between Cialdini's experimental psychology and the reality
+      of corporate decision-making.
+    </p>
+
+    <p>
+      <strong>Daniel Kahneman</strong>, <em>Thinking, Fast and Slow</em>
+      (2011). The System 1/System 2 framework explains why AI-generated
+      output that looks plausible is harder to evaluate critically than
+      output that looks obviously wrong.
+    </p>
+
+    <p>
+      <strong>Lisanne Bainbridge</strong>, "Ironies of Automation" (1983),
+      <em>Automatica</em>, 19(6), 775-779. The original paper on how
+      automation degrades the competence of the humans who oversee it. Still
+      the most concise statement of the problem.
+    </p>
+
+    <p>
+      <strong>Baldur Bjarnason</strong>, <em>The Intelligence Illusion</em>
+      (2023, second edition 2025). Bjarnason's taxonomy of usefulness levels
+      (personal, perceived, project, ROI, business value) is the sharpest
+      framework available for understanding why individual developer
+      testimony diverges from organisational outcomes.
+    </p>
+
+    <p>
+      <strong>Karl Popper</strong>, <em>The Logic of Scientific
+      Discovery</em> (1959). The falsifiability criterion. If you cannot
+      specify what evidence would disprove the claim that AI is making your
+      team more productive, you are not making an empirical claim.
+    </p>
+
+  </article>
+
+  <footer>
+    <a href="/writing/">← All writing</a> · <a href="/">Ivan Cronyn</a>
+  </footer>
+
+</body>
+</html>

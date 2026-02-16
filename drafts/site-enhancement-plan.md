@@ -131,45 +131,68 @@ Both you and Darrel Yawitch are South African. You grew up in Durban; he studied
 
 ### Conferences to target
 
-Research identified five tiers of conferences where your profile fits. Ordered by relevance:
+#### Immediate actions (CFPs open now, February 2026)
 
-**Tier 1 - Finance + AI (your home turf)**
-- **AI in Financial Services Conference 2026** (Arena International, London) - 500+ senior execs, 2 days. Your "trust, not capability" thesis is directly relevant. Likely CFP-based.
-- **RE:WORK AI in Finance Summit** (London) - Mix of academia and industry. Good for the Bainbridge angle.
-- **Quant Strats / Future Alpha 2026** (Alpha Events, London) - 600+ quants, PMs, data scientists. The quant-team-to-risk-to-solutions career arc would resonate here.
-- **FStech Future of AI in Financial Services 2026** (London) - Covers agentic AI deployment, model risk, infrastructure at scale. Strong fit for "observable, reversible, enforceable".
-- **Momentum AI London 2026** (Reuters Events, Canary Wharf) - Senior decision-makers, AI transformation in finance.
-- **AI World Congress 2026** (London, June) - Major brands, speakers from Anthropic, Microsoft, IBM.
+| Conference | Date | Location | CFP status | Best talk | Contact |
+|---|---|---|---|---|---|
+| **CogX London** | 4-5 Mar 2026 | London | Open speaker applications | "Trust, not capability" | cogxfestival.com/speaker-applications |
+| **FTT AI Transformation (summer)** | 25 Jun 2026 | etc.venues County Hall, London | Open call for speakers | "The suspicion tax" | fintechtalents.com/call-for-speakers/ |
+| **The AI Summit London** | 10-11 Jun 2026 | Tobacco Dock, London (4,500 attendees) | Rolling submissions | "Trust, not capability" | london.theaisummit.com/conference-speakers/submit-speaker/ |
+| **FTT AI Transformation (autumn)** | 9-10 Nov 2026 | The Brewery, London (2,000+ attendees) | Open call for speakers | "The suspicion tax" | fintechtalents.com/call-for-speakers/ |
+| **FCA Mills Review** | Ongoing to Sep 2026 | Written submission | Call for Input open | "Trust, not capability" (as written response) | fca.org.uk |
 
-**Tier 2 - Engineering leadership**
-- **LeadDev / LeadingEng** (London and New York) - The premier engineering leadership conference circuit. CFP-based. Strong fit for the "building engineers in the age of AI" talk. LeadDev London is your local event.
-- **ELC Conference 2026** (Prague, April) - Central Europe's leading event for engineering leaders. CTOs, VPs, directors. CFP-based.
-- **DevExec World** (co-located with DeveloperWeek) - CTO/director level. US-based but high visibility.
+#### High-value targets (contact organisers directly)
 
-**Tier 3 - AI in production**
-- **MLOps World / GenAI Summit** (Austin, October) - Production AI deployment focus. CFP-based. Topics include governance, model risk management, agents in production.
-- **Machine Learning Week Hybrid AI 2026** (San Francisco, May) - Vendor-neutral, enterprise practitioners only. CFP open. Evaluation favours specific deployment measurements.
-- **MLcon** (Berlin, November) - Practical MLOps and production deployment. European.
+| Conference | Date | Location | How to get in | Best talk |
+|---|---|---|---|---|
+| **QCon London** | 16-18 Mar 2026 | QEII Centre, London | Invite-based; submit via website form, email info@qconlondon.com. "AI Engineering" and "Tech of Finance" tracks are ideal. Having published essays is strong supporting material. | "Trust, not capability" or "Bainbridge's ironies" |
+| **FStech Future of AI in Financial Services** | 6 Oct 2026 | London Hilton Tower Bridge | Contact FStech. Covers "speed versus safety, autonomy versus control, innovation versus regulatory compliance" - your exact territory. | "Trust, not capability" (keynote potential) |
+| **RiskMinds International** | 16-19 Nov 2026 | InterContinental London - The O2 (1,200+ attendees, 330+ speakers) | Invite/sponsorship. Email james.roberts@informa.com. The "Cyber Risk, AI & Technology Resilience Summit" is the best entry point. Buy-side practitioners are valued. | "The suspicion tax" |
+| **LeadDev London (LDX3)** | 2-3 Jun 2026 | InterContinental London - The O2 (2,000+ attendees) | Main CFP closed (deadline was 4 Jan). Workshop proposals accepted rolling. Email hello@leaddev.com. | "Building engineers when AI writes the code" |
 
-**Tier 4 - Risk and governance**
-- **RiskMinds International** (typically Amsterdam/London) - The premier financial risk conference. CROs, heads of risk, risk technology leaders attend.
-- **OpRisk North America / Europe** - Operational risk focused. AI governance is a growing track.
-- **FCA/PRA industry events** - Regulators occasionally host practitioner roundtables on technology governance.
+#### Policy and governance venues (invitation-based, build relationships)
 
-**Tier 5 - Broader tech with relevant tracks**
-- **QCon London** - Software engineering conference with architecture and AI tracks. Practitioner-focused, high signal.
-- **Devoxx UK** (London) - Large developer conference with leadership tracks.
-- **NDC London** - .NET/general development conference. C# background is relevant here.
+| Venue | How to engage | Best talk |
+|---|---|---|
+| **Chatham House** | Build relationship with their Digital Society Programme team. The essays on AI governance in financial services are the kind of work that gets noticed. No public CFP. | "Trust, not capability" (governance frame) |
+| **RSA (Royal Society of Arts)** | Become an RSA Fellow. Fellows can propose events at RSA House. The RSA also commissions external speakers for its main programme. Salon-style discussions are their signature format. | "The suspicion tax" (societal implications) |
+| **Policy Exchange** | Contact technology/economic competitiveness team. Propose a policy-focused framing: "What government should understand about AI deployment in critical infrastructure." | "Trust, not capability" (policy frame) |
+| **BoE/FCA AI Consortium** | Email AIConsortium@bankofengland.co.uk. (Also listed under advisory pathways below - this is the highest-leverage single action.) | All topics |
 
-**Recommended format:** Your debating background makes panel discussions and fireside chats your strongest format. These are also the formats that conference organisers struggle most to fill with compelling participants - most speakers want to give prepared talks. Positioning yourself as available for panels on AI governance, engineering leadership, or AI in finance immediately differentiates you from the keynote-or-nothing crowd.
+#### 2027 pipeline (CFPs will open late 2026)
+
+| Conference | Typical dates | Notes |
+|---|---|---|
+| **LeadDev London** | June | CFP typically opens October, closes January. "Building engineers" is the natural submission. |
+| **Devoxx UK** | May (6-7 May 2026 at Business Design Centre, 1,200+ attendees) | CFP opens December, closes January. "Ten paradigm shifts" or "Building engineers" for the AI-augmented development track. |
+| **QCon London** | March | Write for InfoQ (QCon's parent publication) to build visibility with track hosts. |
+| **ELC Conference Prague** | April | Central Europe's leading event for engineering leaders. CTOs, VPs, directors. CFP-based. |
+
+#### Speaking formats: what your debating background gives you
+
+Research into speaking formats confirms your debating skills are a strategic asset:
+
+1. **Fireside chats** (your strongest format) - Rewards quick thinking, authenticity, the ability to go deeper on follow-up questions. A debater's ability to construct arguments in real time is the core skill. The informal feel lets personality and conviction come through more than a scripted talk.
+
+2. **Panels with opposing viewpoints** (your second strongest) - Small panels (3-4 people) with deliberately opposing viewpoints are where debating experience shines most visibly. Most panellists default to agreeable platitudes. A trained debater who commits to a position stands out. The ability to disagree precisely and respectfully, acknowledging the other side's strongest point before dismantling it, is rare on stage.
+
+3. **25-minute keynotes** (builds reputation fastest) - Debating experience translates to strong argument construction, pacing, and holding a room. The standard conference format (LeadDev, QCon). This is the format that builds a speaker's reputation most efficiently.
+
+4. **Audience Q&A** (natural advantage) - The ability to handle hostile or poorly framed questions, reframe them, and answer with precision. Volunteering for formats with substantial Q&A differentiates you from speakers who avoid unscripted interaction.
+
+**Avoid:** Large panels (5+ speakers, air time diluted), pre-recorded talks (removes your spontaneity advantage), lightning talks (too short to build an argument).
+
+**The ideal progression:** Panel participant (low risk, shows you can hold your own) then fireside chat (shows depth and personality) then solo keynote (establishes you as a standalone voice). The essays provide the intellectual foundation for all three.
 
 ### The speaking ladder
 
 1. **Start with your network.** The SAFFA Breakfast Indaba at Vivat Bacchus (bimonthly, London Bridge) features guest speakers. Low stakes, trust-based audience, SA diaspora network. A talk on AI in London finance, framed through the Durban-to-London arc.
 2. **Internal events at your firm.** If you present internally on AI deployment, that is speaking experience you can reference.
 3. **Meetups and user groups.** London has active Python, C#, and fintech meetup scenes. A 20-minute talk on Bainbridge's ironies would work at any of them.
-4. **Submit to CFPs.** LeadDev London, ELC Prague, and the Arena International AI in Financial Services conference are the highest-value targets for 2026.
-5. **Accept panel invitations.** Panels are lower-preparation than keynotes and let your debating skills shine. Say yes to every relevant one.
+4. **Submit to open CFPs now.** CogX (applications open), FTT AI Transformation (call for speakers open), The AI Summit London (rolling submissions). These are the three you can apply to today.
+5. **Respond to the FCA Mills Review.** A written submission on "trust, not capability" as it applies to retail financial services AI is the most direct route to FCA engagement. The Mills Review is actively seeking input through September 2026.
+6. **Contact organisers directly.** QCon London (info@qconlondon.com), RiskMinds (james.roberts@informa.com), FStech, LeadDev (hello@leaddev.com for workshop proposals).
+7. **Accept panel invitations.** Panels are lower-preparation than keynotes and let your debating skills shine. Say yes to every relevant one.
 
 ### Advisory and board pathways
 

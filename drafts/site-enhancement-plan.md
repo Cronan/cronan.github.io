@@ -173,32 +173,70 @@ Research identified five tiers of conferences where your profile fits. Ordered b
 
 ### Advisory and board pathways
 
-**The NED landscape for technology expertise:**
-- UK boards increasingly need technology NEDs, driven by FCA and PRA expectations around operational resilience, cyber risk, and AI governance.
-- The SM&CR regime means boards of regulated firms need directors who understand technology risk, not just business risk. Your essays on "observable, reversible, enforceable" and trust infrastructure are directly relevant to this.
-- Fintech firms, wealth managers, and smaller asset managers are the most accessible board seats. Large listed companies typically recruit NEDs through headhunters (Odgers Berndtson, Spencer Stuart, Heidrick & Struggles).
+#### The closest precedent: Sandy Rattray
 
-**Comparable transitions:**
-- Joseph Schull (Warburg Pincus, technology focus) became NED at multiple public companies.
-- Elena Sherr (Citibank, Goldman Sachs) moved from investment banking advisory to NED roles through governance expertise developed advising boards.
-- Sandy Rattray (ex-Man Group CIO) now sits on the MSCI board as a non-executive director - the clearest precedent from within your firm's orbit.
+Rattray is the most instructive example from your own firm's orbit. His trajectory:
+- Joined Man Group via GLG Partners (2007). CIO of Man Systematic Strategies, CEO of Man AHL, then CIO of Man Group plc (2017-2021).
+- Appointed NED on the MSCI Inc. board in **February 2020 - while still serving as Man Group CIO**. He did not wait until retirement.
+- Post-retirement: Senior Advisor at Capula Investment Management, Governor of the Southbank Centre, Governor of the King's Maths School, completed an MA in Architectural History at the Bartlett.
+- His board appointment was built on: intellectual contribution (co-inventor of the VIX, published research, Bernstein Fabozzi/Jacobs Levy awards), investment seniority (CIO of a public company), and governance experience (FTSE/Russell index committees).
 
-**Think tanks and advisory bodies to approach:**
-- **Alan Turing Institute** - Has practitioner advisory panels on AI in industry. Your "trust, not capability" thesis aligns with their responsible AI work.
-- **AI Safety Institute (AISI)** - UK government body. Recruits practitioner advisors on AI deployment in regulated industries.
-- **DSIT (Department for Science, Innovation and Technology)** - Runs consultations and expert panels on AI governance. Practitioners from regulated industries are valued.
-- **Bank of England / FCA** - Both run roundtables and working groups on AI in financial services. The BoE's "Machine Learning in UK Financial Services" report draws on practitioner input.
-- **Oxford-Man Institute** - Man Group's academic partnership with Oxford. Already in your firm's ecosystem.
+The structural pattern is transferable: build visible intellectual contribution (the writing portfolio), accumulate governance experience (advisory panels, charity boards), and let the NED appointment arrive as a natural consequence rather than a cold application.
 
-**Professional bodies:**
-- **BCS (British Computer Society)** - Fellowship (FBCS) is available for senior practitioners. Signals professional standing.
-- **IET (Institution of Engineering and Technology)** - Fellowship (FIET) for chartered engineers. Carries weight on board CVs.
-- **Royal Academy of Engineering** - Fellowship is elected and prestigious. Longer-term goal.
+#### The market is moving your way
 
-**Credentials that help:**
-- **IoD Certificate in Company Direction** - The standard board-readiness qualification in the UK. Signals you are serious about governance, not just technology.
-- **FT Board Director Programme** - High-profile, signals intent.
-- **Chatham House membership** - Networking rather than credential, but valuable for the advisory network.
+EY's Global Financial Services Boardroom Monitor found that the number of NEDs appointed with technology expertise in UK financial services increased by **66% between 2020 and 2024**. Demand is real. Recent named appointments:
+- Stephane Malrait - appointed to the FCA Board (October 2025). Former MD and Global Head of Market Structure & Innovation at ING Bank.
+- James Bilefield - NED at FCDO (April 2024) with digital expertise.
+- Richard Harvey - FSCS Board (March 2025). Led analytics and digital transformation at HSBC.
+
+#### Highest-leverage actions (do first)
+
+**1. BoE/FCA AI Consortium** - email AIConsortium@bankofengland.co.uk
+This is the single most relevant body. Launched May 2025, co-chaired by BoE Deputy Governor Sarah Breeden and FCA's David Geale. 26 members from financial services, tech companies, fintechs, and universities. They meet quarterly. Workshop groups cover new risk categories from AI, responsible adoption, explainability, and systemic risk from AI-driven automation. Your combination of hands-on AI implementation + governance thinking + writing portfolio is exactly what they need. Members can invite subject-matter experts from their organisations to workshops.
+
+**2. Nurole registration** - free, immediate
+The leading online platform for board-level recruitment in the UK. 60,000 board-ready members, 800+ roles per year. Financial services board recruitment is a dedicated practice. Sign up, receive matched NED opportunities by email, apply against specific competency requirements. Nurole Plus (paid) adds CV review, elevator pitch sessions, and 1:1 guidance from headhunters.
+
+**3. BCS Fellowship (FBCS)** - £210-560, ~16-20 weeks
+Straightforward application. Requires 5+ years in IT (you have 27), evidence of professional achievements, impact, and recognition. Written review route: £210, 16+ weeks. Interview route: £560, 2-4 weeks for result. Annual subscription: £240. The post-nominals signal professional standing to nominating committees who may not have technology backgrounds themselves.
+
+#### High value, moderate effort
+
+**4. IoD Certificate in Company Direction** - the recognised NED qualification
+The benchmark for director competence in the UK. Four modules covering governance, finance, strategy, and leadership. Three routes:
+- **Accelerated residential** (5.5 days): £10,695 (IoD member) / £13,895 (non-member). Locations include 116 Pall Mall.
+- **Modular** (10 days over months): ~£13,600 total.
+- **Global** (University of St Andrews residential): premium pricing.
+Exams: four 45-minute papers, £600 for all four. Leads to Cert IoD post-nominals. Further study leads to Chartered Director status. For someone with 27 years of experience, this is less about learning new things and more about demonstrating due diligence and signalling board-readiness.
+
+**5. Alan Turing Institute - Finance & Economics Programme**
+Their ML in Finance sub-programme brings together researchers, practitioners, and regulators. They run workshops (Explainability in Finance, AIML in Finance) open to industry practitioners, and collaborate with the FCA Emerging Technology Research Hub. The Practitioners Hub has an advisory network accepting applications. The natural entry point: attend workshops, contribute to discussions, become known to the programme team.
+
+**6. IET Fellowship (FIET)** - £188, ~20 weeks
+Evidence against 2-3 of nine criteria (Creativity, Insight & Experience, Leadership, Enterprise, Innovation, etc.). Maximum 500 words per criterion. Two supporters needed (one must be a Fellow). Combined with FBCS, creates a strong credential set for technology governance positioning.
+
+#### Worth doing, lower urgency
+
+**7. FCA Practitioner Panel** - watch for vacancies at fca.org.uk/about/how-we-operate/who-work-with/statutory-panels. Appointed by the FCA Board. Recruited through open competition. Members serve in individual capacity, not representing their firms.
+
+**8. FT Non-Executive Director Diploma** - ~£7,000, 6 months
+Level 7 postgraduate qualification (Pearson-accredited). Includes workshops, networking, premium FT.com access, a "How to Get Your First NED Role" workshop, and specialist CV consultancy. Alumni network at ftnedalumni.com. Alternative to IoD if the practical NED-landing focus is more appealing.
+
+**9. NEDonBoard membership** - for the daily NED job board and networking events. Not-for-profit, approved professional organisation (membership fees are tax-deductible). NED Accelerator Programme available at £750-£1,650.
+
+**10. Henley Board Directors' Programme** - £2,195-2,805
+Shorter, cheaper than IoD. Taught by Professor Andrew Kakabadse (world's largest database of board research, 37 countries). Live-online (6 weeks of 90-minute workshops) or 2-day residential at Henley's Greenlands campus. Good governance knowledge, less formal credential weight than IoD.
+
+#### Recruitment firms for NED roles
+
+- **Odgers Berndtson** - global Board Group. Financial Services and Board Advisory practices. Technology and AI is a stated focus area.
+- **Spencer Stuart** - publishes the annual UK Board Index. Dedicated Board and CEO practice plus Technology, Media & Telecommunications practice.
+- **NED Capital** - London boutique specialising exclusively in NED placements for financial services.
+
+#### Fund directorships as a stepping stone
+
+The Hedge Fund Journal's "A Seat on the Board" covers independent directorships of offshore hedge funds (Cayman, etc.). Fund boards specifically need people who understand investment strategies, risk parameters, and fund governance. This is a different pathway from corporate NED roles but more accessible for hedge fund professionals. Fund directorships build governance experience and a track record before pursuing corporate boards.
 
 ---
 
@@ -252,4 +290,4 @@ That is the line that makes conference organisers pause, board recruiters take a
 - **Dr Darrel Yawitch** - CRO of Man Solutions, Man AHL, Man GLG. PhD Theoretical Physics (King's College London). BSc Hons (Wits, Johannesburg). Fellow of the Faculty of Actuaries. Previously 10+ years at Investec Bank. Co-authored "Drawdowns" in the Journal of Portfolio Management. South African.
 - **Dr Nicholas Clarke** - Managing Director, Head of Portfolio Management Tech at Man AHL. PhD Computational and Applied Mathematics (Southampton). Previously GLG Partners.
 - **Gary Collier** - CTO of Man Group since 2001. Member of Executive Committee. Oversees ~230 engineers and data scientists across Alpha Technology and Platform Engineering.
-- **Sandy Rattray** - Former CIO of Man Group (retired). Now NED on MSCI board. Previously Goldman Sachs, then headed systematic strategies at GLG. Co-authored *Strategic Risk Management* (Wiley).
+- **Sandy Rattray** - Former CIO of Man Group (retired 2021). NED on MSCI board since February 2020 (appointed while still CIO). Senior Advisor at Capula Investment Management. Governor of the Southbank Centre and King's Maths School. Co-inventor of the VIX index. Co-authored *Strategic Risk Management* (Wiley). Two-time Bernstein Fabozzi/Jacobs Levy Award winner. Previously Goldman Sachs (15 years), then headed systematic strategies at GLG.

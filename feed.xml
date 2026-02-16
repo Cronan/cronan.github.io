@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ivan Cronyn</title>
+    <link>https://cronyn.co.uk/</link>
+    <description>Essays on AI deployment, engineering leadership, and financial technology.</description>
+    <language>en-gb</language>
+    <atom:link href="https://cronyn.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Compromised Witnesses</title>
+      <link>https://cronyn.co.uk/writing/compromised-witnesses.html</link>
+      <guid>https://cronyn.co.uk/writing/compromised-witnesses.html</guid>
+      <pubDate>Sat, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Self-reported developer productivity with AI tools is structurally unreliable. The witnesses are compromised by the same cognitive biases Cialdini mapped decades ago.</description>
+    </item>
+    <item>
+      <title>Observable, reversible, enforceable: three requirements for AI in production</title>
+      <link>https://cronyn.co.uk/writing/observable-reversible-enforceable.html</link>
+      <guid>https://cronyn.co.uk/writing/observable-reversible-enforceable.html</guid>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <description>Three requirements for AI in production. Before asking whether AI can do something, ask whether your system can absorb the mistakes.</description>
+    </item>
+    <item>
+      <title>The Suspicion Tax</title>
+      <link>https://cronyn.co.uk/writing/the-suspicion-tax.html</link>
+      <guid>https://cronyn.co.uk/writing/the-suspicion-tax.html</guid>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
+      <description>What AI content actually costs - and why trust, not filtering, is the design problem.</description>
+    </item>
+    <item>
+      <title>Bainbridge's Ironies of Automation, forty years on</title>
+      <link>https://cronyn.co.uk/writing/ironies-of-automation.html</link>
+      <guid>https://cronyn.co.uk/writing/ironies-of-automation.html</guid>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <description>Lisanne Bainbridge's 1983 paper on the ironies of automation maps precisely onto how we're integrating AI into modern software systems.</description>
+    </item>
+    <item>
+      <title>Trust, not capability: the real bottleneck in AI-assisted engineering</title>
+      <link>https://cronyn.co.uk/writing/trust-not-capability.html</link>
+      <guid>https://cronyn.co.uk/writing/trust-not-capability.html</guid>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+      <description>The models are good enough. The bottleneck is trust - and trust is built from infrastructure, not adoption speed.</description>
+    </item>
+    <item>
+      <title>Building engineers in the age of AI</title>
+      <link>https://cronyn.co.uk/writing/ai-as-junior-engineer.html</link>
+      <guid>https://cronyn.co.uk/writing/ai-as-junior-engineer.html</guid>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <description>AI changes what junior work looks like. If we're not careful, we'll optimise for today's velocity and break tomorrow's capability.</description>
+    </item>
+  </channel>
+</rss>

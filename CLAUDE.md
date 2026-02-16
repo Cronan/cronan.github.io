@@ -15,6 +15,7 @@ cronan.github.io/
 ├── CNAME                       # cronyn.co.uk
 ├── writing/
 │   ├── index.html              # Essay listing
+│   ├── compromised-witnesses.html
 │   ├── observable-reversible-enforceable.html
 │   ├── the-suspicion-tax.html
 │   ├── ironies-of-automation.html

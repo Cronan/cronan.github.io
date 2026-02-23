@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page {
+    size: 1080px 1080px;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Bitstream Charter', 'Charter', 'Georgia', 'DejaVu Serif', serif;
+    color: #e0e0e0;
+    background: #111;
+    font-size: 32px;
+    line-height: 1.55;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1080px;
+    padding: 100px 100px 80px;
+    page-break-after: always;
+    page-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #111;
+    position: relative;
+  }
+
+  .slide:last-child {
+    page-break-after: avoid;
+  }
+
+  /* Accent bar at the top of every slide */
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: #c44;
+  }
+
+  /* Slide number */
+  .slide-num {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 20px;
+    color: #555;
+  }
+
+  h1 {
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-weight: 600;
+    font-size: 52px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: #999;
+    margin-bottom: 32px;
+  }
+
+  p {
+    margin-bottom: 28px;
+  }
+
+  .accent {
+    color: #c44;
+  }
+
+  .dim {
+    color: #999;
+  }
+
+  .bright {
+    color: #fff;
+  }
+
+  strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 28px;
+  }
+
+  ul li {
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 10px;
+    height: 2px;
+    background: #c44;
+  }
+
+  .byline {
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 22px;
+    color: #999;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  .stat {
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 72px;
+    font-weight: 600;
+    color: #c44;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    color: #c44;
+    border: 1px solid #333;
+    padding: 6px 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .url {
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 26px;
+    color: #c44;
+    word-break: break-all;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #333;
+    margin: 32px 0;
+  }
+
+  .quote-mark {
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 120px;
+    color: #333;
+    line-height: 0.6;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .footer-line {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    font-family: 'DejaVu Sans Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title / Hook -->
+<div class="slide">
+  <h1>Your AI-assisted writing sounds like everyone else's</h1>
+  <div class="divider"></div>
+  <p>
+    Not because AI cannot write.<br>
+    Because its fluency is <strong>generic</strong>.
+  </p>
+  <p class="dim" style="font-size: 28px;">
+    Most likely next token, by definition, means least individual.
+  </p>
+  <div class="byline">
+    Ivan Cronyn<br>
+    February 2026
+  </div>
+  <span class="slide-num">1 / 10</span>
+</div>
+
+<!-- SLIDE 2: Semantic ablation -->
+<div class="slide">
+  <h2>Semantic ablation</h2>
+  <p>
+    Not hallucination, where the model invents what is not there.
+  </p>
+  <p>
+    <strong>The opposite.</strong>
+  </p>
+  <p>
+    The model destroying what <em>is</em> there. Your phrasing,
+    your rhythm, your willingness to leave something unresolved.
+    Smoothed into the same three-paragraph shape with the same
+    measured confidence about everything.
+  </p>
+  <p class="dim" style="font-size: 24px; margin-top: 24px;">
+    Term coined by The Register, February 2026
+  </p>
+  <span class="slide-num">2 / 10</span>
+</div>
+
+<!-- SLIDE 3: Wrong fight -->
+<div class="slide">
+  <h2>The wrong fight</h2>
+  <p>
+    <strong>Detectors</strong> try to catch AI text.<br>
+    <strong>Humanisers</strong> try to evade those detectors.
+  </p>
+  <div class="divider"></div>
+  <p>
+    This is an arms race about the <strong>signal</strong>,
+    not the substance.
+  </p>
+  <p>
+    A humaniser that swaps "delve" for "explore" to fool a
+    classifier has not fixed the writing. It has <strong>laundered</strong> it.
+  </p>
+  <span class="slide-num">3 / 10</span>
+</div>
+
+<!-- SLIDE 4: The real question -->
+<div class="slide">
+  <p style="margin-bottom: 48px;">
+    <span class="quote-mark">"</span>
+  </p>
+  <h1 style="font-size: 44px;">Is the text worse than what you would have written yourself?</h1>
+  <div class="divider"></div>
+  <p class="dim">
+    The question is not whether you used help.
+    It is whether the result sounds like you thought it.
+  </p>
+  <span class="slide-num">4 / 10</span>
+</div>
+
+<!-- SLIDE 5: Structural patterns -->
+<div class="slide">
+  <h2>Structural patterns</h2>
+  <p class="dim" style="font-size: 26px; margin-bottom: 36px;">
+    The patterns that do the most damage are about shape, not vocabulary.
+  </p>
+  <ul>
+    <li><strong>Sentence length uniformity</strong> - everything clusters
+    around 15-25 words. Metronomic.</li>
+    <li><strong>Paragraph length uniformity</strong> - every paragraph
+    the same height. Three to five sentences, tiling like bricks.</li>
+    <li><strong>Epistemic uniformity</strong> - flat certainty on every
+    claim. No hedging, no doubt, no being wrong.</li>
+    <li><strong>Register lock</strong> - one tone from start to finish.
+    No drift, no slang, no tightening when the stakes rise.</li>
+  </ul>
+  <span class="slide-num">5 / 10</span>
+</div>
+
+<!-- SLIDE 6: Vocabulary tells -->
+<div class="slide">
+  <h2>The vocabulary tells</h2>
+  <p>
+    <span class="stat">25x</span>
+    increase in "delves" in academic papers, 2022 to 2024.
+  </p>
+  <div class="divider"></div>
+  <ul>
+    <li>"Serves as," "functions as," "stands as" where
+    <strong>"is"</strong> would do</li>
+    <li>Everything is pivotal, crucial, <em>transformative</em>.
+    If everything is significant, nothing is.</li>
+    <li>Clean because/therefore chains where reality is messy.
+    Humans say "and then" when the cause is unclear.</li>
+  </ul>
+  <span class="slide-num">6 / 10</span>
+</div>
+
+<!-- SLIDE 7: What's missing -->
+<div class="slide">
+  <h2>What the model removes</h2>
+  <p>
+    Strip the patterns and you are still only halfway.
+  </p>
+  <div class="divider"></div>
+  <ul>
+    <li><strong>Emotional reaction.</strong> It describes a production
+    outage in the same tone it uses for a product launch.</li>
+    <li><strong>Opinion.</strong> Every side presented with equal weight.
+    Human writers lean somewhere. Even cautious ones.</li>
+    <li><strong>Specific detail.</strong> "A team I worked with" versus
+    "the four of us at the tail end of that November sprint."</li>
+    <li><strong>Time.</strong> Everything in vague present tense.
+    No anchoring, no "I remember the week before launch."</li>
+  </ul>
+  <span class="slide-num">7 / 10</span>
+</div>
+
+<!-- SLIDE 8: Editing, not evasion -->
+<div class="slide">
+  <h2>Editing, not evasion</h2>
+  <p>
+    The alternative to both detection and evasion is
+    <strong>editing</strong>. Not "make this text pass a classifier"
+    but "make this text better."
+  </p>
+  <div class="divider"></div>
+  <p class="dim" style="font-size: 28px;">
+    Strip structural tells first. Then vocabulary. Then add back
+    what the model removed: opinion, reaction, specific detail,
+    temporal anchoring.
+  </p>
+  <p class="dim" style="font-size: 28px;">
+    A piece with zero rough edges is itself suspicious.
+  </p>
+  <span class="slide-num">8 / 10</span>
+</div>
+
+<!-- SLIDE 9: The repo -->
+<div class="slide">
+  <h2>Open source</h2>
+  <p>
+    I built a Claude Code skill that works through these patterns
+    in severity order. 25 patterns, ranked by detection severity,
+    with before/after examples.
+  </p>
+  <div class="divider"></div>
+  <p style="margin-bottom: 12px;">
+    <span class="url">github.com/Cronan/<br>claude-code-prompts</span>
+  </p>
+  <p class="dim" style="font-size: 24px; margin-top: 32px;">
+    Works as a Claude Code skill. Drop it into any repo.
+  </p>
+  <span class="slide-num">9 / 10</span>
+</div>
+
+<!-- SLIDE 10: Close -->
+<div class="slide">
+  <p class="dim" style="font-size: 26px; margin-bottom: 36px;">
+    The surface tells will fade as models improve. The deeper patterns will persist.
+  </p>
+  <h1 style="font-size: 40px; margin-bottom: 48px;">
+    Epistemic uniformity. Register lock. The absence of someone
+    who was actually there. These are not bugs. They are the natural
+    output of a system optimised to predict the most likely next token.
+  </h1>
+  <div class="divider"></div>
+  <p class="byline" style="font-size: 24px;">
+    Full essay<br>
+    <span class="url" style="font-size: 24px;">cronyn.co.uk/writing</span>
+  </p>
+  <p class="byline" style="font-size: 24px; margin-top: 16px;">
+    Repo<br>
+    <span class="url" style="font-size: 24px;">github.com/Cronan/claude-code-prompts</span>
+  </p>
+  <span class="slide-num">10 / 10</span>
+</div>
+
+</body>
+</html>

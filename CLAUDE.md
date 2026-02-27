@@ -42,9 +42,9 @@ GitHub Pages, plain HTML + CSS. No framework, no JavaScript, no build step, no t
 
 ## Development workflow
 
-Edit HTML directly. Commit and push to `master`. GitHub Pages deploys automatically.
+Edit HTML directly. Commit and push to `master`. GitHub Pages deploys automatically. To preview locally, open `index.html` in a browser.
 
-To preview locally, open `index.html` in a browser.
+There is no build step, no test suite, and no CI. Validation is visual: open the page in a browser and check it looks right.
 
 ## Conventions
 

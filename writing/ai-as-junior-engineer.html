@@ -20,6 +20,7 @@
   <meta name="twitter:title" content="Building engineers in the age of AI - Ivan Cronyn">
   <meta name="twitter:description" content="AI changes what junior work looks like. If we're not careful, we'll optimise for today's velocity and break tomorrow's capability.">
   <meta name="twitter:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="/styles.css?v=3">
   <script type="application/ld+json">
   {
@@ -218,6 +219,19 @@
     <p><a href="/about/">Ivan Cronyn</a> is Principal Engineer and Head of Solutions Technology at Man Group in London.</p>
     <a href="/writing/">← All writing</a> · <a href="/">Home</a>
   </footer>
+
+  <script>
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('article > p, article > h2, article > h3, article > blockquote, article > ul, article > ol');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
 
 </body>
 </html>

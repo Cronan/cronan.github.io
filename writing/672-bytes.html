@@ -153,8 +153,8 @@ TOTAL             672    Every byte accounted for</code></pre>
       are empty, check that the king doesn't pass through check. Forty bytes
       is more than the entire game loop. En passant needs a flag tracking
       whether the last move was a two-square pawn advance, plus the capture
-      logic itself. Thirty bytes. The same as the combined lookup tables for
-      piece characters, material values, and direction vectors. These weren't
+      logic itself. Thirty bytes, nearly the weight of the combined lookup
+      tables for piece characters, material values, and direction vectors. These weren't
       features I couldn't implement. They were features the budget couldn't
       carry.
     </p>

@@ -65,39 +65,20 @@
 
     <p>
       This is a chess engine for the Sinclair ZX81. 1K of RAM. A Z80A
-      processor at 3.25 MHz. The whole thing hides inside a BASIC comment:
+      processor at 3.25 MHz. The whole program is two lines of BASIC:
     </p>
 
     <pre><code>1 REM ... (672 bytes of machine code)
 2 RAND USR 16514</code></pre>
 
     <p>
-      The BASIC interpreter skips everything after REM. The Z80 doesn't
-      know what REM is. <code>RAND USR 16514</code> jumps into those
-      bytes as executable code. The 64-byte chess board lives inside the
-      REM statement itself, doing double duty as board data and machine
-      code area. In 1K, nothing serves a single purpose.
-    </p>
-
-    <pre><code>Component        Bytes   What it does
-------------------------------------------------------
-Board Data         64    The 8x8 board (1 byte/square)
-Variables           7    Cursor, move coords, best move
-Lookup Tables      38    Piece chars, values, directions
-------------------------------------------------------
-Display            85    Draw board to screen
-Input              90    Read player moves from keyboard
-Move Logic        100    Execute moves, pawn promotion
-AI Engine         250    Generate moves, evaluate, choose
-Game Loop          38    Main loop, win/lose detection
-------------------------------------------------------
-TOTAL             672    Every byte accounted for</code></pre>
-
-    <p>
-      The AI engine alone, scanning pieces, generating moves, evaluating
-      captures, picking the best, consumes 250 bytes. That's 37% of the
-      program doing one thing: deciding what to play next. Display and
-      input together take another 26%. Everything else fits in 247 bytes.
+      <code>RAND USR 16514</code> jumps into the REM statement and
+      executes it as Z80 machine code. The chess board, the move logic,
+      the display routine, the computer's thinking engine, all of it
+      packed into what the BASIC interpreter treats as a comment. The
+      board itself is 64 bytes inside that REM, doing double duty as
+      data and executable address space. In 1K, nothing serves a single
+      purpose.
     </p>
 
     <hr>

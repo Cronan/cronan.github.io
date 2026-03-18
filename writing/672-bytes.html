@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>672 bytes - Ivan Cronyn</title>
+  <meta name="description" content="A chess engine in 672 bytes of Z80 machine code. What constraint-driven design on a ZX81 teaches about building systems that absorb failure cheaply.">
+  <link rel="canonical" href="https://cronyn.co.uk/writing/672-bytes.html">
+  <link rel="alternate" type="application/rss+xml" title="Ivan Cronyn" href="https://cronyn.co.uk/feed.xml">
+  <meta property="og:title" content="672 bytes - Ivan Cronyn">
+  <meta property="og:description" content="A chess engine in 672 bytes of Z80 machine code. What constraint-driven design on a ZX81 teaches about building systems that absorb failure cheaply.">
+  <meta property="og:url" content="https://cronyn.co.uk/writing/672-bytes.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <meta property="og:site_name" content="Ivan Cronyn">
+  <meta property="article:published_time" content="2026-03-01">
+  <meta property="article:author" content="https://cronyn.co.uk/about/">
+  <meta property="article:section" content="Engineering">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="672 bytes - Ivan Cronyn">
+  <meta name="twitter:description" content="A chess engine in 672 bytes of Z80 machine code. What constraint-driven design on a ZX81 teaches about building systems that absorb failure cheaply.">
+  <meta name="twitter:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="/styles.css?v=3">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "672 bytes",
+    "author": {"@type": "Person", "name": "Ivan Cronyn", "url": "https://cronyn.co.uk/"},
+    "publisher": {"@type": "Person", "name": "Ivan Cronyn", "url": "https://cronyn.co.uk/"},
+    "datePublished": "2026-03-01",
+    "url": "https://cronyn.co.uk/writing/672-bytes.html",
+    "description": "A chess engine in 672 bytes of Z80 machine code. What constraint-driven design on a ZX81 teaches about building systems that absorb failure cheaply.",
+    "keywords": ["ZX81", "constraint-driven design", "Z80 machine code", "chess engine", "AI deployment", "engineering judgment"],
+    "isPartOf": {"@type": "Blog", "name": "Writing", "url": "https://cronyn.co.uk/writing/"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/writing/" class="active">Writing</a>
+    <a href="/reading/">Reading</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/about/">About</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>672 bytes</h1>
+      <p class="date">March 2026</p>
+    </header>
+
+    <hr>
+
+    <p>
+      Castling costs 40 bytes. En passant, another 30. Check detection,
+      properly done, knowing whether the king is under attack and filtering
+      moves to only those that resolve it, at least 80. The entire program
+      is 672 bytes of Z80 machine code. At that budget you don't decide
+      what to build. You decide what to cut.
+    </p>
+
+    <p>
+      This is a chess engine for the Sinclair ZX81. 1K of RAM. A Z80A
+      processor at 3.25 MHz. The whole thing hides inside a BASIC comment:
+    </p>
+
+    <pre><code>1 REM ... (672 bytes of machine code)
+2 RAND USR 16514</code></pre>
+
+    <p>
+      The BASIC interpreter skips everything after REM. The Z80 doesn't
+      know what REM is. <code>RAND USR 16514</code> jumps into those
+      bytes as executable code. The 64-byte chess board lives inside the
+      REM statement itself, doing double duty as board data and machine
+      code area. In 1K, nothing serves a single purpose.
+    </p>
+
+    <pre><code>Component        Bytes   What it does
+------------------------------------------------------
+Board Data         64    The 8x8 board (1 byte/square)
+Variables           7    Cursor, move coords, best move
+Lookup Tables      38    Piece chars, values, directions
+------------------------------------------------------
+Display            85    Draw board to screen
+Input              90    Read player moves from keyboard
+Move Logic        100    Execute moves, pawn promotion
+AI Engine         250    Generate moves, evaluate, choose
+Game Loop          38    Main loop, win/lose detection
+------------------------------------------------------
+TOTAL             672    Every byte accounted for</code></pre>
+
+    <p>
+      The AI engine alone, scanning pieces, generating moves, evaluating
+      captures, picking the best, consumes 250 bytes. That's 37% of the
+      program doing one thing: deciding what to play next. Display and
+      input together take another 26%. Everything else, the board, the
+      variables, the lookup tables, move execution, pawn promotion, the
+      main game loop, fits in 247 bytes.
+    </p>
+
+    <hr>
+
+    <p>
+      I wrote this in Durban, South Africa, between 1982 and 1983.
+      Twelve when I started. Fourteen when it worked. No assembler. No
+      compiler. Nothing that would run in 1K, and nothing I could have
+      afforded anyway. The process was: write Z80 mnemonics in an exercise
+      book, look up each opcode in the back of Rodnay Zaks'
+      <em>Programming the Z80</em> (624 pages, third revised edition, a
+      Christmas present from my dad alongside the ZX81 itself), write down
+      the hex bytes, calculate jump offsets by hand, then POKE each byte
+      into the machine from the keyboard. One wrong byte and the screen
+      filled with garbage. Back to the K cursor. Anything not saved to
+      tape, gone.
+    </p>
+
+    <p>
+      No school computer club. No friends with ZX81s. Durban in 1982, not
+      exactly a hub. Just the machine, the Zaks book, and whatever copies
+      of <em>Sinclair User</em> made it to South Africa by sea mail.
+    </p>
+
+    <p>
+      The exercise book had memory budgets scribbled in the margins. Small
+      ledgers in pencil: bytes spent, bytes remaining, what gets cut if the
+      AI engine needs another ten. I filled pages with board representations,
+      bit patterns for pieces (bits 0-2 for piece type, bit 3 for colour),
+      direction offset tables. I didn't know the phrase "constraint-driven
+      design." I thought this was just what you did when there wasn't enough
+      room.
+    </p>
+
+    <hr>
+
+    <h2>What 672 bytes can't afford</h2>
+
+    <p>
+      Castling is 40 bytes of special-case move logic: check that neither
+      the king nor the rook has moved, check that the squares between them
+      are empty, check that the king doesn't pass through check. Forty bytes
+      is more than the entire game loop. En passant needs a flag tracking
+      whether the last move was a two-square pawn advance, plus the capture
+      logic itself. Thirty bytes. The same as the combined lookup tables for
+      piece characters, material values, and direction vectors. These weren't
+      features I couldn't implement. They were features the budget couldn't
+      carry.
+    </p>
+
+    <p>
+      Check detection is the cut that matters to this argument. Full
+      implementation means generating all opponent moves to see if any
+      attack the king, then filtering the current player's legal moves to
+      only those that resolve the threat. At least 80 bytes. Probably more.
+      That's 12% of the program for something that doesn't improve the
+      quality of most moves played.
+    </p>
+
+    <p>
+      The alternative: don't detect check at all. Let the king be captured
+      like any other piece. Move into check and the computer takes your king
+      next turn. The computer moves into check and you take its king. The
+      game doesn't distinguish between checkmate and a blunder.
+    </p>
+
+    <p>
+      It doesn't need to. The king is gone either way.
+    </p>
+
+    <p>
+      The system can't afford to prevent illegal states, so instead it
+      absorbs the consequences of those states cheaply. A captured king
+      ends the game, same as checkmate. The failure mode exists. The failure
+      is contained. Eighty bytes freed up for things that affect every move,
+      not just the positions where check matters.
+    </p>
+
+    <h2>One loop, three pieces</h2>
+
+    <p>
+      Bishop, Rook and Queen all move in straight lines, just different
+      ones. Bishops go diagonally. Rooks go orthogonally. Queens go both.
+      Separate move-generation routines for each piece would need maybe 90
+      bytes. One shared loop with a bitmask controlling which directions
+      are active needs 60.
+    </p>
+
+    <p>
+      Bishop: <code>$A5</code>, diagonals only. Rook: <code>$5A</code>,
+      orthogonal only. Queen: <code>$FF</code>, all eight directions.
+      One loop. Three piece types. Thirty bytes saved, 4.5% of the total
+      program.
+    </p>
+
+    <p>
+      The trick came to me on the bus home from school. I'd been stuck for
+      days on how the AI engine could generate moves for three different
+      sliding pieces within its 250-byte budget. Separate routines wouldn't
+      fit. On the bus, staring out the window somewhere between Durban
+      North and Glenwood, the bitmask idea clicked. Each bit in a byte maps
+      to a direction. Set the bits you want, mask out the ones you don't.
+      One loop handles everything. I remember the moment because I nearly
+      shouted on the bus.
+    </p>
+
+    <p>
+      Pawn promotion is twelve bytes. Pawn reaches the far rank, becomes
+      a Queen. No choice of piece. In grandmaster play, underpromotion to
+      a knight occasionally matters. In a 1-ply engine with no check
+      detection and no look-ahead, it doesn't. Twelve bytes for the thing
+      that almost always happens. Zero for the thing that almost never
+      does.
+    </p>
+
+    <p>
+      The AI scans all 64 squares for Black pieces, generates moves from
+      direction tables, scores captures by the value of the piece taken,
+      and plays the highest-scoring move. No look-ahead. A slight queenside
+      bias because it scans a-h and keeps the first equally-scored move it
+      finds. It will take your queen before your pawn, but it can't see
+      your reply.
+    </p>
+
+    <hr>
+
+    <p>
+      Board display came first. Weeks of work. Had the ranks upside down
+      for an embarrassing period. Player input next. The thinking routine
+      was the mountain: 250 bytes of move generation and evaluation,
+      debugged one POKE at a time.
+    </p>
+
+    <p>
+      When it finally worked I saved to tape twice, on different cassettes,
+      before running it. Board appeared. I played e2-e4. Two seconds of
+      thought. d7-d5. The Scandinavian Defence, which lets the queen
+      recapture if the pawn is taken. Not sophisticated. Not random either.
+    </p>
+
+    <p>
+      My dad played it that evening. He didn't really understand what he was
+      looking at: inverse video characters on a wobbly TV, channel 36.
+      When the computer took his bishop, he said "It's actually quite good,
+      isn't it?" He'd taught me chess. Now a program I'd written, running
+      on a machine he'd given me, was taking his pieces. I was fourteen. I
+      didn't know what to do with that moment so I just watched the next
+      move.
+    </p>
+
+    <hr>
+
+    <p>
+      I should be clear about what the
+      <a href="https://github.com/Cronan/zx81-chess">repository</a>
+      contains. The original code is lost. It lived on a C15 cassette
+      labelled "CHESS" in biro, which went into a shoebox, through a house
+      move, out of Durban, and was eventually found years later with the
+      tape degraded beyond loading. The exercise book probably ended up
+      levelling a table in my first flat in Johannesburg.
+    </p>
+
+    <p>
+      What's on GitHub is a reconstruction. An adult's work, in the spirit
+      of a teenager's project. Some tricks are ones I genuinely used at
+      fourteen. Others benefit from four decades of hindsight. It would be
+      dishonest to pretend otherwise. The constraints are real, though.
+      1K of RAM. The Z80A instruction set. 672 bytes. Those haven't changed.
+    </p>
+
+    <hr>
+
+    <h2>The constraint that scales</h2>
+
+    <p>
+      The chess engine can't detect check, so it absorbs that failure
+      cheaply. The king gets captured. The game ends. Eighty bytes that
+      would have gone to prevention are spent on features that affect every
+      position. This was a budget decision, not an architectural principle.
+      I was fourteen, working in an exercise book. I didn't have
+      principles. I had 672 bytes.
+    </p>
+
+    <p>
+      But the logic holds at every scale I've worked at since.
+    </p>
+
+    <p>
+      I've spent the years since Durban building financial systems, the kind
+      where mistakes are denominated in money and regulators want to know
+      why. The budgets are different. RAM isn't the constraint; time,
+      attention, and operational risk tolerance are. But the underlying
+      arithmetic is the same. You can't verify everything. You can't prevent
+      every bad state. You have to decide what the system can afford to
+      check and what it absorbs when unchecked things go wrong.
+    </p>
+
+    <p>
+      I've written about this before as
+      <a href="/writing/observable-reversible-enforceable.html">observable,
+      reversible, enforceable</a>: the three properties that determine
+      whether a system can absorb mistakes cheaply. The chess engine, for
+      what it's worth, had all three at ZX81 scale. The board state was
+      visible. A captured king was recoverable (start a new game). The game
+      loop enforced the rules it could afford to enforce and let the rest
+      go.
+    </p>
+
+    <p>
+      The AI deployment conversations I'm part of now keep circling the
+      same question the chess engine answered in 1983. Not "how capable is
+      the model?" Capability arrived faster than anyone expected. The
+      question is what happens when the model is wrong, and whether the
+      system around it can absorb that cheaply enough to be worth the risk.
+    </p>
+
+    <p>
+      The instinct in most of these conversations is to reach for accuracy.
+      Better prompting. Better fine-tuning. Better evaluation benchmarks.
+      These matter, the way castling and en passant matter in chess: they
+      improve the quality of play in specific positions. But they're
+      features at a cost. Castling was 40 bytes I couldn't spend. Perfect
+      accuracy is an engineering budget most organisations can't carry
+      either. The teams that are actually deploying AI into production,
+      rather than running pilots that never graduate, are the ones that
+      accepted this and invested in containment instead. Their systems catch
+      bad outputs the way the chess engine catches an exposed king: not by
+      preventing the state, but by making the consequences cheap.
+    </p>
+
+    <p>
+      The exercise book had those pencilled ledgers in the margins. Bytes
+      spent, bytes remaining, explicit trade-offs in a fourteen-year-old's
+      handwriting. I didn't know the vocabulary for what I was doing. I do
+      now. Every production system I've built since has had the same
+      ledger, in different units. What can we afford to check? What do we
+      let through and catch downstream? Where does the budget go?
+    </p>
+
+    <p>
+      672 bytes. Every one accounted for. You can read the
+      <a href="https://github.com/Cronan/zx81-chess">source</a> or
+      <a href="https://cronan.github.io/zx81-chess/play/">play it in
+      a browser</a>. It won't beat a competent player. It was never going
+      to. It plays chess in 672 bytes, and the constraints that shaped it
+      are the same ones that matter now, applied to systems where the
+      stakes are higher and the budget is still, always, finite.
+    </p>
+
+  </article>
+
+  <footer>
+    <p><a href="/about/">Ivan Cronyn</a> is Principal Engineer and Head of Solutions Technology at Man Group in London.</p>
+    <a href="/writing/">← All writing</a> · <a href="/">Home</a>
+  </footer>
+
+  <script>
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('article > p, article > h2, article > h3, article > blockquote, article > ul, article > ol, article > pre');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
+
+</body>
+</html>

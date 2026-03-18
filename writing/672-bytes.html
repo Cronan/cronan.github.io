@@ -97,19 +97,29 @@ TOTAL             672    Every byte accounted for</code></pre>
       The AI engine alone, scanning pieces, generating moves, evaluating
       captures, picking the best, consumes 250 bytes. That's 37% of the
       program doing one thing: deciding what to play next. Display and
-      input together take another 26%. Everything else, the board, the
-      variables, the lookup tables, move execution, pawn promotion, the
-      main game loop, fits in 247 bytes.
+      input together take another 26%. Everything else fits in 247 bytes.
     </p>
 
     <hr>
 
     <p>
       I wrote this in Durban, South Africa, between 1982 and 1983.
-      Twelve when I started. Fourteen when it worked. No assembler. No
-      compiler. Nothing that would run in 1K, and nothing I could have
-      afforded anyway. The process was: write Z80 mnemonics in an exercise
-      book, look up each opcode in the back of Rodnay Zaks'
+      Twelve when I started. Fourteen when it worked. The original is
+      lost: a C15 cassette labelled "CHESS" in biro, tape degraded beyond
+      loading, the exercise book with the hex dump gone somewhere between
+      Durban and Johannesburg. What's on
+      <a href="https://github.com/Cronan/zx81-chess">GitHub</a> now is
+      a reconstruction by an adult, in the spirit of the teenager. Some
+      tricks are ones I genuinely used at fourteen. Others benefit from
+      four decades of hindsight. It would be dishonest to pretend
+      otherwise. But the constraints haven't changed. 1K of RAM. The Z80A
+      instruction set. 672 bytes.
+    </p>
+
+    <p>
+      No assembler. No compiler. Nothing that would run in 1K, and
+      nothing I could have afforded anyway. The process was: write Z80
+      mnemonics on paper, look up each opcode in the back of Rodnay Zaks'
       <em>Programming the Z80</em> (624 pages, third revised edition, a
       Christmas present from my dad alongside the ZX81 itself), write down
       the hex bytes, calculate jump offsets by hand, then POKE each byte
@@ -125,13 +135,12 @@ TOTAL             672    Every byte accounted for</code></pre>
     </p>
 
     <p>
-      The exercise book had memory budgets scribbled in the margins. Small
-      ledgers in pencil: bytes spent, bytes remaining, what gets cut if the
-      AI engine needs another ten. I filled pages with board representations,
-      bit patterns for pieces (bits 0-2 for piece type, bit 3 for colour),
-      direction offset tables. I didn't know the phrase "constraint-driven
-      design." I thought this was just what you did when there wasn't enough
-      room.
+      I filled an exercise book with the design: board representations,
+      bit patterns for pieces (bits 0-2 for type, bit 3 for colour),
+      direction offset tables. Memory budgets scribbled in the margins,
+      bytes spent, bytes remaining, what gets cut if the AI engine needs
+      another ten. I didn't have a name for what I was doing. I thought
+      it was just what you did when there wasn't enough room.
     </p>
 
     <hr>
@@ -151,7 +160,7 @@ TOTAL             672    Every byte accounted for</code></pre>
     </p>
 
     <p>
-      Check detection is the cut that matters to this argument. Full
+      Check detection is the interesting cut. Full
       implementation means generating all opponent moves to see if any
       attack the king, then filtering the current player's legal moves to
       only those that resolve the threat. At least 80 bytes. Probably more.
@@ -176,6 +185,14 @@ TOTAL             672    Every byte accounted for</code></pre>
       ends the game, same as checkmate. The failure mode exists. The failure
       is contained. Eighty bytes freed up for things that affect every move,
       not just the positions where check matters.
+    </p>
+
+    <p>
+      Play it and you notice. Nothing stops you moving your king next to
+      the opponent's rook. The engine won't object. Next move, it takes
+      your king, and that's the game. You learn not to do that. The
+      discipline shifts from the system to the player, which costs the
+      programmer nothing.
     </p>
 
     <h2>One loop, three pieces</h2>
@@ -230,7 +247,11 @@ TOTAL             672    Every byte accounted for</code></pre>
       Board display came first. Weeks of work. Had the ranks upside down
       for an embarrassing period. Player input next. The thinking routine
       was the mountain: 250 bytes of move generation and evaluation,
-      debugged one POKE at a time.
+      debugged one POKE at a time. The AI would move a piece to a square
+      that didn't exist, or lock up mid-search, or generate a move and
+      forget to execute it. Each bug was a wrong byte somewhere in the
+      250, and finding it meant rereading the hex dump line by line until
+      the numbers stopped matching the mnemonics.
     </p>
 
     <p>
@@ -252,91 +273,48 @@ TOTAL             672    Every byte accounted for</code></pre>
 
     <hr>
 
-    <p>
-      I should be clear about what the
-      <a href="https://github.com/Cronan/zx81-chess">repository</a>
-      contains. The original code is lost. It lived on a C15 cassette
-      labelled "CHESS" in biro, which went into a shoebox, through a house
-      move, out of Durban, and was eventually found years later with the
-      tape degraded beyond loading. The exercise book probably ended up
-      levelling a table in my first flat in Johannesburg.
-    </p>
-
-    <p>
-      What's on GitHub is a reconstruction. An adult's work, in the spirit
-      of a teenager's project. Some tricks are ones I genuinely used at
-      fourteen. Others benefit from four decades of hindsight. It would be
-      dishonest to pretend otherwise. The constraints are real, though.
-      1K of RAM. The Z80A instruction set. 672 bytes. Those haven't changed.
-    </p>
-
-    <hr>
-
     <h2>The constraint that scales</h2>
 
     <p>
       The chess engine can't detect check, so it absorbs that failure
-      cheaply. The king gets captured. The game ends. Eighty bytes that
-      would have gone to prevention are spent on features that affect every
-      position. This was a budget decision, not an architectural principle.
-      I was fourteen, working in an exercise book. I didn't have
-      principles. I had 672 bytes.
+      cheaply. The king gets captured. The game ends. The budget that
+      would have gone to prevention goes to features that affect every
+      position instead. Pragmatism, not architecture. I had 672 bytes,
+      not principles.
     </p>
 
     <p>
-      But the logic holds at every scale I've worked at since.
+      I've worked at a different scale since, on systems where mistakes
+      are denominated in money and regulators want to know why. When a
+      portfolio calculation produces the wrong number, nobody asks whether
+      the logic was hand-coded or AI-generated. They ask how fast you
+      noticed, how fast you fixed it, and whether the client was affected.
+      The byte budget became a risk budget. The arithmetic didn't change. You can't
+      verify everything. You can't prevent every bad state. You decide
+      what the system can afford to enforce and design everything else for
+      <a href="/writing/observable-reversible-enforceable.html">cheap
+      containment</a>.
     </p>
 
     <p>
-      I've spent the years since Durban building financial systems, the kind
-      where mistakes are denominated in money and regulators want to know
-      why. The budgets are different. RAM isn't the constraint; time,
-      attention, and operational risk tolerance are. But the underlying
-      arithmetic is the same. You can't verify everything. You can't prevent
-      every bad state. You have to decide what the system can afford to
-      check and what it absorbs when unchecked things go wrong.
+      The AI deployment conversations I sit in now circle the same
+      question the chess engine answered. Not "how capable is the model?"
+      Capability arrived faster than anyone expected. The question is what
+      happens when the model is wrong, and whether the system around it
+      absorbs that cheaply enough to be worth the risk.
     </p>
 
     <p>
-      I've written about this before as
-      <a href="/writing/observable-reversible-enforceable.html">observable,
-      reversible, enforceable</a>: the three properties that determine
-      whether a system can absorb mistakes cheaply. The chess engine, for
-      what it's worth, had all three at ZX81 scale. The board state was
-      visible. A captured king was recoverable (start a new game). The game
-      loop enforced the rules it could afford to enforce and let the rest
-      go.
-    </p>
-
-    <p>
-      The AI deployment conversations I'm part of now keep circling the
-      same question the chess engine answered in 1983. Not "how capable is
-      the model?" Capability arrived faster than anyone expected. The
-      question is what happens when the model is wrong, and whether the
-      system around it can absorb that cheaply enough to be worth the risk.
-    </p>
-
-    <p>
-      The instinct in most of these conversations is to reach for accuracy.
-      Better prompting. Better fine-tuning. Better evaluation benchmarks.
-      These matter, the way castling and en passant matter in chess: they
-      improve the quality of play in specific positions. But they're
-      features at a cost. Castling was 40 bytes I couldn't spend. Perfect
-      accuracy is an engineering budget most organisations can't carry
-      either. The teams that are actually deploying AI into production,
-      rather than running pilots that never graduate, are the ones that
-      accepted this and invested in containment instead. Their systems catch
-      bad outputs the way the chess engine catches an exposed king: not by
-      preventing the state, but by making the consequences cheap.
-    </p>
-
-    <p>
-      The exercise book had those pencilled ledgers in the margins. Bytes
-      spent, bytes remaining, explicit trade-offs in a fourteen-year-old's
-      handwriting. I didn't know the vocabulary for what I was doing. I do
-      now. Every production system I've built since has had the same
-      ledger, in different units. What can we afford to check? What do we
-      let through and catch downstream? Where does the budget go?
+      The instinct is to reach for accuracy. Better prompting. Better
+      fine-tuning. Better evaluation benchmarks. These matter, the way
+      castling and en passant matter in chess: they improve the quality of
+      play in specific positions. But they're features at a cost. Castling
+      was 40 bytes I couldn't spend. Perfect accuracy is an engineering
+      budget most organisations can't carry either. The teams deploying AI
+      into production, rather than running pilots that never graduate, are
+      the ones that invested in containment instead. Their systems catch
+      bad outputs the way the chess engine catches an exposed king. Not by
+      preventing the state. By making the consequences cheap.
     </p>
 
     <p>
@@ -344,9 +322,10 @@ TOTAL             672    Every byte accounted for</code></pre>
       <a href="https://github.com/Cronan/zx81-chess">source</a> or
       <a href="https://cronan.github.io/zx81-chess/play/">play it in
       a browser</a>. It won't beat a competent player. It was never going
-      to. It plays chess in 672 bytes, and the constraints that shaped it
-      are the same ones that matter now, applied to systems where the
-      stakes are higher and the budget is still, always, finite.
+      to. The constraints that shaped it are the same ones I think about
+      now, in different units, at different stakes. What can we afford to
+      check? What do we let through and catch downstream? Where does the
+      budget go?
     </p>
 
   </article>

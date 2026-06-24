@@ -7,6 +7,27 @@
     <language>en-gb</language>
     <atom:link href="https://cronyn.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Propose, not promote</title>
+      <link>https://cronyn.co.uk/writing/propose-not-promote.html</link>
+      <guid>https://cronyn.co.uk/writing/propose-not-promote.html</guid>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A new paper lets an AI agent rewrite its own harness and get better at its work. The interesting part is the one thing it is not allowed to do: decide whether its own changes survive.</description>
+    </item>
+    <item>
+      <title>672 bytes</title>
+      <link>https://cronyn.co.uk/writing/672-bytes.html</link>
+      <guid>https://cronyn.co.uk/writing/672-bytes.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>A chess engine in 672 bytes of Z80 machine code. What constraint-driven design on a ZX81 teaches about building systems that absorb failure cheaply.</description>
+    </item>
+    <item>
+      <title>The 25 ways AI overwrites your voice</title>
+      <link>https://cronyn.co.uk/writing/ai-writing-patterns.html</link>
+      <guid>https://cronyn.co.uk/writing/ai-writing-patterns.html</guid>
+      <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Large language models destroy voice through 25 identifiable patterns. The problem is not detection. It is quality.</description>
+    </item>
+    <item>
       <title>Compromised Witnesses</title>
       <link>https://cronyn.co.uk/writing/compromised-witnesses.html</link>
       <guid>https://cronyn.co.uk/writing/compromised-witnesses.html</guid>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Propose, not promote - Ivan Cronyn</title>
+  <meta name="description" content="A new paper lets an AI agent rewrite its own harness and get better at its work. The interesting part is the one thing it is not allowed to do: decide whether its own changes survive.">
+  <link rel="canonical" href="https://cronyn.co.uk/writing/propose-not-promote.html">
+  <link rel="alternate" type="application/rss+xml" title="Ivan Cronyn" href="https://cronyn.co.uk/feed.xml">
+  <meta property="og:title" content="Propose, not promote - Ivan Cronyn">
+  <meta property="og:description" content="A new paper lets an AI agent rewrite its own harness and get better at its work. The interesting part is the one thing it is not allowed to do: decide whether its own changes survive.">
+  <meta property="og:url" content="https://cronyn.co.uk/writing/propose-not-promote.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <meta property="og:site_name" content="Ivan Cronyn">
+  <meta property="article:published_time" content="2026-06-01">
+  <meta property="article:author" content="https://cronyn.co.uk/about/">
+  <meta property="article:section" content="Engineering">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Propose, not promote - Ivan Cronyn">
+  <meta name="twitter:description" content="A new paper lets an AI agent rewrite its own harness and get better at its work. The interesting part is the one thing it is not allowed to do: decide whether its own changes survive.">
+  <meta name="twitter:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="/styles.css?v=3">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Propose, not promote",
+    "author": {"@type": "Person", "name": "Ivan Cronyn", "url": "https://cronyn.co.uk/"},
+    "publisher": {"@type": "Person", "name": "Ivan Cronyn", "url": "https://cronyn.co.uk/"},
+    "datePublished": "2026-06-01",
+    "url": "https://cronyn.co.uk/writing/propose-not-promote.html",
+    "description": "A new paper lets an AI agent rewrite its own harness and get better at its work. The interesting part is the one thing it is not allowed to do: decide whether its own changes survive.",
+    "keywords": ["AI agents", "self-improvement", "harness design", "change management", "AI governance", "held-out evaluation"],
+    "isPartOf": {"@type": "Blog", "name": "Writing", "url": "https://cronyn.co.uk/writing/"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/writing/" class="active">Writing</a>
+    <a href="/reading/">Reading</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/about/">About</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>Propose, not promote</h1>
+      <p class="date">June 2026</p>
+    </header>
+
+    <hr>
+
+    <p>
+      A paper went up on arXiv two weeks ago describing an agent that
+      rewrites its own operating instructions and gets better at its work
+      as a result. Across three different models, task success rose by as
+      much as 21 percentage points, with no change to the models
+      themselves. The headline writes itself. It is also the wrong one.
+    </p>
+
+    <p>
+      Agents that improve themselves are not new. Reflexion stored verbal
+      feedback for reuse in 2023. STOP took on recursively self-improving
+      code generation a year later. The Darwin G&ouml;del Machine pushed
+      open-ended self-improvement further in 2025. The claim that a fixed
+      model can get more out of itself by changing what surrounds it has a
+      three-year record and a settled literature. If self-modification were
+      the point, this would be a footnote to that work.
+    </p>
+
+    <p>
+      What makes the paper worth reading is the line it draws.
+    </p>
+
+    <hr>
+
+    <p>
+      The work concerns the harness: the scaffolding around a model that
+      decides how it behaves. The system prompt, the available tools, the
+      verification rules, the recovery logic when a tool call fails. The
+      model weights are one thing; the harness is everything else, and the
+      same model under two different harnesses produces different work. The
+      authors let the agent edit its own harness and measured what happened.
+    </p>
+
+    <p>
+      The loop has three stages. First, run the model on a set of tasks and
+      cluster the failures, so the agent reasons about a recurring pattern
+      rather than a single bad run. Second, propose a small number of narrow
+      edits, each tied to one specific failure, each touching only the part
+      of the harness that failure requires. Third, and this is the part that
+      matters, test each proposed edit against a held-out set of tasks the
+      proposing model never sees, and keep it only if it improves
+      performance on one split without making the other worse.
+    </p>
+
+    <p>
+      That third stage is the whole argument. The model is allowed to
+      propose any change to the instructions that govern it. It is not
+      allowed to decide whether the change survives. That decision belongs
+      to a deterministic rule applied against evidence the proposer had no
+      access to. The model writes the edit. The gate keeps it or discards it.
+    </p>
+
+    <hr>
+
+    <p>
+      There is a reason the held-out set has to be hidden from the proposer,
+      and it is the reason self-improvement is dangerous in the first place.
+      The thing proposing the change is the thing being graded by it. Left
+      to mark its own work, a system finds edits that flatter the cases it
+      can see. The held-out split is the check on that: a set of tasks the
+      proposer never reads, used only by the gate. An edit earns promotion
+      by improving on problems it was not written to address. That is the
+      difference between a student revising for the questions and a student
+      who has learned the material, and the only way to tell them apart is
+      to test on questions the student has not seen.
+    </p>
+
+    <p>
+      The paper sets this against two alternatives. In one, human engineers
+      tune the harness by hand. In the other, a stronger external agent
+      supervises a weaker one and guides its improvement. The authors remove
+      both. There is no human in the loop and no smarter model overseeing
+      the work; the same fixed model proposes the edits to its own scaffold.
+      What keeps the process honest is not a wiser authority above it. It is
+      the gate beside it. The instinct in regulated work is to reach for a
+      more senior reviewer when the stakes rise, and that instinct is sound.
+      This paper shows the discipline does not collapse the moment no one is
+      looking, because the gate does not depend on anyone looking.
+    </p>
+
+    <hr>
+
+    <p>
+      Read in that light, the numbers say something precise. The models were
+      held fixed throughout. Same weights, same tools, same budget, same
+      benchmark, same evaluator. Only the scaffold changed. One model went
+      from 23.8% to 38.1% on the held-out tasks. Another rose 21 points.
+      None of the three was a frontier system; they were ordinary open
+      models of the kind a team might actually run. The lift came from the
+      harness, not the model. This is trust, not capability, shown under
+      laboratory control: the same engine, made to deliver more by the
+      system built around it.
+    </p>
+
+    <p>
+      The edits themselves are worth sitting with, because they are not what
+      an unconstrained model produces when asked to improve its own prompt.
+      There is no padding, no generic instruction to try harder. One model
+      learned to write its required output file early rather than exploring
+      until it ran out of time. Another learned to stop retrying a command
+      that had already failed, and to rebuild a deleted file before
+      stopping. A third learned to make environment changes persist across
+      shell sessions, and to move from looking around to building once it
+      had looked around enough. Each edit names a real failure and changes
+      one thing. The gate selected for that. An edit that read well but
+      moved nothing did not survive contact with the held-out set. Because
+      each change is small and recorded, the whole sequence can be read back
+      later: what changed, why, and the result that justified keeping it.
+    </p>
+
+    <hr>
+
+    <p>
+      This answers an objection I have never had a clean answer to.
+    </p>
+
+    <p>
+      The standard way a team encodes its hard-won knowledge for an AI
+      coding agent is a file of instructions: the rule that this calculation
+      runs before that one, the data source you must use and the one you
+      must not, the mistake the agent keeps making. Anthropic's own practice
+      is to add a line to that file every time the agent gets something
+      wrong, so each error becomes a rule. It is a sound discipline and I
+      recommend it. The objection a careful engineer raises is this: the
+      file has a budget. Instruction-following degrades as the count climbs,
+      and every line you add makes every other line slightly less reliable.
+      So how do you know the rule you wrote to stop yesterday's mistake is
+      not quietly causing tomorrow's? In the manual version, you do not. You
+      add the rule on judgement and hope. There is no gate.
+    </p>
+
+    <p>
+      Self-Harness is what the gated version looks like. Do not promote the
+      rule because it sounds right. Promote it because it improved measured
+      behaviour and broke nothing you were watching. The same correction,
+      run through a test instead of a hunch.
+    </p>
+
+    <hr>
+
+    <p>
+      I would stop there if the paper did, but it does not, and the honesty
+      of its final section is what makes it useful to anyone working under
+      real constraints.
+    </p>
+
+    <p>
+      The gate in this work is a benchmark pass rate. An edit is kept if it
+      raises the score without lowering it elsewhere. That catches one
+      failure mode: the change that makes the agent worse at the task. It
+      does not catch the change that makes the agent better at the task
+      while doing something you would never sanction. A higher score is not
+      a clean bill of health. It is a higher score. The authors say as much:
+      higher-stakes harness changes would need stronger acceptance gates
+      than pass-rate non-regression alone.
+    </p>
+
+    <p>
+      This is the part that travels. The form of the discipline carries over
+      to any setting, including the regulated ones I work in. Name the
+      behaviour you intend to change. Name the surface you are touching.
+      Show the evidence. Show the result that justifies keeping it. Make
+      every change reversible and recorded, so the lineage of edits reads
+      back later. That is a description of competent change management, and
+      it does not depend on the change being proposed by a model.
+    </p>
+
+    <p>
+      What does not travel unchanged is the strength of the gate. A pass
+      rate is enough to decide whether an agent solves more terminal tasks.
+      It is nowhere near enough to decide whether a system can be trusted
+      with anything that moves money, touches a client, or files a report to
+      a regulator. The discipline scales; the gate has to scale with the
+      stakes. The mistake would be to import the loop and keep the lab's
+      gate.
+    </p>
+
+    <hr>
+
+    <p>
+      The clean way to hold all of this is to separate two decisions that
+      look like one. There is the decision to write a change, and there is
+      the decision to let it take effect. This paper hands the first to the
+      model and keeps the second behind a rule. That division, where
+      authorship ends and authorisation begins, is the delegation line, and
+      the paper locates it with unusual precision. You can hand an agent
+      authorship of its own instructions. You cannot hand it authorisation.
+      The gate is the part you build, the part you own, and the part that
+      decides whether any of this is safe to run. The capability was never
+      the hard problem. The gate is.
+    </p>
+
+  </article>
+
+  <footer>
+    <p><a href="/about/">Ivan Cronyn</a> is Principal Engineer and Head of Solutions Technology at Man Group in London.</p>
+    <a href="/writing/">← All writing</a> · <a href="/">Home</a>
+  </footer>
+
+  <script>
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('article > p, article > h2, article > h3, article > blockquote, article > ul, article > ol');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
+
+</body>
+</html>

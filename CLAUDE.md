@@ -8,43 +8,25 @@ Guide for AI assistants working with this repository.
 
 ## Repository structure
 
-```
-cronan.github.io/
-├── index.html                  # Landing page
-├── styles.css                  # Single stylesheet (dark mode, responsive)
-├── CNAME                       # cronyn.co.uk
-├── writing/
-│   ├── index.html              # Essay listing
-│   ├── compromised-witnesses.html
-│   ├── observable-reversible-enforceable.html
-│   ├── the-suspicion-tax.html
-│   ├── ironies-of-automation.html
-│   ├── trust-not-capability.html
-│   └── ai-as-junior-engineer.html
-├── reading/
-│   └── index.html              # Reading list
-├── about/
-│   └── index.html              # Full bio
-├── images/
-│   ├── ivan-glitch.jpg         # Home page headshot
-│   └── ivan-headshot.jpg       # About page headshot
-├── drafts/                     # Unpublished working files
-├── .claude/
-│   └── skills/
-│       └── humaniser/
-│           └── SKILL.md        # AI pattern detection (portable)
-└── CLAUDE.md                   # This file
-```
+Run `ls` for the current layout; a listing written here would only go stale (the one that was here did). The files whose purpose is not obvious from their names:
+
+- `drafts/` - unpublished working files, never linked from the site
+- `CONTEXT.md` - source material gathered for the "672 bytes" essay
+- `VOICE-GUIDE.md` - standalone voice guide; overlaps with the Voice section below
+- `.claude/skills/humaniser/SKILL.md` - AI pattern detection skill (portable across repos)
+- `feed.xml`, `sitemap.xml` - maintained by hand; see the essay checklist below
 
 ## Tech stack
 
-GitHub Pages, plain HTML + CSS. No framework, no JavaScript, no build step, no templating engine. Files served as-is. Domain via CNAME; DNS A records point at GitHub Pages IPs.
+GitHub Pages, plain HTML + CSS, plus a few lines of inline JavaScript per page (scroll-reveal). No framework, no build step, no templating engine. Files served as-is. Domain via CNAME; DNS A records point at GitHub Pages IPs.
 
 ## Development workflow
 
 Edit HTML directly. Commit and push to `master`. GitHub Pages deploys automatically. To preview locally, open `index.html` in a browser.
 
 There is no build step, no test suite, and no CI. Validation is visual: open the page in a browser and check it looks right.
+
+Adding an essay touches four files: the essay page itself, `writing/index.html`, `feed.xml`, and `sitemap.xml`. The last two are easy to forget and go stale silently - check them when touching the others.
 
 ## Conventions
 
@@ -53,7 +35,7 @@ There is no build step, no test suite, and no CI. Validation is visual: open the
 - No JavaScript unless there is no other way.
 - Keep changes minimal. Do not add tooling.
 - British English throughout (optimisation, colour, behaviour).
-- All pages share the same nav: Home, Writing, Reading, About.
+- All pages share the same nav. When adding a page, copy the nav from an existing page, not from any list written down here.
 - Essay pages link back to `/writing/` and `/`.
 
 ## Subdomain architecture (planned)
@@ -76,11 +58,11 @@ Monospaced headings (SF Mono / Consolas), serif body (Charter / Georgia). Automa
 
 ## Author
 
-Ivan Cronyn. Principal Engineer, Head of Solutions Technology at a large systematic and discretionary investment manager in London. Leads engineering for bespoke investment mandates across three business engines.
+Ivan Cronyn. Principal Engineer, Head of Solutions Technology at Man Group in London. Leads engineering for bespoke investment mandates across three business engines.
 
-Coding since 1981 (ZX81, Durban, South Africa). Career: Barclays Capital, Merrill Lynch, GLG Partners, Brevan Howard, then current firm. Languages: C++, C#, Python. Twenty-seven years in London finance.
+Coding since 1981 (ZX81, Durban, South Africa). Career: Barclays Capital, Merrill Lynch, GLG Partners, Brevan Howard, then Man Group. Languages: C++, C#, Python. In London finance since 1998.
 
-Writing should not name the firm. Write about principles, not specifics. This constraint is deliberate - it forces universal applicability.
+Essay bodies do not name the firm; the standard footer byline, the bio pages, and the README do. Write about principles, not firm specifics. This constraint is deliberate - it forces universal applicability.
 
 -----
 
@@ -105,7 +87,7 @@ Other influences: Howard Marks (patient argument, intellectual honesty), Cliff A
 - **Open with observation, not opinion.** Let the reader arrive at the conclusion.
 - **Use "I" sparingly but deliberately.** When personal experience is the evidence, use it. Otherwise, let the argument stand alone.
 - **Acknowledge complexity without paralysis.** "This is hard. Here is how I think about it."
-- **Draw on long time horizons.** Twenty-seven years creates implicit authority without claiming it.
+- **Draw on long time horizons.** A career in production finance since 1998 creates implicit authority without claiming it.
 - **Be specific where it matters, plain otherwise.** Technical precision on technical points. Simple language for strategic implications.
 - **End with implications, not prescriptions.** Don't lecture.
 - **State opinions plainly.** Hedging erodes authority. "I think X" is stronger than presenting both sides without committing.
@@ -125,14 +107,9 @@ The essays are a body of work. Readers who find one will read others. The collec
 
 "Trust, not capability" - AI is a force multiplier only if systems are designed to absorb mistakes cheaply. Every essay connects to this thesis, directly or at an angle.
 
-### Published essays (chronological)
+### Published essays
 
-1. **Building engineers in the age of AI** (May 2025) - junior engineer development
-1. **Trust, not capability** (July 2025) - the foundational thesis
-1. **Bainbridge's Ironies of Automation, forty years on** (August 2025) - historical grounding
-1. **The Suspicion Tax** (November 2025) - the cost of not trusting AI output
-1. **Observable, Reversible, Enforceable** (December 2025) - practical framework
-1. **Compromised Witnesses** (February 2026) - cognitive bias in AI productivity claims
+The canonical list, with dates and descriptions, is `writing/index.html`. Do not rely on any list of essays written down here or elsewhere; an earlier copy in this file went stale and caused planning against a six-essay collection when there were nine. Before adding or revising an essay, read the index and skim the most recent two or three essays in full - the cross-essay checks below depend on knowing what the collection currently says.
 
 ### Cross-essay discipline
 

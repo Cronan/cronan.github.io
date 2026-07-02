@@ -7,6 +7,13 @@
     <language>en-gb</language>
     <atom:link href="https://cronyn.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>The surrender note</title>
+      <link>https://cronyn.co.uk/writing/the-surrender-note.html</link>
+      <guid>https://cronyn.co.uk/writing/the-surrender-note.html</guid>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
+      <description>An AI agent debugging my ZX81 chess engine once wrote itself a resignation letter. Its successor found a bug that survived 92 commits, in the time my train took to get in.</description>
+    </item>
+    <item>
       <title>Propose, not promote</title>
       <link>https://cronyn.co.uk/writing/propose-not-promote.html</link>
       <guid>https://cronyn.co.uk/writing/propose-not-promote.html</guid>

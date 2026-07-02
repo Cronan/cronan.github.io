@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The surrender note - Ivan Cronyn</title>
+  <meta name="description" content="An AI agent debugging my ZX81 chess engine once wrote itself a resignation letter. Its successor found a bug that survived 92 commits, in the time my train took to get in.">
+  <link rel="canonical" href="https://cronyn.co.uk/writing/the-surrender-note.html">
+  <link rel="alternate" type="application/rss+xml" title="Ivan Cronyn" href="https://cronyn.co.uk/feed.xml">
+  <meta property="og:title" content="The surrender note - Ivan Cronyn">
+  <meta property="og:description" content="An AI agent debugging my ZX81 chess engine once wrote itself a resignation letter. Its successor found a bug that survived 92 commits, in the time my train took to get in.">
+  <meta property="og:url" content="https://cronyn.co.uk/writing/the-surrender-note.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <meta property="og:site_name" content="Ivan Cronyn">
+  <meta property="article:published_time" content="2026-07-02">
+  <meta property="article:author" content="https://cronyn.co.uk/about/">
+  <meta name="author" content="Ivan Cronyn">
+  <meta property="article:section" content="Engineering">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The surrender note - Ivan Cronyn">
+  <meta name="twitter:description" content="An AI agent debugging my ZX81 chess engine once wrote itself a resignation letter. Its successor found a bug that survived 92 commits, in the time my train took to get in.">
+  <meta name="twitter:image" content="https://cronyn.co.uk/images/ivan-headshot.jpg">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="/styles.css?v=3">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The surrender note",
+    "author": {"@type": "Person", "name": "Ivan Cronyn", "url": "https://cronyn.co.uk/"},
+    "publisher": {"@type": "Person", "name": "Ivan Cronyn", "url": "https://cronyn.co.uk/"},
+    "datePublished": "2026-07-02",
+    "url": "https://cronyn.co.uk/writing/the-surrender-note.html",
+    "description": "An AI agent debugging my ZX81 chess engine once wrote itself a resignation letter. Its successor found a bug that survived 92 commits, in the time my train took to get in.",
+    "keywords": ["Claude Fable 5", "ZX81", "Z80 assembly", "AI coding agents", "debugging", "trust infrastructure"],
+    "isPartOf": {"@type": "Blog", "name": "Writing", "url": "https://cronyn.co.uk/writing/"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/writing/" class="active">Writing</a>
+    <a href="/reading/">Reading</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/about/">About</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>The surrender note</h1>
+      <p class="date">July 2026</p>
+    </header>
+
+    <hr>
+
+    <p>
+      There is a commit in the history of my chess repository titled "Add
+      debugging prompt for handoff to another model". An AI coding agent,
+      sixteen commits deep in a browser input bug it could not find, wrote
+      up everything it had tried for the benefit of whichever model came
+      after it, and stopped. The pull requests leading up to that commit
+      are titled "Debug v2", "Debug v3", and so on through "Debug v7". A
+      machine wrote itself a resignation letter. I merged it, because what
+      else do you do with a resignation letter.
+    </p>
+
+    <p>
+      That was earlier this year, with the previous generation of Claude
+      models. The bug it gave up on eventually took another session and
+      five separate root-cause fixes to dig out. I mention this not to
+      embarrass anyone's product but because the git history is the only
+      honest baseline I have. Everyone's memory of how good AI coding used
+      to be is corrupted by how good it is now. Mine is written down.
+    </p>
+
+    <p>
+      The repository is a chess engine for the Sinclair ZX81, a
+      reconstruction of the 1K program I wrote as a teenager. I've
+      <a href="/writing/672-bytes.html">told that story already</a>. Since
+      March the reconstruction has grown, from 672 bytes to 983 of the 984
+      I allow myself, and around the Z80 core sits scaffolding the teenager
+      could not have imagined: a Python emulator, a JavaScript emulator so
+      the game runs in a browser, and a differential suite that replays
+      whole games through both and compares the results. The assembly
+      itself is still 1983 in spirit. Hand-allocated memory. Registers
+      doing double duty. The kind of code where a comment says "A holds
+      the piece" and you are expected to notice when that stops being true.
+    </p>
+
+    <hr>
+
+    <p>
+      This week I gave Anthropic's new Fable 5 model two prompts against
+      that repo. "Suggest a schedule of improvements, prioritise bugs."
+      Then: "run the schedule in order, creating commits and testing as
+      you go." I got on the train.
+    </p>
+
+    <p>
+      It read the repository and wrote a five-milestone roadmap. Then it
+      found the bug that is the reason this essay exists. Deep in the AI
+      move routine, if the engine ever had no legal move, a
+      <code>$FF</code> sentinel fell through unguarded and was used as a
+      board index. The board is 64 bytes. Index 255 is not on it. The
+      write landed inside the engine's own machine code, at
+      <code>$4181</code>. In positions nobody had ever driven it into, my
+      chess program would quietly lobotomise itself.
+    </p>
+
+    <p>
+      That code had survived 92 commits and 28 pull requests. It had
+      survived a review session I ran specifically to hunt this class of
+      bug. Fable 5 found it by reading the assembly, cold. And before
+      touching the fix it wrote a test that drives the engine into the
+      no-move position and fails, so the bug existed as evidence before it
+      existed as a claim. The fix is three bytes.
+    </p>
+
+    <p>
+      The rest of the hour reads like a good week from a senior engineer.
+      It noticed the touch interface had complete, working handling for a
+      DELETE key that no on-screen key actually emitted: fully implemented
+      dead code, which meant anyone playing on a phone could never correct
+      a typo. It noticed the browser page could silently ship a stale copy
+      of the binary, and added a drift check to CI. It worked out that the
+      engine had been politely declining free pawns, because a
+      centre-square bonus outscored a capture. It merged two byte-for-byte
+      duplicate routines, freed 36 bytes, and spent them on chess:
+      material-first scoring, promotion awareness. The binary ended the
+      session at 961 bytes, 22 smaller than it started, and plays better.
+    </p>
+
+    <p>
+      It also built the net it was working over. Test locators that used
+      to grep for byte patterns now come from the assembler's symbol
+      table. A coverage probe cross-checks both emulators against all 78
+      instruction types in the binary. The differential suite went from
+      five games to eight. Ten Playwright tests now drive the actual page,
+      where before there were none. When its own new features exposed a
+      frame-timing race at boot, it reasoned through the frame sequence
+      from first principles and fixed the race, rather than adding logging
+      and hoping. And it kept honest books: three roadmap items were
+      skipped on purpose, with the reasons recorded. One of those reasons
+      was that a scoring tweak risked colliding with the same
+      <code>$FF</code> sentinel it had just fixed.
+    </p>
+
+    <p>
+      Move history. A full-turn undo that works even after the game has
+      ended, by re-entering the engine's loop at the right address. Board
+      flip, legal-move hints, save and resume, a keyboard accessibility
+      pass. I am compressing; SESSION.md has the rest.
+    </p>
+
+    <hr>
+
+    <p>
+      I know exactly when I last felt what I felt reading that session
+      log, because it has only happened once before: December 2025, the
+      first time I watched a model write code I could not have written as
+      well. It is a strange mixture. Awe, of the specific kind you are
+      primed for if you grew up on Asimov, the feeling of being inside the
+      story. And underneath it something quieter, closer to sadness, which
+      arrived with the thought: this is a fix I could not have done.
+    </p>
+
+    <p>
+      That thought does not survive cross-examination, so let me
+      cross-examine it before someone else does. Given a week, a printout
+      and enough coffee, I would have found the sentinel bug. It is my
+      code twice over; I wrote it at fourteen and rewrote it in my
+      fifties. What is true is narrower and worse: I did look, in a
+      session set aside for looking, and missed it. The model read the
+      same bytes with none of my history and found it in the time my
+      train took to get in. What the sadness mourns is less a capability I lack
+      than a kind of effort that used to be the point of the exercise,
+      and is now optional.
+    </p>
+
+    <h2>The shape of the improvement</h2>
+
+    <p>
+      Fable 5 is <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5">pitched
+      as the first of a new class of model</a>. It launched in early June,
+      spent most of the month under US export controls while the
+      government satisfied itself about the safeguards, and came back on
+      the first of July. Its first assignment from me was a teenager's
+      chess program.
+    </p>
+
+    <p>
+      The system card numbers are worth a minute, because they predict the
+      texture of the session better than I would have guessed. On
+      SWE-bench Verified, the write-a-patch benchmark, Fable 5 scores
+      95.0% against Opus 4.8's 88.6%. Respectable, incremental. On
+      FrontierCode Diamond, a long-horizon benchmark where the model must
+      investigate, form a hypothesis, patch, test, and recover from being
+      wrong across many steps, it scores 29.3% against 13.4%. The
+      capability that more than doubled is not writing code. It is not
+      getting stuck.
+    </p>
+
+    <p>
+      Which is exactly what the git history of my repo shows. The old
+      failure was never bad lines of code. It was thrashing: sixteen
+      debug commits, each one plausible, none of them converging, ending
+      in a handover note. This session found harder bugs than the one
+      that defeated its predecessor and never once lost the thread. The
+      benchmark moved where my experience moved. I find that mildly
+      reassuring about the benchmark.
+    </p>
+
+    <h2>A hostile witness</h2>
+
+    <p>
+      In February I wrote that people who testify to their own AI
+      productivity are <a href="/writing/compromised-witnesses.html">compromised
+      witnesses</a>: the testimony is sincere, and the incentives corrupt
+      it anyway. I am now the witness. A man with a website, telling you
+      the new model is remarkable, three paragraphs after admitting it
+      moved him. Discount accordingly.
+    </p>
+
+    <p>
+      What I can offer that the witnesses in that essay could not: every
+      factual claim here resolves to something you can check without
+      trusting me. The repository is public. The failing test is in the
+      tree, and so is the three-byte fix.
+      <a href="https://github.com/Cronan/zx81-chess/blob/main/SESSION.md">SESSION.md</a>
+      was written at the end of the session and reads against the commit
+      log line by line. Where the essay rests on my account rather than
+      the record, the feeling on the train, the comparison with sessions
+      I ran months ago on older models, I have tried to say so.
+    </p>
+
+    <p>
+      Two weeks ago I wrote about a paper that lets an agent rewrite its
+      own harness, and argued that the interesting part was
+      <a href="/writing/propose-not-promote.html">the gate</a>: the model
+      proposes, and something that is not the model decides. I ended that
+      essay with a line I liked, that capability was never the hard
+      problem. Half of that line aged well. What I watched this week was
+      a model that behaves as if the gate were internal. Failing test
+      before fix. Reasons recorded for the things it declined to do.
+      Nobody prompted that discipline. It arrived with the weights.
+    </p>
+
+    <p>
+      The harness still earns its keep, and this is the part I would
+      underline for anyone extrapolating from one good hour. The only
+      reason I could verify any of this from a train seat is that the
+      repository was already built for distrust: two emulators that must
+      agree, a differential suite, a history no session can rewrite.
+      Fable 5 worked inside that net and visibly used it. One clean
+      session does not buy the next one my signature. It buys the next
+      one a longer leash.
+    </p>
+
+    <hr>
+
+    <p>
+      By the time I had walked up the hill from the station it was done:
+      roadmap executed, sixteen commits, tests green, books balanced. I
+      read the handover at my desk. Not a surrender note this time. A
+      summary written by something that expected its work to be checked,
+      and could afford the expectation.
+    </p>
+
+    <p>
+      This essay was drafted with Fable 5, from my notes and its own
+      session records, then argued with and edited by me. It found the
+      bugs; I get the byline. In the circumstances, that seemed worth
+      disclosing.
+    </p>
+
+    <p>
+      The code is at <a href="https://github.com/Cronan/zx81-chess">github.com/Cronan/zx81-chess</a>,
+      and you can <a href="https://cronan.github.io/zx81-chess/play/">play
+      the game in a browser</a>. The session's own account is in
+      <a href="https://github.com/Cronan/zx81-chess/blob/main/SESSION.md">SESSION.md</a>,
+      and the plan it executed is in
+      <a href="https://github.com/Cronan/zx81-chess/blob/main/ROADMAP.md">ROADMAP.md</a>.
+      Every claim above is in the git log. Check me.
+    </p>
+
+  </article>
+
+  <footer>
+    <p><a href="/about/">Ivan Cronyn</a> is Principal Engineer and Head of Solutions Technology at Man Group in London.</p>
+    <a href="/writing/">← All writing</a> · <a href="/">Home</a>
+  </footer>
+
+  <script>
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('article > p, article > h2, article > h3, article > blockquote, article > ul, article > ol, article > pre');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
+
+</body>
+</html>

@@ -61,7 +61,7 @@ year.
 |---|---|---|---|
 | FCA Mills Review submission, first draft | Call for Input open to Sep 2026. "Trust, not capability" as a written response on retail financial services AI. This document is also the raw material for essay 11. | 2 sessions | Thesis + reputation |
 | Corpus pass over all ten essays | The humaniser skill's collection-level checks (shared phrases, recycled images, convergent framings, opening/ending shapes) have never been run over the full ten. Do it once, fix what it finds, record the opening/ending inventory in CLAUDE.md so future essays consult it. | 1 session | Thesis (the collection is the asset) |
-| Site quick-wins session | Favicon set (typographic monogram matching the share card), `404.html` in the site voice, `security.txt`. One session, one commit. | 1 session | Brand polish |
+| Site quick-wins session | Favicon set (typographic monogram matching the share card), `404.html` in the site voice, `security.txt`. One session, one commit. Done 3 July, along with the reveal-script hardening from the dark-mode bug report. Note: `security.txt` carries an RFC-mandated `Expires` of July 2027; the December audit must refresh it. | 1 session | Brand polish |
 
 ---
 

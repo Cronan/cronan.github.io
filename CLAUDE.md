@@ -58,7 +58,7 @@ Other subdomains will be separate repos, each with their own CNAME:
 
 ## Design
 
-Monospaced headings (SF Mono / Consolas), serif body (Charter / Georgia). Automatic dark mode via `prefers-color-scheme`. Max width 640px. Fast, accessible, printable. Accent colour: dark red (`#8b0000` light, `#c44` dark). Social share card: `images/og-card.png` (1200x630), referenced by every page's `og:image`; regenerate in the same typographic style if the thesis line or name treatment changes.
+Monospaced headings (SF Mono / Consolas), serif body (Charter / Georgia). Automatic dark mode via `prefers-color-scheme`. Max width 640px. Fast, accessible, printable. Accent colour: dark red (`#8b0000` light, `#c44` dark). Social share card: `images/og-card.png` (1200x630), referenced by every page's `og:image`; regenerate in the same typographic style if the thesis line or name treatment changes. Favicons: `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` at the repo root (the ZX81 K cursor: accent-red ground, off-white mono K), linked from every page's head.
 
 -----
 

@@ -318,3 +318,22 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Print: scroll-reveal must not hide unscrolled content on paper */
+@media print {
+  body {
+    animation: none;
+  }
+  .js article > p,
+  .js article > h2,
+  .js article > h3,
+  .js article > blockquote,
+  .js article > ul,
+  .js article > ol {
+    opacity: 1;
+    transform: none;
+  }
+  nav {
+    display: none;
+  }
+}

@@ -1,5 +1,7 @@
 # Site enhancement plan: positioning for speaking, advisory, and board roles
 
+> Scheduling superseded by `schedule-2026-h2.md` (July 2026). Strategy content below remains current.
+
 February 2026. This plan covers what to change on cronyn.co.uk and why, informed by research into Ivan's unique positioning, target conferences, advisory pathways, and comparable career trajectories.
 
 ---

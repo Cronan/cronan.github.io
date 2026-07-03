@@ -1,5 +1,7 @@
 # Ivan Cronyn - Personal Brand & Presence Plan
 
+> Scheduling superseded by `schedule-2026-h2.md` (July 2026).
+
 Last updated: February 2026
 
 ## The Goal

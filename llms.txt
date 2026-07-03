@@ -1,0 +1,29 @@
+# Ivan Cronyn
+
+> Personal site of Ivan Cronyn, Principal Engineer and Head of Solutions Technology at Man Group in London. Essays arguing that trust, not capability, is the bottleneck in AI-assisted engineering: the models are good enough, and the real work is designing systems that absorb their mistakes cheaply - observable, reversible, enforceable.
+
+Ivan has built financial systems in London since 1998 (Barclays Capital, Merrill Lynch, GLG Partners, Brevan Howard, Man Group) and has programmed since 1981, starting on a Sinclair ZX81 in Durban, South Africa. He writes about AI deployment in regulated environments from the perspective of building these systems, not studying them.
+
+## Writing
+
+- [The surrender note](https://cronyn.co.uk/writing/the-surrender-note.html) (July 2026): An AI agent debugging my ZX81 chess engine once wrote itself a resignation letter. Its successor found a bug that survived 92 commits, in the time my train took to get in.
+- [Propose, not promote](https://cronyn.co.uk/writing/propose-not-promote.html) (June 2026): A new paper lets an AI agent rewrite its own harness and get better at its work. The interesting part is the one thing it is not allowed to do: decide whether its own changes survive.
+- [672 bytes](https://cronyn.co.uk/writing/672-bytes.html) (March 2026): A chess engine in 672 bytes of Z80 machine code. What constraint-driven design on a ZX81 teaches about building systems that absorb failure cheaply.
+- [The 25 ways AI overwrites your voice](https://cronyn.co.uk/writing/ai-writing-patterns.html) (February 2026): Large language models destroy voice through 25 identifiable patterns. The problem is not detection. It is quality.
+- [Compromised Witnesses](https://cronyn.co.uk/writing/compromised-witnesses.html) (February 2026): Self-reported developer productivity with AI tools is structurally unreliable. The witnesses are compromised by the same cognitive biases Cialdini mapped decades ago.
+- [Observable, reversible, enforceable](https://cronyn.co.uk/writing/observable-reversible-enforceable.html) (December 2025): Three requirements for AI in production. Before asking whether AI can do something, ask whether your system can absorb the mistakes.
+- [The Suspicion Tax](https://cronyn.co.uk/writing/the-suspicion-tax.html) (November 2025): What AI content actually costs - and why trust, not filtering, is the design problem.
+- [Bainbridge's Ironies of Automation, forty years on](https://cronyn.co.uk/writing/ironies-of-automation.html) (August 2025): Lisanne Bainbridge's 1983 paper on the ironies of automation maps precisely onto how we're integrating AI into modern software systems.
+- [Trust, not capability](https://cronyn.co.uk/writing/trust-not-capability.html) (July 2025): The models are good enough. The bottleneck is trust - and trust is built from infrastructure, not adoption speed.
+- [Building engineers in the age of AI](https://cronyn.co.uk/writing/ai-as-junior-engineer.html) (May 2025): AI changes what junior work looks like. If we're not careful, we'll optimise for today's velocity and break tomorrow's capability.
+
+## Pages
+
+- [About](https://cronyn.co.uk/about/): Full bio and career history.
+- [Speaking](https://cronyn.co.uk/speaking/): Talk topics, formats, and speaker bios.
+- [Reading](https://cronyn.co.uk/reading/): A curated reading list on AI in production engineering, with three trails through the material.
+
+## Feeds
+
+- [RSS feed](https://cronyn.co.uk/feed.xml)
+- [Sitemap](https://cronyn.co.uk/sitemap.xml)

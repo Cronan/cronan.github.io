@@ -32,7 +32,7 @@ This has been forgotten before, most recently by missing the landing page. Do no
 
 **Grep for the previous essay's filename. Every file it appears in, except its own page, needs the new essay too.** Run the same grep for the new essay afterwards and compare.
 
-For orientation, the current set is five files: the essay page itself, the essay lists in both `writing/index.html` (HTML and JSON-LD) and the landing page `index.html`, plus `feed.xml` and `sitemap.xml` (new entry, and `lastmod` for `/` and `/writing/`). The grep is authoritative; this list is not.
+For orientation, the current set is six files: the essay page itself, the essay lists in both `writing/index.html` (HTML and JSON-LD) and the landing page `index.html`, `llms.txt`, plus `feed.xml` and `sitemap.xml` (new entry, and `lastmod` for `/` and `/writing/`). The grep is authoritative; this list is not.
 
 ## Conventions
 
@@ -58,7 +58,7 @@ Other subdomains will be separate repos, each with their own CNAME:
 
 ## Design
 
-Monospaced headings (SF Mono / Consolas), serif body (Charter / Georgia). Automatic dark mode via `prefers-color-scheme`. Max width 640px. No images on the landing page. Fast, accessible, printable. Accent colour: dark red (`#8b0000` light, `#c44` dark).
+Monospaced headings (SF Mono / Consolas), serif body (Charter / Georgia). Automatic dark mode via `prefers-color-scheme`. Max width 640px. Fast, accessible, printable. Accent colour: dark red (`#8b0000` light, `#c44` dark). Social share card: `images/og-card.png` (1200x630), referenced by every page's `og:image`; regenerate in the same typographic style if the thesis line or name treatment changes.
 
 -----
 

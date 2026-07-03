@@ -26,7 +26,13 @@ Edit HTML directly. Commit and push to `master`. GitHub Pages deploys automatica
 
 There is no build step, no test suite, and no CI. Validation is visual: open the page in a browser and check it looks right.
 
-Adding an essay touches five files: the essay page itself, the essay lists in both `writing/index.html` and the landing page `index.html`, plus `feed.xml` and `sitemap.xml` (including the `lastmod` entries for `/` and `/writing/`). Verify with a grep for the previous essay's filename - every file it appears in, except its own page, needs the new one too.
+## Adding an essay
+
+This has been forgotten before, most recently by missing the landing page. Do not work from a remembered file list, including the one below. The check that actually catches omissions:
+
+**Grep for the previous essay's filename. Every file it appears in, except its own page, needs the new essay too.** Run the same grep for the new essay afterwards and compare.
+
+For orientation, the current set is five files: the essay page itself, the essay lists in both `writing/index.html` (HTML and JSON-LD) and the landing page `index.html`, plus `feed.xml` and `sitemap.xml` (new entry, and `lastmod` for `/` and `/writing/`). The grep is authoritative; this list is not.
 
 ## Conventions
 
@@ -136,6 +142,7 @@ These checks matter more than any single-essay edit. Run them when adding or rev
 - Prefer verbs to nominalisations. "Decide" not "make a decision."
 - Active voice. Subject-verb-object.
 - Concrete numbers over vague claims. "84%" not "significant."
+- Anchor durations to a start year, never a count: "since 1998", not "27 years". Counts silently go stale; the site has already shipped a wrong one. (Essays are dated artefacts - a count correct at publication stays.)
 - Straight quotes, not curly.
 - British English. Mid-Atlantic acceptable for international audiences.
 

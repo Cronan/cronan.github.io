@@ -26,7 +26,7 @@ Edit HTML directly. Commit and push to `master`. GitHub Pages deploys automatica
 
 There is no build step, no test suite, and no CI. Validation is visual: open the page in a browser and check it looks right.
 
-Adding an essay touches four files: the essay page itself, `writing/index.html`, `feed.xml`, and `sitemap.xml`. The last two are easy to forget and go stale silently - check them when touching the others.
+Adding an essay touches five files: the essay page itself, the essay lists in both `writing/index.html` and the landing page `index.html`, plus `feed.xml` and `sitemap.xml` (including the `lastmod` entries for `/` and `/writing/`). Verify with a grep for the previous essay's filename - every file it appears in, except its own page, needs the new one too.
 
 ## Conventions
 

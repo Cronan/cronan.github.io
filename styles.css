@@ -222,6 +222,13 @@ nav a.active {
   margin-top: 0.15rem;
 }
 
+.essay-list .desc {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
 /* Article / essay pages */
 article header {
   margin-bottom: 2rem;

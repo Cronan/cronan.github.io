@@ -1,6 +1,6 @@
 # Ivan Cronyn
 
-> Personal site of Ivan Cronyn, Principal Engineer and Head of Solutions Technology at Man Group in London. Essays arguing that trust, not capability, is the bottleneck in AI-assisted engineering: the models are good enough, and the real work is designing systems that absorb their mistakes cheaply - observable, reversible, enforceable.
+> Personal site of Ivan Cronyn, Head of AI Enablement and Head of Solutions Technology at Man Group in London. Essays arguing that trust, not capability, is the bottleneck in AI-assisted engineering: the models are good enough, and the real work is designing systems that absorb their mistakes cheaply - observable, reversible, enforceable.
 
 Ivan has built financial systems in London since 1998 (Barclays Capital, Merrill Lynch, GLG Partners, Brevan Howard, Man Group) and has programmed since 1981, starting on a Sinclair ZX81 in Durban, South Africa. He writes about AI deployment in regulated environments from the perspective of building these systems, not studying them.
 

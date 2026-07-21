@@ -229,6 +229,15 @@ nav a.active {
   color: var(--text-secondary);
 }
 
+/* CV page - company/date line under each role heading */
+.cv-meta {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
+}
+
 /* Article / essay pages */
 article header {
   margin-bottom: 2rem;

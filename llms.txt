@@ -20,6 +20,7 @@ Ivan has built financial systems in London since 1998 (Barclays Capital, Merrill
 ## Pages
 
 - [About](https://cronyn.co.uk/about/): Full bio and career history.
+- [CV](https://cronyn.co.uk/cv/): Curriculum vitae - roles, dates, and selected work.
 - [Speaking](https://cronyn.co.uk/speaking/): Talk topics, formats, and speaker bios.
 - [Reading](https://cronyn.co.uk/reading/): A curated reading list on AI in production engineering, with three trails through the material.
 

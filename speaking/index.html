@@ -7,11 +7,11 @@
   <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
   <title>Speaking - Ivan Cronyn</title>
-  <meta name="description" content="Ivan Cronyn speaks on AI deployment in regulated environments, engineering leadership, and the trust infrastructure that production AI actually needs.">
+  <meta name="description" content="Ivan Cronyn speaks on measuring whether AI actually helps in production engineering: trust over capability, the adoption you cannot mandate, and making AI's mistakes cheap to catch.">
   <link rel="canonical" href="https://cronyn.co.uk/speaking/">
   <link rel="alternate" type="application/rss+xml" title="Ivan Cronyn" href="https://cronyn.co.uk/feed.xml">
   <meta property="og:title" content="Speaking - Ivan Cronyn">
-  <meta property="og:description" content="Ivan Cronyn speaks on AI deployment in regulated environments, engineering leadership, and the trust infrastructure that production AI actually needs.">
+  <meta property="og:description" content="Ivan Cronyn speaks on measuring whether AI actually helps in production engineering: trust over capability, the adoption you cannot mandate, and making AI's mistakes cheap to catch.">
   <meta property="og:url" content="https://cronyn.co.uk/speaking/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://cronyn.co.uk/images/og-card.png">
@@ -22,7 +22,7 @@
   <meta name="author" content="Ivan Cronyn">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Speaking - Ivan Cronyn">
-  <meta name="twitter:description" content="Ivan Cronyn speaks on AI deployment in regulated environments, engineering leadership, and the trust infrastructure that production AI actually needs.">
+  <meta name="twitter:description" content="Ivan Cronyn speaks on measuring whether AI actually helps in production engineering: trust over capability, the adoption you cannot mandate, and making AI's mistakes cheap to catch.">
   <meta name="twitter:image" content="https://cronyn.co.uk/images/og-card.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
@@ -55,15 +55,58 @@
     systems, not studying them from outside.
   </p>
 
-  <h2>Topics</h2>
+  <h2>Trust, not capability: measuring whether AI actually helps in production engineering</h2>
+
+  <p>
+    Most reports of AI making engineers faster are self-reported, and
+    self-report is the least reliable instrument we have. People who like a
+    tool report gains whether or not their output changed. So the interesting
+    question is not whether AI is capable. It plainly is. The question is
+    whether you can show, with evidence, that it helped, and whether your
+    systems can absorb its mistakes cheaply enough to trust it in production.
+  </p>
+
+  <p>
+    This talk is an account of doing that inside a large regulated fund:
+    driving AI adoption across an engineering group without the authority to
+    mandate it, and building the measurement to know whether it worked. It
+    covers the baselines worth setting before you change anything, why
+    attendance is not adoption and adoption is not impact, the safety layer
+    that makes AI errors cheap to catch, and treating token spend as a
+    measured input rather than an overhead. One configuration change cut
+    per-session cost by roughly two-thirds. A second team adopted the approach
+    without being asked, which turned out to be the only adoption signal that
+    could not be gamed.
+  </p>
+
+  <p>
+    Some of it worked. Some of it did not, and telling the difference is the
+    point.
+  </p>
+
+  <h3>What you leave with</h3>
 
   <ul>
-    <li>
-      <strong>Trust, not capability: what production AI actually needs</strong><br>
-      <small>The bottleneck in AI adoption is not model quality but whether
-      your systems can observe, reverse, and enforce AI output. Drawn from
-      building AI-integrated systems inside a regulated financial firm.</small>
-    </li>
+    <li>How to baseline a developer workflow before introducing AI, so you are measuring change rather than sentiment.</li>
+    <li>Why self-reported productivity is unreliable, and what to measure in its place.</li>
+    <li>A safety pattern that makes AI-generated mistakes cheap to catch before they reach production.</li>
+    <li>How real adoption spreads by demonstrated value rather than mandate, and how to tell the two apart.</li>
+  </ul>
+
+  <h3>Format and audience</h3>
+
+  <p>
+    30 to 40 minutes, or 45 with questions. A 20-minute version works for a
+    shorter slot. It suits engineering leaders, heads and VPs of engineering,
+    and platform or developer-productivity teams: intermediate to senior, and
+    it assumes engineering leadership rather than AI research. I am comfortable
+    with keynote, panel, and fireside formats, including unscripted conversation
+    and extended audience Q&amp;A.
+  </p>
+
+  <h2>Other talks</h2>
+
+  <ul>
     <li>
       <strong>Ten paradigm shifts: what programming since 1981 teaches you about AI</strong><br>
       <small>From ZX81 BASIC in 1981 to AI agents in 2026. Pattern recognition
@@ -90,36 +133,38 @@
     </li>
   </ul>
 
-  <h2>Formats</h2>
-
-  <p>
-    Keynote, panel, fireside chat. I am comfortable with unscripted formats
-    and extended audience Q&amp;A.
-  </p>
-
   <h2>Bio</h2>
 
   <p>
-    <strong>Short (50 words):</strong> Ivan Cronyn is a Principal Engineer and
-    Head of Solutions Technology at a major London hedge fund, where he leads
-    engineering for bespoke investment mandates. He has built
-    financial systems across risk, quant, and client technology since 1998,
-    and writes about AI deployment in regulated environments.
+    <strong>One line:</strong> Ivan Cronyn is a principal engineer and AI
+    enablement lead at a major London hedge fund manager, and writes on AI in
+    production engineering at cronyn.co.uk.
   </p>
 
   <p>
-    <strong>Long (150 words):</strong> Ivan Cronyn leads engineering for bespoke
-    investment mandates at one of the world's largest alternative investment
-    managers in London. Since 1998 in financial technology - at Barclays
-    Capital, Merrill Lynch, GLG Partners, Brevan Howard, and his current firm -
-    he has built systems across risk technology, quantitative research, and
-    solutions engineering: the full lifecycle from signal generation through
-    risk management to client delivery. He has programmed since 1981, starting
-    on a Sinclair ZX81 in Durban, South Africa, and has built production systems
-    through every major paradigm shift from structured programming to AI agents.
-    His writing argues that trust, not capability, is the real bottleneck in
-    AI-assisted engineering - that the models are good enough, but systems must
-    be designed to absorb their mistakes cheaply.
+    <strong>Short (50 words):</strong> Ivan Cronyn has built software in
+    regulated finance since 1998, and now leads AI engineering enablement at
+    one of the world's largest listed hedge fund managers. He builds the
+    tooling himself - agents, evaluation harnesses, CI safety layers - and
+    drives its adoption across engineering and the business. He writes at
+    cronyn.co.uk on why trust, not capability, decides whether AI pays off.
+  </p>
+
+  <p>
+    <strong>Long (150 words):</strong> Ivan Cronyn leads AI engineering
+    enablement at one of the world's largest listed hedge fund managers in
+    London, where he builds the tooling - agents, evaluation harnesses, CI
+    safety layers - and drives its adoption across engineering and the
+    business. He has built software in regulated finance since 1998, at
+    Barclays Capital, Merrill Lynch, GLG Partners, Brevan Howard, and his
+    current firm, across risk technology, quantitative research, and client
+    solutions: the full lifecycle from signal generation through risk
+    management to client delivery. He has written code since 1981, starting on
+    a Sinclair ZX81 in Durban, South Africa, and has shipped production systems
+    through every major paradigm shift from structured programming to AI
+    agents. His writing argues that trust, not capability, is the real
+    bottleneck in AI-assisted engineering: the models are good enough, but the
+    systems around them must be designed to absorb their mistakes cheaply.
   </p>
 
   <h2>Headshot</h2>
